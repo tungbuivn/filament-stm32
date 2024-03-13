@@ -4,7 +4,7 @@
 // #include <U8g2lib.h>
 #include <Wire.h>
 // #include <lcd.h>
-#include "lcd/lcd_st7567s.h"
+#include "../libs/ST7567S_128X64_I2C/lcd_st7567s.h"
 
 #define LCD_SCL PB6
 #define LCD_SDA PB7
@@ -81,13 +81,22 @@ void LCDThread::initLcd() {
     //   Wire.setSDA(SDA);
     // Wire.setSCL(SCL);
     Lcd7567.Init();
-    Lcd7567.testPixel(2);
+    // Lcd7567.testPixel(2);
 
      Lcd7567.Clear(true);
  
 /**/  
-  Lcd7567.Cursor(0, 7);                    //Character display position. y=0-3, x=0-17
-  Lcd7567.Display("Xin chao");  
+ Lcd7567.Cursor(1, 0);      
+ Lcd7567.DisplayText(0,0,"Thu doan text that la dai");  
+ Lcd7567.DisplayText(0,1,"Khong giong nhau ti nao");  
+ Lcd7567.DisplayText(0,2,"Fit all in screen some");  
+ Lcd7567.DisplayText(0,3,"Hien thi 4 dong day du");  
+//   Lcd7567.Cursor(1, 2);                    //Character display position. y=0-3, x=0-17
+//   Lcd7567.Display("Xin Chao");  
+//    Lcd7567.Cursor(1, 4);                    //Character display position. y=0-3, x=0-17
+//   Lcd7567.Display("Tot roi");  
+//    Lcd7567.Cursor(1, 6);                    //Character display position. y=0-3, x=0-17
+//   Lcd7567.Display("Cuoi cung");  
     return;
     
   for(int a=0; a<64; a++){

@@ -22,7 +22,7 @@
             } \
         break; \
     } \
-    ip=ip+1;
+    ip=ip+1; done=ip>=NARGS;
 
 #define __FOREACH_(prio,FN, NARGS, ...) __FOREACH__(prio,FN, NARGS, __VA_ARGS__)
 #define TBT_THC(prio,FN, ...)  __FOREACH_(prio,FN, N_VA_ARGS(__VA_ARGS__), __VA_ARGS__)
@@ -71,6 +71,9 @@ protected:
    THREAD_EXECUTION type;
    int finished;
 
+    /* when the last command execute then this value is true */
+    bool done;
+
 public:
     BaseThread();
     virtual ~BaseThread();
@@ -81,6 +84,14 @@ public:
     virtual  void execute()=0;
 };
 
+typedef void (*execution)();
+class THFunc: public BaseThread {
+private:
+execution *callback;
+    public:
+    THFunc(execution *fn);
+    void execute();
+};
 // void BaseThread::execute() {
 //     if (isSuspend) return;
 // }

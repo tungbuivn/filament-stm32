@@ -67,7 +67,7 @@ ${c}
 `
 
 
-fs.writeFileSync("./src/macro.h",`
+fs.writeFileSync("./macro.h",`
 #pragma once
 
 ${ct4}
