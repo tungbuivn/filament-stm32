@@ -4,7 +4,7 @@
 // #include <U8g2lib.h>
 #include <Wire.h>
 // #include <lcd.h>
-#include "../libs/ST7567S_128X64_I2C/lcd_st7567s.h"
+#include "ST7567S-IIC-128x64.h"
 
 #define LCD_SCL PB6
 #define LCD_SDA PB7
@@ -14,7 +14,7 @@
 
 // ST7567_128
 //create an lcd object.
-lcd_st7567s Lcd7567;
+ST7567S_IIC Lcd7567(128,64);
 // lcd  lcd;
 LCDThread::LCDThread() : BaseThread(){
 
@@ -67,8 +67,8 @@ void LCDThread::updateText() {
         TextQueueData *inf = data.front();
         // Serial.print("Update text lcd: ");
         // Serial.println(inf->text);
-         Lcd7567.Cursor(inf->x, inf->y);                    //Character display position. y=0-3, x=0-17
-  Lcd7567.Display(inf->text); 
+//          Lcd7567.Cursor(inf->x, inf->y);                    //Character display position. y=0-3, x=0-17
+//   Lcd7567.Display(inf->text); 
         // Lcd7567.
         data.pop();
         delete[] inf->text;
@@ -77,102 +77,32 @@ void LCDThread::updateText() {
     }
    
 }
+#include <ttf/segoeui6pt7b.h>
+GFXfont font=segoeui6pt7b;
 void LCDThread::initLcd() {
-    //   Wire.setSDA(SDA);
-    // Wire.setSCL(SCL);
     Lcd7567.Init();
-    // Lcd7567.testPixel(2);
+   
+    Lcd7567.fillScreen(0xff);
+    Lcd7567.setRotation(0);
+    Lcd7567.setFont(&font);
+     Lcd7567.drawRect(10,10,50,30,1);
+    // Lcd7567.drawPixel(1,1,1);
+    // Lcd7567.setCursor(0,font.yAdvance);
+    Lcd7567.drawCircle(64,32,10,1);
+    // Lcd7567.print("Xin Chao"); 
 
-     Lcd7567.Clear(true);
- 
-/**/  
- Lcd7567.Cursor(1, 0);      
- Lcd7567.DisplayText(0,0,"Thu doan text that la dai");  
- Lcd7567.DisplayText(0,1,"Khong giong nhau ti nao");  
- Lcd7567.DisplayText(0,2,"Fit all in screen some");  
- Lcd7567.DisplayText(0,3,"Hien thi 4 dong day du");  
-//   Lcd7567.Cursor(1, 2);                    //Character display position. y=0-3, x=0-17
-//   Lcd7567.Display("Xin Chao");  
-//    Lcd7567.Cursor(1, 4);                    //Character display position. y=0-3, x=0-17
-//   Lcd7567.Display("Tot roi");  
-//    Lcd7567.Cursor(1, 6);                    //Character display position. y=0-3, x=0-17
-//   Lcd7567.Display("Cuoi cung");  
+   int up=6;
+  Lcd7567.setCursor(0, font.yAdvance-up);                    //Character display position. y=0-3, x=0-17
+  Lcd7567.print("Xin Chao");  
+   Lcd7567.setCursor(0, font.yAdvance*2-up);                    //Character display position. y=0-3, x=0-17
+  Lcd7567.print("Tot roi");  
+   Lcd7567.setCursor(0, font.yAdvance*3-up);                    //Character display position. y=0-3, x=0-17
+  Lcd7567.print("Cuoi cung");  
+  Lcd7567.setCursor(0, font.yAdvance*4-up);                    //Character display position. y=0-3, x=0-17
+  Lcd7567.print("Dong thu 4");  
+   Lcd7567.render();
     return;
     
-  for(int a=0; a<64; a++){
-  Lcd7567.DisplayPixel(a,a);              //display one pixel. X=0-31, Y=0-127
-  delay(5);
-  }
-  for(int a=0; a<64; a++){
-  Lcd7567.ClearPixel(a,a);                //Does not display a pixel. X=0-31, Y=0-127
-  delay(5);
-  }
-
-  Lcd7567.Clear(true);
-  for(int a=0; a<64; a++){
-  Lcd7567.ClearPixel(a,a);                //Does not display a pixel. X=0-31, Y=0-127
-  delay(5);
-  }
-  delay(5000);
-
-  Lcd7567.Clear(false);
-  for(int a=0; a<128; a++){
-  Lcd7567.DisplayPixel(a,0);              //display one pixel. X=0-31, Y=0-127
-  Lcd7567.DisplayPixel(a,63);              //display one pixel. X=0-31, Y=0-127
-  }
-  for(int a=0; a<64; a++){
-  Lcd7567.DisplayPixel(0, a);              //display one pixel. X=0-31, Y=0-127
-  Lcd7567.DisplayPixel(127,a);              //display one pixel. X=0-31, Y=0-127
-  Lcd7567.DisplayPixel(4,a);
-  }
-  Lcd7567.DrawLine(5, 5, 125, 60, false);
-  Lcd7567.DrawLine(125, 5, 5, 60, false);
-  Lcd7567.DrawLine(53, 31, 73, 31, false);
-  Lcd7567.DrawLine(63, 20, 63, 40, false);
-
-  Lcd7567.draw_circle(20, 30, 10, DRAW_ALL, false, false);
-  Lcd7567.draw_circle(20, 30, 15, DRAW_ALL, false, false);
-
-  Lcd7567.draw_circle(105, 30, 15, DRAW_ALL, false, true);
-
-  delay(5000);
-
-  Lcd7567.Clear(false);
-  Lcd7567.DrawLine(53, 31, 73, 31, false);
-  Lcd7567.DrawLine(63, 20, 63, 40, false);
-  Lcd7567.draw_circle(90, 30, 10, DRAW_ALL, false, false);
-  Lcd7567.draw_circle(30, 30, 10, DRAW_ALL, false, true);
-  delay(5000);
-
-  Lcd7567.Clear(true);
-  Lcd7567.DrawLine(53, 31, 73, 31, true);
-  Lcd7567.DrawLine(63, 20, 63, 40, true);
-  Lcd7567.draw_circle(90, 30, 10, DRAW_ALL, true, false);
-  Lcd7567.draw_circle(30, 30, 10, DRAW_ALL, true, true);
-  delay(5000);
-
-/**/  
-  Lcd7567.Cursor(7, 0);                    //Character display position. y=0-3, x=0-17
-  Lcd7567.Display("KEYES");               //Maximun 18 characters.
-  Lcd7567.Cursor(0, 1);
-  Lcd7567.Display("ABCDEFGHIJKLMNOPQR");
-  Lcd7567.Cursor(0, 2);
-  Lcd7567.Display("123456789+-*/<>=$@");
-  Lcd7567.Cursor(0, 3);
-  Lcd7567.Display("%^&(){}:;'|?,.~\\[]");
-  Lcd7567.Cursor(0, 4);
-  Lcd7567.Display("ABCDEFGHIJKLMNOPQR");
-  Lcd7567.Cursor(0, 5);
-  Lcd7567.Display("123456789+-*/<>=$@");
-  Lcd7567.Cursor(0, 6);
-  Lcd7567.Display("%^&(){}:;'|?,.~\\[]");
-  Lcd7567.Cursor(0, 7);
-  Lcd7567.Display("ABCDEFGHIJKLMNOPQR");
-  delay(5000);
-  Lcd7567.Clear(false);                        //All pixels turn off.
-  
-  Lcd7567.DisplayPicture();               //Displays the image data for the picture.c file
-  delay(5000);
 }
 void LCDThread::execute(){
 
