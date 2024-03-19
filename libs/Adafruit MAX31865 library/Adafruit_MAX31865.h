@@ -53,7 +53,7 @@
 #endif
 
 #include <Adafruit_SPIDevice.h>
-
+#include <tbt_thread.h>
 typedef enum max31865_numwires {
   MAX31865_2WIRE = 0,
   MAX31865_3WIRE = 1,
@@ -66,7 +66,10 @@ typedef enum {
   MAX31865_FAULT_MANUAL_RUN,
   MAX31865_FAULT_MANUAL_FINISH
 } max31865_fault_cycle_t;
-
+struct TemperatureContext:ThreadFunc
+{
+  uint16_t rtd;
+};
 /*! Interface class for the MAX31865 RTD Sensor reader */
 class Adafruit_MAX31865 {
 public:
@@ -78,7 +81,10 @@ public:
 
   uint8_t readFault(max31865_fault_cycle_t fault_cycle = MAX31865_FAULT_AUTO);
   void clearFault(void);
+ 
+  void readRTD2(TemperatureContext *ctx);
   uint16_t readRTD();
+  
 
   void setThresholds(uint16_t lower, uint16_t upper);
   uint16_t getLowerThreshold(void);
@@ -93,7 +99,7 @@ public:
   float calculateTemperature(uint16_t RTDraw, float RTDnominal,
                              float refResistor);
 
-protected:
+// protected:
   Adafruit_SPIDevice spi_dev;
 
   void readRegisterN(uint8_t addr, uint8_t buffer[], uint8_t n);

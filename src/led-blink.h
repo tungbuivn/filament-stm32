@@ -10,7 +10,7 @@ private:
     // int queueLen;
 public:
   
-    
+    void init();
     void execute();
 };
 extern LedBlink ledBlink;

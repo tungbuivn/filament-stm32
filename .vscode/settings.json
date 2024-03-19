@@ -3,5 +3,14 @@
         "sstream": "cpp",
         "ibm8x16.c": "cpp",
         "random": "cpp"
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        ".pio":true
     }
 }

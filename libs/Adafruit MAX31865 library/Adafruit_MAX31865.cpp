@@ -20,7 +20,7 @@
 #elif defined(ESP8266)
 #include <pgmspace.h>
 #endif
-
+#include <tbt_thread.h>
 #include <stdlib.h>
 
 /**************************************************************************/
@@ -293,6 +293,37 @@ float Adafruit_MAX31865::calculateTemperature(uint16_t RTDraw, float RTDnominal,
     @return The raw unsigned 16-bit value, NOT temperature!
 */
 /**************************************************************************/
+void Adafruit_MAX31865::readRTD2(TemperatureContext *th) {
+  ThreadContext *ctx=th->ctx;
+  TBT_THC(5,,,
+    clearFault(),
+    enableBias(true),
+    TBT_DELAY(10),
+    {
+    uint8_t t = readRegister8(MAX31865_CONFIG_REG);
+    t |= MAX31865_CONFIG_1SHOT;
+    writeRegister8(MAX31865_CONFIG_REG, t);
+    },
+    TBT_DELAY(65),
+    th->rtd = readRegister16(MAX31865_RTDMSB_REG),
+    enableBias(false), // Disable bias current again to reduce selfheating.
+    // remove fault
+    th->rtd >>= 1,
+  )
+ 
+  
+  
+  
+
+  // uint16_t rtd = readRegister16(MAX31865_RTDMSB_REG);
+
+  // enableBias(false); // Disable bias current again to reduce selfheating.
+
+  // // remove fault
+  // rtd >>= 1;
+
+  // return rtd;
+}
 uint16_t Adafruit_MAX31865::readRTD(void) {
   clearFault();
   enableBias(true);

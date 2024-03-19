@@ -9,55 +9,53 @@
 // #define FOREACH_3(FN, E, ...) case N_VA_ARGS(__VA_ARGS__)+1: FN; break; FOREACH_2(E, __VA_ARGS__)
 // #define FOREACH_4(FN, E, ...) case N_VA_ARGS(__VA_ARGS__)+1: FN; break; FOREACH_3(E, __VA_ARGS__)
 // #define FOREACH_5(FN, E, ...) case N_VA_ARGS(__VA_ARGS__)+1: FN; break; FOREACH_4(E, __VA_ARGS__)
+#define MERGE_(a,b)  a##b
+#define LABEL_(a) MERGE_(autolabel_, a)
+#define AUTO_LABEL_NAME LABEL_(__LINE__)
 
 
 #define __FOREACH__(prio,FN, NARGS, ...) \
-    if (finished) return; \
-    switch (ip) { \
+    if (ctx->finished) return; \
+    switch (ctx->ip) { \
         FOREACH_##NARGS(prio,NARGS,FN, __VA_ARGS__ ) \
         default: \
-            if  (ip>MUL(NARGS,prio)) { \
-                if (type==THREAD_EXECUTION::FOREVER ) ip=-1; \
-                else finished=1; \
+            if  (ctx->ip>MUL(NARGS,prio)) { \
+                if (ctx->type==THREAD_EXECUTION::FOREVER ) ctx->ip=-1; \
+                else ctx->finished=1; \
             } \
         break; \
     } \
-    ip=ip+1; done=ip>=NARGS;
+    ctx->ip+=1; ctx->done=ctx->ip>=MUL(NARGS,prio);
 
 #define __FOREACH_(prio,FN, NARGS, ...) __FOREACH__(prio,FN, NARGS, __VA_ARGS__)
 #define TBT_THC(prio,FN, ...)  __FOREACH_(prio,FN, N_VA_ARGS(__VA_ARGS__), __VA_ARGS__)
 
 #define TBT_BLOCK(...) __VA_ARGS__
-#define TBT_IF(labelNum,cond,trueCond,falseCond) \
-    if (!(cond)) goto lbl__false_##labelNum; \
-    ,trueCond,goto lbl__end_##labelNum \
-    ,lbl__false_##labelNum: falseCond \
-    ,lbl__end_##labelNum:
+#define TBT_IF(cond,trueCond,falseCond) \
+    if (!(cond)) goto PP_CONCAT(lbl__false_,__LINE__); ,trueCond,goto PP_CONCAT(lbl__end_,__LINE__),PP_CONCAT(lbl__false_,__LINE__): falseCond ,PP_CONCAT(lbl__end_,__LINE__):
 
 
-#define TBT_WHILE(labelNum,cond,body) TBT_BLOCK( \
-    lbl__while_##labelNum: body, \
-    if (cond) goto lbl__while_##labelNum; \
+#define TBT_WHILE(cond,...) TBT_BLOCK( \
+    PP_CONCAT(lbl__while_,__LINE__): __VA_ARGS__, if (cond) goto PP_CONCAT(lbl__while_,__LINE__)\
 )
 
-#define __TBT_DELAY(labelNum,FN,num)  time=FN; TBT_WHILE(labelNum,FN-time<num,;)
 
-#define TBT_DELAY(labelNum,num) __TBT_DELAY(labelNum,millis(),num)
+#define __TBT_DELAY(FN,num)  ctx->time=FN; TBT_WHILE(FN-ctx->time<num,;)
 
-#define TBT_DELAY_MICRO(labelNum,num) __TBT_DELAY(labelNum,micros(),num)
+#define TBT_DELAY(num)   __TBT_DELAY(millis(),num)
 
-#define TBT_WAIT_THREAD(labelNum,th) TBT_WHILE(labelNum,!(th.isFinished()),th.execute());
+#define TBT_DELAY_MICRO(num) __TBT_DELAY(micros(),num)
+
+#define TBT_WAIT_THREAD(th) TBT_WHILE(!(th.isFinished()),th.execute());
+// #define H(X) HashString(__COUNTER__)
+
+
 
 enum THREAD_EXECUTION {
     ONCE=1,
     FOREVER=2,
 };
-class BaseThread {
-protected:
-   
-    /**
-     * instruction pointer
-    */
+struct ThreadContext {
     int ip;
     /**
      * priority of the thread 1~N, max=maxInt/N
@@ -66,32 +64,56 @@ protected:
     /**
      * isSuspend
     */
-   bool isSuspend;
-   uint32_t time;
-   THREAD_EXECUTION type;
-   int finished;
+    bool isSuspend;
+    uint32_t time;
+    THREAD_EXECUTION type;
+    int finished;
 
     /* when the last command execute then this value is true */
     bool done;
+};
+
+class BaseThread {
+protected:
+    
+//     /**
+//      * instruction pointer
+//     */
+//     int ip;
+//     /**
+//      * priority of the thread 1~N, max=maxInt/N
+//     */
+//     int priority;
+//     /**
+//      * isSuspend
+//     */
+//    bool isSuspend;
+//    uint32_t time;
+//    THREAD_EXECUTION type;
+//    int finished;
+
+//     /* when the last command execute then this value is true */
+//     bool done;
 
 public:
+    ThreadContext *ctx;
     BaseThread();
     virtual ~BaseThread();
     int isFinished();
+    virtual void init();
     /**
      * this is body of the thread, do not use any local variable here, if you want to, then create a function and call it
     */
     virtual  void execute()=0;
 };
 
-typedef void (*execution)();
-class THFunc: public BaseThread {
-private:
-execution *callback;
-    public:
-    THFunc(execution *fn);
-    void execute();
+
+class ThreadFunc: public BaseThread {
+    
+public:
+void execute();
 };
 // void BaseThread::execute() {
 //     if (isSuspend) return;
 // }
+#define TBT_WAIT_FUNC(th,func) TBT_WHILE(!th->ctx->done,func(th))

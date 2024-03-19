@@ -22,13 +22,15 @@ void setup()
     
     //  Serial.setRx(PA10); // using pin name PY_n
     // Serial.setTx(PA9); // using pin number PYn
-    // Serial.begin(115200);
+    Serial.begin(115200);
     
    
     // Serial.dtr(false);
 	// while(Serial1x);
     // while(!Serial.available());
-    pinMode(LED_BUILTIN,OUTPUT);
+   
+    ledBlink.init();
+    mylcd.init();
 };
 
 void loop()

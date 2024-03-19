@@ -1,22 +1,22 @@
 
 #include "tbt_thread.h"
 BaseThread::BaseThread() {
-    this->ip=0;
-    priority=5;
-    type=THREAD_EXECUTION::FOREVER;
-    finished=0;
-    done=0;
+    ctx=new ThreadContext();
+    ctx->ip=0;
+    ctx->priority=5;
+    ctx->type=THREAD_EXECUTION::FOREVER;
+    ctx->finished=0;
+    ctx->done=0;
 };
 BaseThread::~BaseThread() {
-
+    delete ctx;
 }
 int BaseThread::isFinished() {
-    return finished;
+    return ctx->finished;
 }
-
-THFunc::THFunc(execution *fn) {
-    callback=fn;
+void BaseThread::init() {
+    
 }
-void THFunc::execute() {
-    (*callback)();
+void ThreadFunc::execute() {
+    
 }
