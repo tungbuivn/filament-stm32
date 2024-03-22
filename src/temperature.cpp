@@ -3,6 +3,7 @@
 #include "tbt_thread.h"
 #include "mylcd.h"
 #include <Adafruit_MAX31865.h>
+#include "rtd100.h"
 
 // use spi class
 
@@ -28,64 +29,36 @@ Temperature::Temperature()
 
   // lcd.execute()
 }
-
-
+// TemperatureContext *tempContext=NULL;
 void Temperature::execute()
 {
 
-  TBT_THC(5,
+  TBT_THC(
+      5,
       , ,
-      thermoContext=new TemperatureContext();
-      TBT_WAIT_FUNC(thermoContext,        thermo.readRTD2      ),
-      rtd=thermoContext->rtd,
 
-      delete thermoContext,
-  // return rtd;
-      // rtd = thermo.readRTD(),
-// tm1=micros() - tm1,
-      // Serial.print("RTD value: ");
-      // Serial.println(rtd),
-      // ratio = rtd,
-      // ratio /= 32768,
-      // Serial.print("Ratio = ");
-      // Serial.println(ratio, 8),
+      TBT_IF(false, TBT_BLOCK(
+        // TBT_CREATE_CONTEXT(tempContext),
+        
+        TBT_EXECUTE_FUNC(TemperatureContext,tempContext, thermo.readRTD2,rtd=tempContext->rtd),  
 
-      // Serial.print("Resistance = ");
-      // Serial.println(RREF * ratio, 8),
-      temp = thermo.calculateTemperature(rtd,RNOMINAL, RREF),
-      // Serial.print("Temperature = "); // Serial.println(temp),
+                              temp = thermo.calculateTemperature(rtd, RNOMINAL, RREF),
 
-      // Check and print any faults
-      fault = thermo.readFault(),
-      TBT_IF(fault,TBT_BLOCK(
-// Serial.print("Fault 0x");
-        // Serial.println(fault, HEX);
-        if (fault & MAX31865_FAULT_HIGHTHRESH)
-        {
-          // Serial.println("RTD High Threshold");
-        }
-        if (fault & MAX31865_FAULT_LOWTHRESH)
-        {
-          // Serial.println("RTD Low Threshold");
-        }
-        if (fault & MAX31865_FAULT_REFINLOW)
-        {
-          // Serial.println("REFIN- > 0.85 x Bias");
-        }
-        if (fault & MAX31865_FAULT_REFINHIGH)
-        {
-          // Serial.println("REFIN- < 0.85 x Bias - FORCE- open");
-        }
-        if (fault & MAX31865_FAULT_RTDINLOW)
-        {
-          // Serial.println("RTDIN- < 0.85 x Bias - FORCE- open");
-        }
-        if (fault & MAX31865_FAULT_OVUV)
-        {
-          // Serial.println("Under/Over voltage");
-        }
-        thermo.clearFault();
-      ),)
+                              fault = thermo.readFault(), TBT_IF(fault, TBT_BLOCK(
+
+                                                                            if (fault & MAX31865_FAULT_HIGHTHRESH) {
+                                                                              Serial.println("RTD High Threshold");
+                                                                            } if (fault & MAX31865_FAULT_LOWTHRESH) {
+                                                                              Serial.println("RTD Low Threshold");
+                                                                            } if (fault & MAX31865_FAULT_REFINLOW) {
+                                                                              Serial.println("REFIN- > 0.85 x Bias");
+                                                                            } if (fault & MAX31865_FAULT_REFINHIGH) {
+                                                                              Serial.println("REFIN- < 0.85 x Bias - FORCE- open");
+                                                                            } if (fault & MAX31865_FAULT_RTDINLOW) {
+                                                                              Serial.println("RTDIN- < 0.85 x Bias - FORCE- open");
+                                                                            } if (fault & MAX31865_FAULT_OVUV) {
+                                                                              Serial.println("Under/Over voltage");
+                                                                            } thermo.clearFault();), )), ),
 
       // lbl2:
       // if ((micros() - time) > 50) goto lbl1,
@@ -93,10 +66,10 @@ void Temperature::execute()
       // lbl1:
       //   Serial.println();
       //   delay(1000);
-      // Serial.println("setup text"),
+      Serial.println(millis()),
       {
         // int t = millis() - time;
-        mylcd.setTemp(temp);
+        mylcd.setTemp(millis());
       },
 
       // mylcd.setText(0,1*font.yAdvance,buf),
@@ -104,9 +77,7 @@ void Temperature::execute()
       // mylcd.
       // mylcd.setText(1,1,temp),
 
-      // TBT_DELAY(tempWait, 100)
+      // TBT_DELAY(10)
       // TBT_WAIT_THREAD(200, lcd)
   )
-
-
 };

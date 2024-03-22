@@ -90,7 +90,7 @@ void LCDThread::setText(int x, int y, char *atext)
 }
 void LCDThread::setTemp(int t)
 {
-    if (t != lastTemp)
+    // if (t != lastTemp)
     {
         lastTemp = t;
         needUpdate = true;
@@ -155,15 +155,17 @@ void LCDThread::init()
     return;
 }
 
+// ThreadFunc *refreshCTX=NULL;
 void LCDThread::execute()
 {
+    static uint32_t tm=0;
 
     // QX(4,3)
-
-
+// Serial.clearWriteError();
+// Serial.flush();
+tm=tm+1;
     TBT_THC(5,
-        , ,
-        TBT_IF( needUpdate == true,
+        TBT_IF( needUpdate,
             TBT_BLOCK(
                 needUpdate = false;
                 row = 0,
@@ -172,24 +174,36 @@ void LCDThread::execute()
                 TBT_WHILE( row < LCD_HEIGHT / 8,
                     TBT_BLOCK(
                         col = 0,
-                        TBT_WHILE( col < LCD_WIDTH, 
+                        // TBT_WHILE( col < LCD_WIDTH, 
                             TBT_BLOCK(
-                                Lcd7567.renderPartial(row, col);
+                                Lcd7567.renderPartial(row, 0);
                                 col+=1,
                             )
-                        ),
+                        // ),
                         row += 1
                     )
                 )
 
             ), 
         ),
+        TBT_IF(tm>5000,TBT_BLOCK(
+            TBT_EXECUTE_FUNC(ThreadFunc,refreshCTX, Lcd7567.refresh),
+            tm%=5000,
+        ),)
+        
+        // TBT_CREATE_CONTEXT(refreshCTX),
+        // if (refreshCTX==NULL) refreshCTX=new ThreadFunc(),
+        // 
+        
+        // TBT_DESTROY_CONTEXT(refreshCTX),
+        // TBT_DELAY(10),
+      
 
-        TBT_DELAY( 100),
+        // TBT_DELAY( 100),
 
         , ,
             // Lcd7567.draw_circle(105, 30, 15, DRAW_ALL, false, true),
 
     );
-
+// Serial.println("loop");
 };

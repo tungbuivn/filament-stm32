@@ -10,7 +10,7 @@
 // #include <Wire.h>
 // #define SERIAL_PORT_MONITOR     Serial
 //   #define SERIAL_PORT_HARDWARE    Serial
-
+#define SERIAL_RX_BUUFFER_SIZE 64
 LCDThread mylcd;
 Temperature temp;
 LedBlink ledBlink;
@@ -19,16 +19,29 @@ SerialCmd mySerial;
 // HardwareSerial Serial1x(PA10, PA9);
 void setup()
 {
+    // SERIAL_PORT_MONITOR
+    //  Serial.setRx(PA12); // using pin name PY_n
+    // Serial.setTx(PA11); // using pin number PYn
+    Serial.begin(9600);
     
-    //  Serial.setRx(PA10); // using pin name PY_n
-    // Serial.setTx(PA9); // using pin number PYn
-    Serial.begin(115200);
     
-   
+   delay(2000);
+  
     // Serial.dtr(false);
 	// while(Serial1x);
-    // while(!Serial.available());
-   
+    // while(!Serial.available()) {
+    //     delay(100);
+    // }
+    uint32_t tm=millis();
+    wait_more:
+//    Serial.println("hello");
+    if (!Serial.availableForWrite()) {
+        // Serial.clearWriteError();
+        goto wait_more;
+    }
+     Serial.println("hello");
+    Serial.println(millis()-tm);
+
     ledBlink.init();
     mylcd.init();
 };
@@ -40,6 +53,7 @@ void loop()
     ledBlink.execute();
     mySerial.execute();
     // i2cscan.execute();
-    return;
+    // return;
+    // delay(1);
 
 }

@@ -82,7 +82,7 @@ public:
   uint8_t readFault(max31865_fault_cycle_t fault_cycle = MAX31865_FAULT_AUTO);
   void clearFault(void);
  
-  void readRTD2(TemperatureContext *ctx);
+  void readRTD2(ThreadFunc *ctx);
   uint16_t readRTD();
   
 

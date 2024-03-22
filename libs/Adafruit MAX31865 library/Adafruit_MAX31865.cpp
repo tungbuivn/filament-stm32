@@ -293,7 +293,8 @@ float Adafruit_MAX31865::calculateTemperature(uint16_t RTDraw, float RTDnominal,
     @return The raw unsigned 16-bit value, NOT temperature!
 */
 /**************************************************************************/
-void Adafruit_MAX31865::readRTD2(TemperatureContext *th) {
+void Adafruit_MAX31865::readRTD2(ThreadFunc *thx) {
+  TemperatureContext *th=(TemperatureContext*)thx;
   ThreadContext *ctx=th->ctx;
   TBT_THC(5,,,
     clearFault(),
