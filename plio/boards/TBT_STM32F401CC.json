@@ -6,11 +6,9 @@
     "f_cpu": "84000000L",
     "mcu": "stm32f401ccu6",
     "product_line": "STM32F401xC",
-<<<<<<<< HEAD:boards/TBT_STM32F401CC.json
+
     "variant": "TBT_STM32F401CC"
-========
-    "variant": "CustomF401Cx"
->>>>>>>> origin/master:boards/tbt_STM32F401CC.json
+
   },
   "debug": {
     "jlink_device": "STM32F401CC",
@@ -23,11 +21,7 @@
     "stm32cube",
     "libopencm3"
   ],
-<<<<<<<< HEAD:boards/TBT_STM32F401CC.json
   "name": "TBT STM32F401CC (64k RAM. 256k Flash)",
-========
-  "name": "=============== STM32F401CC (64k RAM. 256k Flash) Custom",
->>>>>>>> origin/master:boards/tbt_STM32F401CC.json
   "upload": {
     "maximum_ram_size": 65536,
     "maximum_size": 262144,

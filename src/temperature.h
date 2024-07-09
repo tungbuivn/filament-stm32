@@ -12,7 +12,7 @@ private:
     uint32_t tm2;
     uint32_t tm3;
     uint32_t tm4;
-    TemperatureContext *thermoContext;
+    // TemperatureContext *thermoContext;
 public:    
     Temperature();
     void execute();

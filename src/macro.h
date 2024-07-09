@@ -45026,6997 +45026,6997 @@
 //#define PP_COMMA PP_LPAREN() PP_RPAREN()                // -> PP_COMMA ( )
 //#define PP_IDENTITY(PP_COMMA PP_LPAREN() PP_RPAREN())   // -> PP_COMMA() -> ,
 
-#define FOREACH_0(prio,na,FN, ...) case MUL(na,prio):  FN;ctx->ip=MUL(na,prio); break;
+#define FOREACH_0(prio,na,FN, ...) case MUL(na,prio):  FN;ip=MUL(na,prio); break;
 #define FOREACH_1(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(1,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(1,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(1,prio)); \
     break; \
     FOREACH_0(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_2(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(2,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(2,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(2,prio)); \
     break; \
     FOREACH_1(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_3(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(3,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(3,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(3,prio)); \
     break; \
     FOREACH_2(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_4(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(4,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(4,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(4,prio)); \
     break; \
     FOREACH_3(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_5(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(5,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(5,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(5,prio)); \
     break; \
     FOREACH_4(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_6(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(6,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(6,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(6,prio)); \
     break; \
     FOREACH_5(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_7(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(7,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(7,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(7,prio)); \
     break; \
     FOREACH_6(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_8(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(8,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(8,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(8,prio)); \
     break; \
     FOREACH_7(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_9(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(9,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(9,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(9,prio)); \
     break; \
     FOREACH_8(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_10(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(10,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(10,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(10,prio)); \
     break; \
     FOREACH_9(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_11(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(11,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(11,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(11,prio)); \
     break; \
     FOREACH_10(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_12(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(12,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(12,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(12,prio)); \
     break; \
     FOREACH_11(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_13(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(13,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(13,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(13,prio)); \
     break; \
     FOREACH_12(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_14(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(14,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(14,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(14,prio)); \
     break; \
     FOREACH_13(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_15(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(15,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(15,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(15,prio)); \
     break; \
     FOREACH_14(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_16(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(16,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(16,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(16,prio)); \
     break; \
     FOREACH_15(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_17(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(17,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(17,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(17,prio)); \
     break; \
     FOREACH_16(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_18(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(18,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(18,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(18,prio)); \
     break; \
     FOREACH_17(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_19(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(19,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(19,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(19,prio)); \
     break; \
     FOREACH_18(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_20(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(20,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(20,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(20,prio)); \
     break; \
     FOREACH_19(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_21(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(21,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(21,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(21,prio)); \
     break; \
     FOREACH_20(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_22(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(22,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(22,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(22,prio)); \
     break; \
     FOREACH_21(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_23(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(23,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(23,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(23,prio)); \
     break; \
     FOREACH_22(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_24(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(24,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(24,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(24,prio)); \
     break; \
     FOREACH_23(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_25(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(25,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(25,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(25,prio)); \
     break; \
     FOREACH_24(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_26(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(26,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(26,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(26,prio)); \
     break; \
     FOREACH_25(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_27(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(27,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(27,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(27,prio)); \
     break; \
     FOREACH_26(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_28(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(28,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(28,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(28,prio)); \
     break; \
     FOREACH_27(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_29(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(29,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(29,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(29,prio)); \
     break; \
     FOREACH_28(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_30(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(30,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(30,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(30,prio)); \
     break; \
     FOREACH_29(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_31(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(31,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(31,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(31,prio)); \
     break; \
     FOREACH_30(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_32(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(32,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(32,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(32,prio)); \
     break; \
     FOREACH_31(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_33(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(33,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(33,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(33,prio)); \
     break; \
     FOREACH_32(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_34(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(34,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(34,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(34,prio)); \
     break; \
     FOREACH_33(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_35(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(35,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(35,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(35,prio)); \
     break; \
     FOREACH_34(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_36(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(36,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(36,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(36,prio)); \
     break; \
     FOREACH_35(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_37(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(37,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(37,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(37,prio)); \
     break; \
     FOREACH_36(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_38(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(38,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(38,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(38,prio)); \
     break; \
     FOREACH_37(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_39(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(39,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(39,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(39,prio)); \
     break; \
     FOREACH_38(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_40(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(40,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(40,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(40,prio)); \
     break; \
     FOREACH_39(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_41(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(41,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(41,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(41,prio)); \
     break; \
     FOREACH_40(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_42(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(42,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(42,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(42,prio)); \
     break; \
     FOREACH_41(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_43(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(43,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(43,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(43,prio)); \
     break; \
     FOREACH_42(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_44(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(44,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(44,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(44,prio)); \
     break; \
     FOREACH_43(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_45(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(45,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(45,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(45,prio)); \
     break; \
     FOREACH_44(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_46(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(46,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(46,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(46,prio)); \
     break; \
     FOREACH_45(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_47(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(47,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(47,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(47,prio)); \
     break; \
     FOREACH_46(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_48(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(48,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(48,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(48,prio)); \
     break; \
     FOREACH_47(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_49(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(49,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(49,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(49,prio)); \
     break; \
     FOREACH_48(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_50(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(50,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(50,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(50,prio)); \
     break; \
     FOREACH_49(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_51(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(51,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(51,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(51,prio)); \
     break; \
     FOREACH_50(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_52(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(52,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(52,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(52,prio)); \
     break; \
     FOREACH_51(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_53(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(53,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(53,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(53,prio)); \
     break; \
     FOREACH_52(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_54(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(54,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(54,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(54,prio)); \
     break; \
     FOREACH_53(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_55(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(55,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(55,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(55,prio)); \
     break; \
     FOREACH_54(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_56(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(56,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(56,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(56,prio)); \
     break; \
     FOREACH_55(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_57(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(57,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(57,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(57,prio)); \
     break; \
     FOREACH_56(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_58(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(58,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(58,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(58,prio)); \
     break; \
     FOREACH_57(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_59(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(59,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(59,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(59,prio)); \
     break; \
     FOREACH_58(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_60(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(60,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(60,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(60,prio)); \
     break; \
     FOREACH_59(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_61(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(61,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(61,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(61,prio)); \
     break; \
     FOREACH_60(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_62(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(62,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(62,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(62,prio)); \
     break; \
     FOREACH_61(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_63(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(63,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(63,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(63,prio)); \
     break; \
     FOREACH_62(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_64(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(64,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(64,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(64,prio)); \
     break; \
     FOREACH_63(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_65(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(65,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(65,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(65,prio)); \
     break; \
     FOREACH_64(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_66(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(66,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(66,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(66,prio)); \
     break; \
     FOREACH_65(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_67(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(67,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(67,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(67,prio)); \
     break; \
     FOREACH_66(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_68(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(68,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(68,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(68,prio)); \
     break; \
     FOREACH_67(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_69(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(69,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(69,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(69,prio)); \
     break; \
     FOREACH_68(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_70(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(70,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(70,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(70,prio)); \
     break; \
     FOREACH_69(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_71(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(71,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(71,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(71,prio)); \
     break; \
     FOREACH_70(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_72(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(72,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(72,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(72,prio)); \
     break; \
     FOREACH_71(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_73(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(73,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(73,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(73,prio)); \
     break; \
     FOREACH_72(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_74(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(74,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(74,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(74,prio)); \
     break; \
     FOREACH_73(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_75(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(75,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(75,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(75,prio)); \
     break; \
     FOREACH_74(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_76(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(76,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(76,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(76,prio)); \
     break; \
     FOREACH_75(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_77(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(77,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(77,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(77,prio)); \
     break; \
     FOREACH_76(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_78(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(78,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(78,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(78,prio)); \
     break; \
     FOREACH_77(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_79(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(79,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(79,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(79,prio)); \
     break; \
     FOREACH_78(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_80(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(80,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(80,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(80,prio)); \
     break; \
     FOREACH_79(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_81(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(81,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(81,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(81,prio)); \
     break; \
     FOREACH_80(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_82(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(82,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(82,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(82,prio)); \
     break; \
     FOREACH_81(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_83(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(83,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(83,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(83,prio)); \
     break; \
     FOREACH_82(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_84(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(84,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(84,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(84,prio)); \
     break; \
     FOREACH_83(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_85(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(85,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(85,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(85,prio)); \
     break; \
     FOREACH_84(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_86(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(86,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(86,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(86,prio)); \
     break; \
     FOREACH_85(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_87(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(87,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(87,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(87,prio)); \
     break; \
     FOREACH_86(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_88(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(88,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(88,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(88,prio)); \
     break; \
     FOREACH_87(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_89(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(89,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(89,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(89,prio)); \
     break; \
     FOREACH_88(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_90(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(90,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(90,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(90,prio)); \
     break; \
     FOREACH_89(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_91(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(91,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(91,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(91,prio)); \
     break; \
     FOREACH_90(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_92(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(92,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(92,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(92,prio)); \
     break; \
     FOREACH_91(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_93(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(93,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(93,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(93,prio)); \
     break; \
     FOREACH_92(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_94(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(94,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(94,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(94,prio)); \
     break; \
     FOREACH_93(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_95(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(95,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(95,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(95,prio)); \
     break; \
     FOREACH_94(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_96(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(96,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(96,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(96,prio)); \
     break; \
     FOREACH_95(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_97(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(97,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(97,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(97,prio)); \
     break; \
     FOREACH_96(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_98(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(98,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(98,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(98,prio)); \
     break; \
     FOREACH_97(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_99(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(99,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(99,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(99,prio)); \
     break; \
     FOREACH_98(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_100(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(100,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(100,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(100,prio)); \
     break; \
     FOREACH_99(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_101(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(101,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(101,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(101,prio)); \
     break; \
     FOREACH_100(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_102(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(102,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(102,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(102,prio)); \
     break; \
     FOREACH_101(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_103(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(103,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(103,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(103,prio)); \
     break; \
     FOREACH_102(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_104(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(104,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(104,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(104,prio)); \
     break; \
     FOREACH_103(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_105(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(105,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(105,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(105,prio)); \
     break; \
     FOREACH_104(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_106(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(106,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(106,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(106,prio)); \
     break; \
     FOREACH_105(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_107(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(107,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(107,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(107,prio)); \
     break; \
     FOREACH_106(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_108(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(108,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(108,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(108,prio)); \
     break; \
     FOREACH_107(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_109(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(109,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(109,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(109,prio)); \
     break; \
     FOREACH_108(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_110(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(110,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(110,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(110,prio)); \
     break; \
     FOREACH_109(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_111(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(111,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(111,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(111,prio)); \
     break; \
     FOREACH_110(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_112(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(112,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(112,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(112,prio)); \
     break; \
     FOREACH_111(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_113(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(113,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(113,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(113,prio)); \
     break; \
     FOREACH_112(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_114(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(114,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(114,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(114,prio)); \
     break; \
     FOREACH_113(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_115(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(115,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(115,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(115,prio)); \
     break; \
     FOREACH_114(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_116(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(116,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(116,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(116,prio)); \
     break; \
     FOREACH_115(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_117(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(117,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(117,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(117,prio)); \
     break; \
     FOREACH_116(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_118(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(118,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(118,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(118,prio)); \
     break; \
     FOREACH_117(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_119(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(119,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(119,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(119,prio)); \
     break; \
     FOREACH_118(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_120(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(120,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(120,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(120,prio)); \
     break; \
     FOREACH_119(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_121(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(121,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(121,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(121,prio)); \
     break; \
     FOREACH_120(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_122(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(122,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(122,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(122,prio)); \
     break; \
     FOREACH_121(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_123(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(123,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(123,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(123,prio)); \
     break; \
     FOREACH_122(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_124(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(124,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(124,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(124,prio)); \
     break; \
     FOREACH_123(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_125(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(125,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(125,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(125,prio)); \
     break; \
     FOREACH_124(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_126(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(126,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(126,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(126,prio)); \
     break; \
     FOREACH_125(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_127(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(127,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(127,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(127,prio)); \
     break; \
     FOREACH_126(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_128(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(128,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(128,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(128,prio)); \
     break; \
     FOREACH_127(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_129(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(129,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(129,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(129,prio)); \
     break; \
     FOREACH_128(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_130(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(130,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(130,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(130,prio)); \
     break; \
     FOREACH_129(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_131(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(131,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(131,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(131,prio)); \
     break; \
     FOREACH_130(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_132(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(132,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(132,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(132,prio)); \
     break; \
     FOREACH_131(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_133(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(133,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(133,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(133,prio)); \
     break; \
     FOREACH_132(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_134(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(134,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(134,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(134,prio)); \
     break; \
     FOREACH_133(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_135(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(135,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(135,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(135,prio)); \
     break; \
     FOREACH_134(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_136(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(136,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(136,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(136,prio)); \
     break; \
     FOREACH_135(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_137(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(137,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(137,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(137,prio)); \
     break; \
     FOREACH_136(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_138(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(138,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(138,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(138,prio)); \
     break; \
     FOREACH_137(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_139(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(139,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(139,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(139,prio)); \
     break; \
     FOREACH_138(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_140(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(140,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(140,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(140,prio)); \
     break; \
     FOREACH_139(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_141(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(141,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(141,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(141,prio)); \
     break; \
     FOREACH_140(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_142(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(142,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(142,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(142,prio)); \
     break; \
     FOREACH_141(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_143(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(143,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(143,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(143,prio)); \
     break; \
     FOREACH_142(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_144(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(144,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(144,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(144,prio)); \
     break; \
     FOREACH_143(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_145(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(145,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(145,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(145,prio)); \
     break; \
     FOREACH_144(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_146(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(146,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(146,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(146,prio)); \
     break; \
     FOREACH_145(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_147(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(147,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(147,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(147,prio)); \
     break; \
     FOREACH_146(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_148(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(148,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(148,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(148,prio)); \
     break; \
     FOREACH_147(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_149(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(149,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(149,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(149,prio)); \
     break; \
     FOREACH_148(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_150(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(150,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(150,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(150,prio)); \
     break; \
     FOREACH_149(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_151(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(151,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(151,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(151,prio)); \
     break; \
     FOREACH_150(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_152(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(152,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(152,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(152,prio)); \
     break; \
     FOREACH_151(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_153(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(153,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(153,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(153,prio)); \
     break; \
     FOREACH_152(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_154(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(154,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(154,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(154,prio)); \
     break; \
     FOREACH_153(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_155(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(155,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(155,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(155,prio)); \
     break; \
     FOREACH_154(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_156(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(156,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(156,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(156,prio)); \
     break; \
     FOREACH_155(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_157(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(157,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(157,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(157,prio)); \
     break; \
     FOREACH_156(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_158(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(158,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(158,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(158,prio)); \
     break; \
     FOREACH_157(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_159(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(159,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(159,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(159,prio)); \
     break; \
     FOREACH_158(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_160(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(160,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(160,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(160,prio)); \
     break; \
     FOREACH_159(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_161(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(161,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(161,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(161,prio)); \
     break; \
     FOREACH_160(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_162(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(162,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(162,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(162,prio)); \
     break; \
     FOREACH_161(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_163(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(163,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(163,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(163,prio)); \
     break; \
     FOREACH_162(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_164(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(164,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(164,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(164,prio)); \
     break; \
     FOREACH_163(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_165(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(165,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(165,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(165,prio)); \
     break; \
     FOREACH_164(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_166(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(166,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(166,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(166,prio)); \
     break; \
     FOREACH_165(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_167(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(167,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(167,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(167,prio)); \
     break; \
     FOREACH_166(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_168(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(168,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(168,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(168,prio)); \
     break; \
     FOREACH_167(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_169(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(169,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(169,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(169,prio)); \
     break; \
     FOREACH_168(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_170(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(170,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(170,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(170,prio)); \
     break; \
     FOREACH_169(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_171(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(171,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(171,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(171,prio)); \
     break; \
     FOREACH_170(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_172(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(172,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(172,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(172,prio)); \
     break; \
     FOREACH_171(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_173(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(173,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(173,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(173,prio)); \
     break; \
     FOREACH_172(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_174(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(174,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(174,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(174,prio)); \
     break; \
     FOREACH_173(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_175(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(175,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(175,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(175,prio)); \
     break; \
     FOREACH_174(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_176(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(176,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(176,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(176,prio)); \
     break; \
     FOREACH_175(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_177(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(177,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(177,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(177,prio)); \
     break; \
     FOREACH_176(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_178(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(178,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(178,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(178,prio)); \
     break; \
     FOREACH_177(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_179(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(179,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(179,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(179,prio)); \
     break; \
     FOREACH_178(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_180(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(180,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(180,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(180,prio)); \
     break; \
     FOREACH_179(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_181(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(181,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(181,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(181,prio)); \
     break; \
     FOREACH_180(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_182(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(182,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(182,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(182,prio)); \
     break; \
     FOREACH_181(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_183(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(183,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(183,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(183,prio)); \
     break; \
     FOREACH_182(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_184(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(184,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(184,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(184,prio)); \
     break; \
     FOREACH_183(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_185(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(185,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(185,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(185,prio)); \
     break; \
     FOREACH_184(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_186(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(186,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(186,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(186,prio)); \
     break; \
     FOREACH_185(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_187(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(187,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(187,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(187,prio)); \
     break; \
     FOREACH_186(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_188(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(188,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(188,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(188,prio)); \
     break; \
     FOREACH_187(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_189(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(189,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(189,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(189,prio)); \
     break; \
     FOREACH_188(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_190(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(190,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(190,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(190,prio)); \
     break; \
     FOREACH_189(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_191(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(191,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(191,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(191,prio)); \
     break; \
     FOREACH_190(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_192(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(192,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(192,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(192,prio)); \
     break; \
     FOREACH_191(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_193(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(193,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(193,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(193,prio)); \
     break; \
     FOREACH_192(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_194(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(194,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(194,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(194,prio)); \
     break; \
     FOREACH_193(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_195(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(195,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(195,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(195,prio)); \
     break; \
     FOREACH_194(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_196(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(196,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(196,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(196,prio)); \
     break; \
     FOREACH_195(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_197(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(197,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(197,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(197,prio)); \
     break; \
     FOREACH_196(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_198(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(198,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(198,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(198,prio)); \
     break; \
     FOREACH_197(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_199(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(199,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(199,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(199,prio)); \
     break; \
     FOREACH_198(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_200(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(200,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(200,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(200,prio)); \
     break; \
     FOREACH_199(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_201(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(201,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(201,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(201,prio)); \
     break; \
     FOREACH_200(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_202(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(202,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(202,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(202,prio)); \
     break; \
     FOREACH_201(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_203(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(203,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(203,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(203,prio)); \
     break; \
     FOREACH_202(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_204(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(204,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(204,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(204,prio)); \
     break; \
     FOREACH_203(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_205(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(205,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(205,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(205,prio)); \
     break; \
     FOREACH_204(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_206(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(206,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(206,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(206,prio)); \
     break; \
     FOREACH_205(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_207(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(207,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(207,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(207,prio)); \
     break; \
     FOREACH_206(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_208(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(208,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(208,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(208,prio)); \
     break; \
     FOREACH_207(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_209(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(209,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(209,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(209,prio)); \
     break; \
     FOREACH_208(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_210(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(210,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(210,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(210,prio)); \
     break; \
     FOREACH_209(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_211(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(211,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(211,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(211,prio)); \
     break; \
     FOREACH_210(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_212(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(212,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(212,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(212,prio)); \
     break; \
     FOREACH_211(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_213(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(213,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(213,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(213,prio)); \
     break; \
     FOREACH_212(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_214(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(214,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(214,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(214,prio)); \
     break; \
     FOREACH_213(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_215(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(215,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(215,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(215,prio)); \
     break; \
     FOREACH_214(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_216(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(216,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(216,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(216,prio)); \
     break; \
     FOREACH_215(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_217(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(217,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(217,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(217,prio)); \
     break; \
     FOREACH_216(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_218(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(218,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(218,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(218,prio)); \
     break; \
     FOREACH_217(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_219(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(219,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(219,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(219,prio)); \
     break; \
     FOREACH_218(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_220(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(220,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(220,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(220,prio)); \
     break; \
     FOREACH_219(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_221(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(221,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(221,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(221,prio)); \
     break; \
     FOREACH_220(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_222(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(222,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(222,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(222,prio)); \
     break; \
     FOREACH_221(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_223(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(223,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(223,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(223,prio)); \
     break; \
     FOREACH_222(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_224(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(224,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(224,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(224,prio)); \
     break; \
     FOREACH_223(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_225(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(225,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(225,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(225,prio)); \
     break; \
     FOREACH_224(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_226(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(226,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(226,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(226,prio)); \
     break; \
     FOREACH_225(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_227(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(227,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(227,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(227,prio)); \
     break; \
     FOREACH_226(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_228(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(228,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(228,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(228,prio)); \
     break; \
     FOREACH_227(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_229(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(229,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(229,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(229,prio)); \
     break; \
     FOREACH_228(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_230(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(230,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(230,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(230,prio)); \
     break; \
     FOREACH_229(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_231(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(231,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(231,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(231,prio)); \
     break; \
     FOREACH_230(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_232(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(232,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(232,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(232,prio)); \
     break; \
     FOREACH_231(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_233(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(233,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(233,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(233,prio)); \
     break; \
     FOREACH_232(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_234(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(234,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(234,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(234,prio)); \
     break; \
     FOREACH_233(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_235(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(235,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(235,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(235,prio)); \
     break; \
     FOREACH_234(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_236(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(236,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(236,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(236,prio)); \
     break; \
     FOREACH_235(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_237(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(237,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(237,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(237,prio)); \
     break; \
     FOREACH_236(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_238(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(238,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(238,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(238,prio)); \
     break; \
     FOREACH_237(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_239(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(239,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(239,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(239,prio)); \
     break; \
     FOREACH_238(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_240(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(240,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(240,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(240,prio)); \
     break; \
     FOREACH_239(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_241(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(241,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(241,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(241,prio)); \
     break; \
     FOREACH_240(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_242(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(242,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(242,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(242,prio)); \
     break; \
     FOREACH_241(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_243(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(243,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(243,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(243,prio)); \
     break; \
     FOREACH_242(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_244(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(244,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(244,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(244,prio)); \
     break; \
     FOREACH_243(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_245(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(245,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(245,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(245,prio)); \
     break; \
     FOREACH_244(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_246(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(246,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(246,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(246,prio)); \
     break; \
     FOREACH_245(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_247(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(247,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(247,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(247,prio)); \
     break; \
     FOREACH_246(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_248(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(248,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(248,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(248,prio)); \
     break; \
     FOREACH_247(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_249(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(249,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(249,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(249,prio)); \
     break; \
     FOREACH_248(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_250(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(250,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(250,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(250,prio)); \
     break; \
     FOREACH_249(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_251(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(251,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(251,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(251,prio)); \
     break; \
     FOREACH_250(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_252(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(252,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(252,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(252,prio)); \
     break; \
     FOREACH_251(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_253(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(253,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(253,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(253,prio)); \
     break; \
     FOREACH_252(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_254(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(254,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(254,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(254,prio)); \
     break; \
     FOREACH_253(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_255(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(255,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(255,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(255,prio)); \
     break; \
     FOREACH_254(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_256(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(256,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(256,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(256,prio)); \
     break; \
     FOREACH_255(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_257(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(257,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(257,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(257,prio)); \
     break; \
     FOREACH_256(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_258(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(258,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(258,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(258,prio)); \
     break; \
     FOREACH_257(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_259(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(259,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(259,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(259,prio)); \
     break; \
     FOREACH_258(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_260(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(260,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(260,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(260,prio)); \
     break; \
     FOREACH_259(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_261(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(261,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(261,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(261,prio)); \
     break; \
     FOREACH_260(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_262(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(262,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(262,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(262,prio)); \
     break; \
     FOREACH_261(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_263(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(263,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(263,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(263,prio)); \
     break; \
     FOREACH_262(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_264(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(264,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(264,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(264,prio)); \
     break; \
     FOREACH_263(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_265(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(265,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(265,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(265,prio)); \
     break; \
     FOREACH_264(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_266(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(266,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(266,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(266,prio)); \
     break; \
     FOREACH_265(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_267(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(267,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(267,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(267,prio)); \
     break; \
     FOREACH_266(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_268(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(268,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(268,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(268,prio)); \
     break; \
     FOREACH_267(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_269(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(269,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(269,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(269,prio)); \
     break; \
     FOREACH_268(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_270(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(270,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(270,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(270,prio)); \
     break; \
     FOREACH_269(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_271(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(271,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(271,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(271,prio)); \
     break; \
     FOREACH_270(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_272(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(272,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(272,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(272,prio)); \
     break; \
     FOREACH_271(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_273(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(273,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(273,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(273,prio)); \
     break; \
     FOREACH_272(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_274(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(274,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(274,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(274,prio)); \
     break; \
     FOREACH_273(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_275(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(275,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(275,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(275,prio)); \
     break; \
     FOREACH_274(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_276(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(276,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(276,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(276,prio)); \
     break; \
     FOREACH_275(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_277(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(277,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(277,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(277,prio)); \
     break; \
     FOREACH_276(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_278(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(278,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(278,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(278,prio)); \
     break; \
     FOREACH_277(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_279(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(279,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(279,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(279,prio)); \
     break; \
     FOREACH_278(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_280(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(280,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(280,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(280,prio)); \
     break; \
     FOREACH_279(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_281(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(281,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(281,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(281,prio)); \
     break; \
     FOREACH_280(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_282(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(282,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(282,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(282,prio)); \
     break; \
     FOREACH_281(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_283(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(283,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(283,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(283,prio)); \
     break; \
     FOREACH_282(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_284(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(284,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(284,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(284,prio)); \
     break; \
     FOREACH_283(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_285(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(285,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(285,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(285,prio)); \
     break; \
     FOREACH_284(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_286(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(286,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(286,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(286,prio)); \
     break; \
     FOREACH_285(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_287(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(287,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(287,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(287,prio)); \
     break; \
     FOREACH_286(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_288(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(288,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(288,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(288,prio)); \
     break; \
     FOREACH_287(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_289(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(289,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(289,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(289,prio)); \
     break; \
     FOREACH_288(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_290(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(290,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(290,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(290,prio)); \
     break; \
     FOREACH_289(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_291(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(291,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(291,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(291,prio)); \
     break; \
     FOREACH_290(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_292(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(292,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(292,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(292,prio)); \
     break; \
     FOREACH_291(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_293(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(293,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(293,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(293,prio)); \
     break; \
     FOREACH_292(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_294(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(294,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(294,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(294,prio)); \
     break; \
     FOREACH_293(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_295(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(295,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(295,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(295,prio)); \
     break; \
     FOREACH_294(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_296(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(296,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(296,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(296,prio)); \
     break; \
     FOREACH_295(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_297(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(297,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(297,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(297,prio)); \
     break; \
     FOREACH_296(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_298(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(298,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(298,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(298,prio)); \
     break; \
     FOREACH_297(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_299(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(299,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(299,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(299,prio)); \
     break; \
     FOREACH_298(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_300(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(300,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(300,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(300,prio)); \
     break; \
     FOREACH_299(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_301(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(301,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(301,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(301,prio)); \
     break; \
     FOREACH_300(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_302(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(302,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(302,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(302,prio)); \
     break; \
     FOREACH_301(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_303(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(303,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(303,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(303,prio)); \
     break; \
     FOREACH_302(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_304(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(304,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(304,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(304,prio)); \
     break; \
     FOREACH_303(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_305(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(305,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(305,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(305,prio)); \
     break; \
     FOREACH_304(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_306(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(306,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(306,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(306,prio)); \
     break; \
     FOREACH_305(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_307(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(307,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(307,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(307,prio)); \
     break; \
     FOREACH_306(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_308(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(308,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(308,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(308,prio)); \
     break; \
     FOREACH_307(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_309(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(309,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(309,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(309,prio)); \
     break; \
     FOREACH_308(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_310(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(310,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(310,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(310,prio)); \
     break; \
     FOREACH_309(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_311(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(311,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(311,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(311,prio)); \
     break; \
     FOREACH_310(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_312(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(312,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(312,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(312,prio)); \
     break; \
     FOREACH_311(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_313(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(313,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(313,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(313,prio)); \
     break; \
     FOREACH_312(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_314(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(314,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(314,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(314,prio)); \
     break; \
     FOREACH_313(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_315(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(315,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(315,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(315,prio)); \
     break; \
     FOREACH_314(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_316(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(316,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(316,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(316,prio)); \
     break; \
     FOREACH_315(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_317(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(317,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(317,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(317,prio)); \
     break; \
     FOREACH_316(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_318(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(318,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(318,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(318,prio)); \
     break; \
     FOREACH_317(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_319(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(319,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(319,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(319,prio)); \
     break; \
     FOREACH_318(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_320(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(320,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(320,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(320,prio)); \
     break; \
     FOREACH_319(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_321(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(321,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(321,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(321,prio)); \
     break; \
     FOREACH_320(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_322(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(322,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(322,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(322,prio)); \
     break; \
     FOREACH_321(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_323(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(323,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(323,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(323,prio)); \
     break; \
     FOREACH_322(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_324(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(324,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(324,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(324,prio)); \
     break; \
     FOREACH_323(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_325(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(325,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(325,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(325,prio)); \
     break; \
     FOREACH_324(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_326(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(326,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(326,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(326,prio)); \
     break; \
     FOREACH_325(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_327(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(327,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(327,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(327,prio)); \
     break; \
     FOREACH_326(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_328(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(328,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(328,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(328,prio)); \
     break; \
     FOREACH_327(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_329(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(329,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(329,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(329,prio)); \
     break; \
     FOREACH_328(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_330(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(330,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(330,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(330,prio)); \
     break; \
     FOREACH_329(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_331(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(331,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(331,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(331,prio)); \
     break; \
     FOREACH_330(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_332(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(332,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(332,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(332,prio)); \
     break; \
     FOREACH_331(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_333(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(333,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(333,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(333,prio)); \
     break; \
     FOREACH_332(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_334(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(334,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(334,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(334,prio)); \
     break; \
     FOREACH_333(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_335(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(335,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(335,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(335,prio)); \
     break; \
     FOREACH_334(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_336(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(336,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(336,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(336,prio)); \
     break; \
     FOREACH_335(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_337(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(337,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(337,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(337,prio)); \
     break; \
     FOREACH_336(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_338(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(338,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(338,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(338,prio)); \
     break; \
     FOREACH_337(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_339(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(339,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(339,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(339,prio)); \
     break; \
     FOREACH_338(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_340(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(340,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(340,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(340,prio)); \
     break; \
     FOREACH_339(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_341(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(341,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(341,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(341,prio)); \
     break; \
     FOREACH_340(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_342(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(342,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(342,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(342,prio)); \
     break; \
     FOREACH_341(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_343(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(343,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(343,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(343,prio)); \
     break; \
     FOREACH_342(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_344(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(344,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(344,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(344,prio)); \
     break; \
     FOREACH_343(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_345(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(345,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(345,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(345,prio)); \
     break; \
     FOREACH_344(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_346(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(346,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(346,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(346,prio)); \
     break; \
     FOREACH_345(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_347(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(347,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(347,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(347,prio)); \
     break; \
     FOREACH_346(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_348(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(348,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(348,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(348,prio)); \
     break; \
     FOREACH_347(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_349(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(349,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(349,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(349,prio)); \
     break; \
     FOREACH_348(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_350(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(350,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(350,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(350,prio)); \
     break; \
     FOREACH_349(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_351(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(351,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(351,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(351,prio)); \
     break; \
     FOREACH_350(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_352(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(352,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(352,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(352,prio)); \
     break; \
     FOREACH_351(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_353(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(353,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(353,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(353,prio)); \
     break; \
     FOREACH_352(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_354(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(354,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(354,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(354,prio)); \
     break; \
     FOREACH_353(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_355(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(355,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(355,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(355,prio)); \
     break; \
     FOREACH_354(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_356(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(356,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(356,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(356,prio)); \
     break; \
     FOREACH_355(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_357(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(357,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(357,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(357,prio)); \
     break; \
     FOREACH_356(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_358(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(358,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(358,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(358,prio)); \
     break; \
     FOREACH_357(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_359(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(359,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(359,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(359,prio)); \
     break; \
     FOREACH_358(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_360(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(360,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(360,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(360,prio)); \
     break; \
     FOREACH_359(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_361(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(361,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(361,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(361,prio)); \
     break; \
     FOREACH_360(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_362(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(362,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(362,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(362,prio)); \
     break; \
     FOREACH_361(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_363(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(363,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(363,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(363,prio)); \
     break; \
     FOREACH_362(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_364(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(364,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(364,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(364,prio)); \
     break; \
     FOREACH_363(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_365(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(365,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(365,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(365,prio)); \
     break; \
     FOREACH_364(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_366(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(366,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(366,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(366,prio)); \
     break; \
     FOREACH_365(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_367(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(367,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(367,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(367,prio)); \
     break; \
     FOREACH_366(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_368(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(368,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(368,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(368,prio)); \
     break; \
     FOREACH_367(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_369(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(369,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(369,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(369,prio)); \
     break; \
     FOREACH_368(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_370(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(370,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(370,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(370,prio)); \
     break; \
     FOREACH_369(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_371(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(371,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(371,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(371,prio)); \
     break; \
     FOREACH_370(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_372(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(372,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(372,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(372,prio)); \
     break; \
     FOREACH_371(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_373(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(373,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(373,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(373,prio)); \
     break; \
     FOREACH_372(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_374(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(374,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(374,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(374,prio)); \
     break; \
     FOREACH_373(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_375(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(375,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(375,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(375,prio)); \
     break; \
     FOREACH_374(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_376(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(376,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(376,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(376,prio)); \
     break; \
     FOREACH_375(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_377(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(377,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(377,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(377,prio)); \
     break; \
     FOREACH_376(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_378(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(378,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(378,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(378,prio)); \
     break; \
     FOREACH_377(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_379(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(379,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(379,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(379,prio)); \
     break; \
     FOREACH_378(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_380(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(380,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(380,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(380,prio)); \
     break; \
     FOREACH_379(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_381(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(381,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(381,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(381,prio)); \
     break; \
     FOREACH_380(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_382(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(382,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(382,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(382,prio)); \
     break; \
     FOREACH_381(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_383(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(383,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(383,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(383,prio)); \
     break; \
     FOREACH_382(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_384(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(384,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(384,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(384,prio)); \
     break; \
     FOREACH_383(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_385(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(385,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(385,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(385,prio)); \
     break; \
     FOREACH_384(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_386(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(386,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(386,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(386,prio)); \
     break; \
     FOREACH_385(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_387(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(387,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(387,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(387,prio)); \
     break; \
     FOREACH_386(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_388(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(388,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(388,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(388,prio)); \
     break; \
     FOREACH_387(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_389(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(389,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(389,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(389,prio)); \
     break; \
     FOREACH_388(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_390(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(390,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(390,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(390,prio)); \
     break; \
     FOREACH_389(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_391(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(391,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(391,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(391,prio)); \
     break; \
     FOREACH_390(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_392(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(392,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(392,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(392,prio)); \
     break; \
     FOREACH_391(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_393(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(393,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(393,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(393,prio)); \
     break; \
     FOREACH_392(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_394(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(394,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(394,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(394,prio)); \
     break; \
     FOREACH_393(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_395(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(395,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(395,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(395,prio)); \
     break; \
     FOREACH_394(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_396(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(396,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(396,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(396,prio)); \
     break; \
     FOREACH_395(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_397(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(397,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(397,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(397,prio)); \
     break; \
     FOREACH_396(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_398(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(398,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(398,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(398,prio)); \
     break; \
     FOREACH_397(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_399(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(399,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(399,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(399,prio)); \
     break; \
     FOREACH_398(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_400(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(400,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(400,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(400,prio)); \
     break; \
     FOREACH_399(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_401(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(401,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(401,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(401,prio)); \
     break; \
     FOREACH_400(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_402(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(402,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(402,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(402,prio)); \
     break; \
     FOREACH_401(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_403(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(403,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(403,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(403,prio)); \
     break; \
     FOREACH_402(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_404(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(404,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(404,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(404,prio)); \
     break; \
     FOREACH_403(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_405(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(405,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(405,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(405,prio)); \
     break; \
     FOREACH_404(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_406(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(406,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(406,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(406,prio)); \
     break; \
     FOREACH_405(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_407(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(407,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(407,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(407,prio)); \
     break; \
     FOREACH_406(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_408(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(408,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(408,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(408,prio)); \
     break; \
     FOREACH_407(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_409(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(409,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(409,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(409,prio)); \
     break; \
     FOREACH_408(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_410(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(410,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(410,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(410,prio)); \
     break; \
     FOREACH_409(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_411(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(411,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(411,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(411,prio)); \
     break; \
     FOREACH_410(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_412(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(412,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(412,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(412,prio)); \
     break; \
     FOREACH_411(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_413(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(413,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(413,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(413,prio)); \
     break; \
     FOREACH_412(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_414(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(414,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(414,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(414,prio)); \
     break; \
     FOREACH_413(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_415(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(415,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(415,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(415,prio)); \
     break; \
     FOREACH_414(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_416(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(416,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(416,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(416,prio)); \
     break; \
     FOREACH_415(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_417(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(417,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(417,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(417,prio)); \
     break; \
     FOREACH_416(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_418(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(418,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(418,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(418,prio)); \
     break; \
     FOREACH_417(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_419(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(419,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(419,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(419,prio)); \
     break; \
     FOREACH_418(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_420(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(420,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(420,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(420,prio)); \
     break; \
     FOREACH_419(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_421(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(421,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(421,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(421,prio)); \
     break; \
     FOREACH_420(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_422(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(422,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(422,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(422,prio)); \
     break; \
     FOREACH_421(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_423(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(423,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(423,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(423,prio)); \
     break; \
     FOREACH_422(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_424(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(424,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(424,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(424,prio)); \
     break; \
     FOREACH_423(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_425(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(425,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(425,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(425,prio)); \
     break; \
     FOREACH_424(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_426(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(426,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(426,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(426,prio)); \
     break; \
     FOREACH_425(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_427(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(427,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(427,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(427,prio)); \
     break; \
     FOREACH_426(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_428(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(428,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(428,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(428,prio)); \
     break; \
     FOREACH_427(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_429(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(429,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(429,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(429,prio)); \
     break; \
     FOREACH_428(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_430(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(430,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(430,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(430,prio)); \
     break; \
     FOREACH_429(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_431(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(431,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(431,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(431,prio)); \
     break; \
     FOREACH_430(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_432(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(432,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(432,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(432,prio)); \
     break; \
     FOREACH_431(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_433(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(433,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(433,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(433,prio)); \
     break; \
     FOREACH_432(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_434(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(434,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(434,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(434,prio)); \
     break; \
     FOREACH_433(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_435(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(435,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(435,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(435,prio)); \
     break; \
     FOREACH_434(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_436(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(436,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(436,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(436,prio)); \
     break; \
     FOREACH_435(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_437(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(437,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(437,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(437,prio)); \
     break; \
     FOREACH_436(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_438(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(438,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(438,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(438,prio)); \
     break; \
     FOREACH_437(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_439(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(439,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(439,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(439,prio)); \
     break; \
     FOREACH_438(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_440(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(440,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(440,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(440,prio)); \
     break; \
     FOREACH_439(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_441(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(441,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(441,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(441,prio)); \
     break; \
     FOREACH_440(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_442(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(442,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(442,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(442,prio)); \
     break; \
     FOREACH_441(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_443(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(443,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(443,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(443,prio)); \
     break; \
     FOREACH_442(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_444(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(444,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(444,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(444,prio)); \
     break; \
     FOREACH_443(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_445(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(445,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(445,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(445,prio)); \
     break; \
     FOREACH_444(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_446(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(446,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(446,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(446,prio)); \
     break; \
     FOREACH_445(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_447(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(447,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(447,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(447,prio)); \
     break; \
     FOREACH_446(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_448(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(448,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(448,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(448,prio)); \
     break; \
     FOREACH_447(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_449(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(449,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(449,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(449,prio)); \
     break; \
     FOREACH_448(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_450(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(450,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(450,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(450,prio)); \
     break; \
     FOREACH_449(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_451(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(451,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(451,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(451,prio)); \
     break; \
     FOREACH_450(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_452(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(452,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(452,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(452,prio)); \
     break; \
     FOREACH_451(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_453(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(453,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(453,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(453,prio)); \
     break; \
     FOREACH_452(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_454(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(454,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(454,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(454,prio)); \
     break; \
     FOREACH_453(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_455(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(455,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(455,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(455,prio)); \
     break; \
     FOREACH_454(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_456(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(456,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(456,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(456,prio)); \
     break; \
     FOREACH_455(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_457(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(457,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(457,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(457,prio)); \
     break; \
     FOREACH_456(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_458(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(458,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(458,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(458,prio)); \
     break; \
     FOREACH_457(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_459(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(459,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(459,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(459,prio)); \
     break; \
     FOREACH_458(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_460(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(460,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(460,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(460,prio)); \
     break; \
     FOREACH_459(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_461(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(461,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(461,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(461,prio)); \
     break; \
     FOREACH_460(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_462(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(462,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(462,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(462,prio)); \
     break; \
     FOREACH_461(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_463(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(463,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(463,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(463,prio)); \
     break; \
     FOREACH_462(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_464(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(464,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(464,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(464,prio)); \
     break; \
     FOREACH_463(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_465(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(465,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(465,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(465,prio)); \
     break; \
     FOREACH_464(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_466(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(466,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(466,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(466,prio)); \
     break; \
     FOREACH_465(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_467(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(467,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(467,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(467,prio)); \
     break; \
     FOREACH_466(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_468(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(468,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(468,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(468,prio)); \
     break; \
     FOREACH_467(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_469(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(469,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(469,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(469,prio)); \
     break; \
     FOREACH_468(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_470(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(470,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(470,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(470,prio)); \
     break; \
     FOREACH_469(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_471(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(471,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(471,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(471,prio)); \
     break; \
     FOREACH_470(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_472(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(472,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(472,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(472,prio)); \
     break; \
     FOREACH_471(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_473(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(473,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(473,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(473,prio)); \
     break; \
     FOREACH_472(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_474(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(474,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(474,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(474,prio)); \
     break; \
     FOREACH_473(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_475(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(475,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(475,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(475,prio)); \
     break; \
     FOREACH_474(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_476(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(476,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(476,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(476,prio)); \
     break; \
     FOREACH_475(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_477(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(477,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(477,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(477,prio)); \
     break; \
     FOREACH_476(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_478(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(478,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(478,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(478,prio)); \
     break; \
     FOREACH_477(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_479(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(479,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(479,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(479,prio)); \
     break; \
     FOREACH_478(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_480(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(480,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(480,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(480,prio)); \
     break; \
     FOREACH_479(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_481(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(481,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(481,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(481,prio)); \
     break; \
     FOREACH_480(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_482(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(482,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(482,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(482,prio)); \
     break; \
     FOREACH_481(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_483(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(483,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(483,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(483,prio)); \
     break; \
     FOREACH_482(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_484(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(484,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(484,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(484,prio)); \
     break; \
     FOREACH_483(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_485(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(485,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(485,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(485,prio)); \
     break; \
     FOREACH_484(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_486(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(486,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(486,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(486,prio)); \
     break; \
     FOREACH_485(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_487(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(487,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(487,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(487,prio)); \
     break; \
     FOREACH_486(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_488(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(488,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(488,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(488,prio)); \
     break; \
     FOREACH_487(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_489(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(489,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(489,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(489,prio)); \
     break; \
     FOREACH_488(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_490(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(490,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(490,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(490,prio)); \
     break; \
     FOREACH_489(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_491(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(491,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(491,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(491,prio)); \
     break; \
     FOREACH_490(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_492(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(492,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(492,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(492,prio)); \
     break; \
     FOREACH_491(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_493(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(493,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(493,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(493,prio)); \
     break; \
     FOREACH_492(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_494(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(494,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(494,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(494,prio)); \
     break; \
     FOREACH_493(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_495(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(495,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(495,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(495,prio)); \
     break; \
     FOREACH_494(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_496(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(496,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(496,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(496,prio)); \
     break; \
     FOREACH_495(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_497(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(497,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(497,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(497,prio)); \
     break; \
     FOREACH_496(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_498(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(498,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(498,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(498,prio)); \
     break; \
     FOREACH_497(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_499(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(499,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(499,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(499,prio)); \
     break; \
     FOREACH_498(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_500(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(500,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(500,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(500,prio)); \
     break; \
     FOREACH_499(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_501(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(501,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(501,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(501,prio)); \
     break; \
     FOREACH_500(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_502(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(502,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(502,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(502,prio)); \
     break; \
     FOREACH_501(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_503(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(503,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(503,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(503,prio)); \
     break; \
     FOREACH_502(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_504(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(504,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(504,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(504,prio)); \
     break; \
     FOREACH_503(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_505(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(505,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(505,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(505,prio)); \
     break; \
     FOREACH_504(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_506(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(506,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(506,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(506,prio)); \
     break; \
     FOREACH_505(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_507(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(507,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(507,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(507,prio)); \
     break; \
     FOREACH_506(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_508(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(508,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(508,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(508,prio)); \
     break; \
     FOREACH_507(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_509(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(509,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(509,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(509,prio)); \
     break; \
     FOREACH_508(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_510(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(510,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(510,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(510,prio)); \
     break; \
     FOREACH_509(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_511(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(511,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(511,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(511,prio)); \
     break; \
     FOREACH_510(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_512(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(512,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(512,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(512,prio)); \
     break; \
     FOREACH_511(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_513(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(513,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(513,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(513,prio)); \
     break; \
     FOREACH_512(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_514(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(514,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(514,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(514,prio)); \
     break; \
     FOREACH_513(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_515(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(515,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(515,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(515,prio)); \
     break; \
     FOREACH_514(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_516(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(516,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(516,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(516,prio)); \
     break; \
     FOREACH_515(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_517(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(517,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(517,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(517,prio)); \
     break; \
     FOREACH_516(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_518(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(518,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(518,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(518,prio)); \
     break; \
     FOREACH_517(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_519(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(519,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(519,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(519,prio)); \
     break; \
     FOREACH_518(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_520(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(520,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(520,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(520,prio)); \
     break; \
     FOREACH_519(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_521(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(521,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(521,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(521,prio)); \
     break; \
     FOREACH_520(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_522(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(522,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(522,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(522,prio)); \
     break; \
     FOREACH_521(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_523(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(523,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(523,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(523,prio)); \
     break; \
     FOREACH_522(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_524(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(524,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(524,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(524,prio)); \
     break; \
     FOREACH_523(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_525(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(525,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(525,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(525,prio)); \
     break; \
     FOREACH_524(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_526(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(526,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(526,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(526,prio)); \
     break; \
     FOREACH_525(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_527(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(527,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(527,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(527,prio)); \
     break; \
     FOREACH_526(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_528(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(528,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(528,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(528,prio)); \
     break; \
     FOREACH_527(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_529(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(529,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(529,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(529,prio)); \
     break; \
     FOREACH_528(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_530(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(530,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(530,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(530,prio)); \
     break; \
     FOREACH_529(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_531(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(531,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(531,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(531,prio)); \
     break; \
     FOREACH_530(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_532(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(532,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(532,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(532,prio)); \
     break; \
     FOREACH_531(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_533(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(533,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(533,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(533,prio)); \
     break; \
     FOREACH_532(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_534(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(534,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(534,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(534,prio)); \
     break; \
     FOREACH_533(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_535(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(535,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(535,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(535,prio)); \
     break; \
     FOREACH_534(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_536(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(536,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(536,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(536,prio)); \
     break; \
     FOREACH_535(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_537(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(537,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(537,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(537,prio)); \
     break; \
     FOREACH_536(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_538(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(538,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(538,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(538,prio)); \
     break; \
     FOREACH_537(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_539(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(539,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(539,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(539,prio)); \
     break; \
     FOREACH_538(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_540(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(540,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(540,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(540,prio)); \
     break; \
     FOREACH_539(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_541(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(541,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(541,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(541,prio)); \
     break; \
     FOREACH_540(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_542(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(542,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(542,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(542,prio)); \
     break; \
     FOREACH_541(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_543(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(543,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(543,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(543,prio)); \
     break; \
     FOREACH_542(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_544(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(544,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(544,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(544,prio)); \
     break; \
     FOREACH_543(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_545(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(545,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(545,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(545,prio)); \
     break; \
     FOREACH_544(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_546(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(546,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(546,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(546,prio)); \
     break; \
     FOREACH_545(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_547(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(547,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(547,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(547,prio)); \
     break; \
     FOREACH_546(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_548(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(548,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(548,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(548,prio)); \
     break; \
     FOREACH_547(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_549(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(549,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(549,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(549,prio)); \
     break; \
     FOREACH_548(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_550(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(550,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(550,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(550,prio)); \
     break; \
     FOREACH_549(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_551(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(551,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(551,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(551,prio)); \
     break; \
     FOREACH_550(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_552(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(552,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(552,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(552,prio)); \
     break; \
     FOREACH_551(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_553(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(553,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(553,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(553,prio)); \
     break; \
     FOREACH_552(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_554(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(554,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(554,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(554,prio)); \
     break; \
     FOREACH_553(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_555(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(555,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(555,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(555,prio)); \
     break; \
     FOREACH_554(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_556(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(556,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(556,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(556,prio)); \
     break; \
     FOREACH_555(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_557(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(557,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(557,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(557,prio)); \
     break; \
     FOREACH_556(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_558(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(558,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(558,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(558,prio)); \
     break; \
     FOREACH_557(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_559(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(559,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(559,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(559,prio)); \
     break; \
     FOREACH_558(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_560(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(560,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(560,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(560,prio)); \
     break; \
     FOREACH_559(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_561(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(561,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(561,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(561,prio)); \
     break; \
     FOREACH_560(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_562(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(562,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(562,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(562,prio)); \
     break; \
     FOREACH_561(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_563(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(563,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(563,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(563,prio)); \
     break; \
     FOREACH_562(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_564(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(564,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(564,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(564,prio)); \
     break; \
     FOREACH_563(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_565(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(565,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(565,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(565,prio)); \
     break; \
     FOREACH_564(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_566(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(566,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(566,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(566,prio)); \
     break; \
     FOREACH_565(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_567(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(567,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(567,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(567,prio)); \
     break; \
     FOREACH_566(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_568(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(568,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(568,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(568,prio)); \
     break; \
     FOREACH_567(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_569(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(569,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(569,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(569,prio)); \
     break; \
     FOREACH_568(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_570(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(570,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(570,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(570,prio)); \
     break; \
     FOREACH_569(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_571(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(571,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(571,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(571,prio)); \
     break; \
     FOREACH_570(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_572(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(572,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(572,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(572,prio)); \
     break; \
     FOREACH_571(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_573(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(573,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(573,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(573,prio)); \
     break; \
     FOREACH_572(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_574(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(574,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(574,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(574,prio)); \
     break; \
     FOREACH_573(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_575(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(575,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(575,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(575,prio)); \
     break; \
     FOREACH_574(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_576(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(576,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(576,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(576,prio)); \
     break; \
     FOREACH_575(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_577(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(577,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(577,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(577,prio)); \
     break; \
     FOREACH_576(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_578(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(578,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(578,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(578,prio)); \
     break; \
     FOREACH_577(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_579(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(579,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(579,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(579,prio)); \
     break; \
     FOREACH_578(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_580(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(580,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(580,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(580,prio)); \
     break; \
     FOREACH_579(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_581(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(581,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(581,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(581,prio)); \
     break; \
     FOREACH_580(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_582(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(582,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(582,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(582,prio)); \
     break; \
     FOREACH_581(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_583(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(583,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(583,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(583,prio)); \
     break; \
     FOREACH_582(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_584(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(584,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(584,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(584,prio)); \
     break; \
     FOREACH_583(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_585(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(585,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(585,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(585,prio)); \
     break; \
     FOREACH_584(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_586(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(586,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(586,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(586,prio)); \
     break; \
     FOREACH_585(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_587(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(587,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(587,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(587,prio)); \
     break; \
     FOREACH_586(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_588(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(588,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(588,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(588,prio)); \
     break; \
     FOREACH_587(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_589(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(589,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(589,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(589,prio)); \
     break; \
     FOREACH_588(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_590(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(590,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(590,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(590,prio)); \
     break; \
     FOREACH_589(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_591(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(591,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(591,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(591,prio)); \
     break; \
     FOREACH_590(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_592(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(592,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(592,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(592,prio)); \
     break; \
     FOREACH_591(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_593(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(593,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(593,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(593,prio)); \
     break; \
     FOREACH_592(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_594(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(594,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(594,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(594,prio)); \
     break; \
     FOREACH_593(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_595(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(595,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(595,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(595,prio)); \
     break; \
     FOREACH_594(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_596(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(596,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(596,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(596,prio)); \
     break; \
     FOREACH_595(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_597(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(597,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(597,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(597,prio)); \
     break; \
     FOREACH_596(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_598(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(598,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(598,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(598,prio)); \
     break; \
     FOREACH_597(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_599(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(599,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(599,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(599,prio)); \
     break; \
     FOREACH_598(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_600(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(600,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(600,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(600,prio)); \
     break; \
     FOREACH_599(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_601(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(601,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(601,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(601,prio)); \
     break; \
     FOREACH_600(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_602(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(602,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(602,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(602,prio)); \
     break; \
     FOREACH_601(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_603(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(603,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(603,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(603,prio)); \
     break; \
     FOREACH_602(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_604(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(604,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(604,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(604,prio)); \
     break; \
     FOREACH_603(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_605(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(605,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(605,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(605,prio)); \
     break; \
     FOREACH_604(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_606(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(606,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(606,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(606,prio)); \
     break; \
     FOREACH_605(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_607(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(607,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(607,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(607,prio)); \
     break; \
     FOREACH_606(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_608(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(608,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(608,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(608,prio)); \
     break; \
     FOREACH_607(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_609(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(609,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(609,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(609,prio)); \
     break; \
     FOREACH_608(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_610(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(610,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(610,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(610,prio)); \
     break; \
     FOREACH_609(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_611(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(611,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(611,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(611,prio)); \
     break; \
     FOREACH_610(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_612(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(612,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(612,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(612,prio)); \
     break; \
     FOREACH_611(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_613(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(613,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(613,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(613,prio)); \
     break; \
     FOREACH_612(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_614(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(614,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(614,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(614,prio)); \
     break; \
     FOREACH_613(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_615(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(615,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(615,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(615,prio)); \
     break; \
     FOREACH_614(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_616(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(616,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(616,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(616,prio)); \
     break; \
     FOREACH_615(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_617(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(617,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(617,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(617,prio)); \
     break; \
     FOREACH_616(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_618(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(618,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(618,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(618,prio)); \
     break; \
     FOREACH_617(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_619(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(619,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(619,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(619,prio)); \
     break; \
     FOREACH_618(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_620(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(620,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(620,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(620,prio)); \
     break; \
     FOREACH_619(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_621(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(621,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(621,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(621,prio)); \
     break; \
     FOREACH_620(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_622(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(622,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(622,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(622,prio)); \
     break; \
     FOREACH_621(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_623(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(623,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(623,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(623,prio)); \
     break; \
     FOREACH_622(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_624(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(624,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(624,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(624,prio)); \
     break; \
     FOREACH_623(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_625(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(625,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(625,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(625,prio)); \
     break; \
     FOREACH_624(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_626(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(626,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(626,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(626,prio)); \
     break; \
     FOREACH_625(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_627(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(627,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(627,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(627,prio)); \
     break; \
     FOREACH_626(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_628(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(628,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(628,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(628,prio)); \
     break; \
     FOREACH_627(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_629(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(629,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(629,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(629,prio)); \
     break; \
     FOREACH_628(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_630(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(630,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(630,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(630,prio)); \
     break; \
     FOREACH_629(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_631(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(631,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(631,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(631,prio)); \
     break; \
     FOREACH_630(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_632(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(632,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(632,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(632,prio)); \
     break; \
     FOREACH_631(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_633(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(633,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(633,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(633,prio)); \
     break; \
     FOREACH_632(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_634(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(634,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(634,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(634,prio)); \
     break; \
     FOREACH_633(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_635(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(635,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(635,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(635,prio)); \
     break; \
     FOREACH_634(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_636(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(636,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(636,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(636,prio)); \
     break; \
     FOREACH_635(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_637(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(637,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(637,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(637,prio)); \
     break; \
     FOREACH_636(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_638(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(638,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(638,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(638,prio)); \
     break; \
     FOREACH_637(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_639(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(639,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(639,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(639,prio)); \
     break; \
     FOREACH_638(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_640(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(640,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(640,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(640,prio)); \
     break; \
     FOREACH_639(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_641(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(641,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(641,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(641,prio)); \
     break; \
     FOREACH_640(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_642(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(642,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(642,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(642,prio)); \
     break; \
     FOREACH_641(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_643(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(643,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(643,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(643,prio)); \
     break; \
     FOREACH_642(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_644(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(644,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(644,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(644,prio)); \
     break; \
     FOREACH_643(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_645(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(645,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(645,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(645,prio)); \
     break; \
     FOREACH_644(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_646(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(646,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(646,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(646,prio)); \
     break; \
     FOREACH_645(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_647(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(647,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(647,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(647,prio)); \
     break; \
     FOREACH_646(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_648(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(648,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(648,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(648,prio)); \
     break; \
     FOREACH_647(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_649(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(649,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(649,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(649,prio)); \
     break; \
     FOREACH_648(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_650(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(650,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(650,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(650,prio)); \
     break; \
     FOREACH_649(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_651(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(651,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(651,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(651,prio)); \
     break; \
     FOREACH_650(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_652(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(652,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(652,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(652,prio)); \
     break; \
     FOREACH_651(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_653(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(653,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(653,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(653,prio)); \
     break; \
     FOREACH_652(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_654(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(654,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(654,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(654,prio)); \
     break; \
     FOREACH_653(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_655(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(655,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(655,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(655,prio)); \
     break; \
     FOREACH_654(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_656(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(656,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(656,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(656,prio)); \
     break; \
     FOREACH_655(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_657(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(657,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(657,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(657,prio)); \
     break; \
     FOREACH_656(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_658(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(658,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(658,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(658,prio)); \
     break; \
     FOREACH_657(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_659(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(659,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(659,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(659,prio)); \
     break; \
     FOREACH_658(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_660(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(660,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(660,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(660,prio)); \
     break; \
     FOREACH_659(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_661(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(661,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(661,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(661,prio)); \
     break; \
     FOREACH_660(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_662(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(662,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(662,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(662,prio)); \
     break; \
     FOREACH_661(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_663(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(663,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(663,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(663,prio)); \
     break; \
     FOREACH_662(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_664(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(664,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(664,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(664,prio)); \
     break; \
     FOREACH_663(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_665(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(665,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(665,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(665,prio)); \
     break; \
     FOREACH_664(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_666(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(666,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(666,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(666,prio)); \
     break; \
     FOREACH_665(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_667(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(667,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(667,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(667,prio)); \
     break; \
     FOREACH_666(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_668(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(668,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(668,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(668,prio)); \
     break; \
     FOREACH_667(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_669(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(669,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(669,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(669,prio)); \
     break; \
     FOREACH_668(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_670(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(670,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(670,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(670,prio)); \
     break; \
     FOREACH_669(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_671(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(671,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(671,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(671,prio)); \
     break; \
     FOREACH_670(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_672(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(672,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(672,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(672,prio)); \
     break; \
     FOREACH_671(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_673(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(673,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(673,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(673,prio)); \
     break; \
     FOREACH_672(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_674(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(674,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(674,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(674,prio)); \
     break; \
     FOREACH_673(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_675(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(675,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(675,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(675,prio)); \
     break; \
     FOREACH_674(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_676(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(676,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(676,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(676,prio)); \
     break; \
     FOREACH_675(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_677(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(677,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(677,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(677,prio)); \
     break; \
     FOREACH_676(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_678(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(678,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(678,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(678,prio)); \
     break; \
     FOREACH_677(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_679(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(679,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(679,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(679,prio)); \
     break; \
     FOREACH_678(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_680(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(680,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(680,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(680,prio)); \
     break; \
     FOREACH_679(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_681(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(681,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(681,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(681,prio)); \
     break; \
     FOREACH_680(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_682(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(682,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(682,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(682,prio)); \
     break; \
     FOREACH_681(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_683(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(683,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(683,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(683,prio)); \
     break; \
     FOREACH_682(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_684(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(684,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(684,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(684,prio)); \
     break; \
     FOREACH_683(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_685(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(685,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(685,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(685,prio)); \
     break; \
     FOREACH_684(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_686(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(686,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(686,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(686,prio)); \
     break; \
     FOREACH_685(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_687(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(687,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(687,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(687,prio)); \
     break; \
     FOREACH_686(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_688(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(688,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(688,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(688,prio)); \
     break; \
     FOREACH_687(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_689(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(689,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(689,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(689,prio)); \
     break; \
     FOREACH_688(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_690(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(690,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(690,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(690,prio)); \
     break; \
     FOREACH_689(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_691(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(691,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(691,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(691,prio)); \
     break; \
     FOREACH_690(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_692(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(692,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(692,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(692,prio)); \
     break; \
     FOREACH_691(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_693(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(693,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(693,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(693,prio)); \
     break; \
     FOREACH_692(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_694(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(694,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(694,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(694,prio)); \
     break; \
     FOREACH_693(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_695(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(695,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(695,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(695,prio)); \
     break; \
     FOREACH_694(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_696(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(696,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(696,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(696,prio)); \
     break; \
     FOREACH_695(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_697(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(697,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(697,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(697,prio)); \
     break; \
     FOREACH_696(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_698(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(698,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(698,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(698,prio)); \
     break; \
     FOREACH_697(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_699(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(699,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(699,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(699,prio)); \
     break; \
     FOREACH_698(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_700(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(700,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(700,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(700,prio)); \
     break; \
     FOREACH_699(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_701(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(701,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(701,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(701,prio)); \
     break; \
     FOREACH_700(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_702(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(702,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(702,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(702,prio)); \
     break; \
     FOREACH_701(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_703(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(703,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(703,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(703,prio)); \
     break; \
     FOREACH_702(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_704(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(704,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(704,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(704,prio)); \
     break; \
     FOREACH_703(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_705(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(705,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(705,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(705,prio)); \
     break; \
     FOREACH_704(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_706(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(706,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(706,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(706,prio)); \
     break; \
     FOREACH_705(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_707(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(707,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(707,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(707,prio)); \
     break; \
     FOREACH_706(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_708(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(708,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(708,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(708,prio)); \
     break; \
     FOREACH_707(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_709(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(709,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(709,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(709,prio)); \
     break; \
     FOREACH_708(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_710(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(710,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(710,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(710,prio)); \
     break; \
     FOREACH_709(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_711(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(711,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(711,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(711,prio)); \
     break; \
     FOREACH_710(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_712(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(712,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(712,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(712,prio)); \
     break; \
     FOREACH_711(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_713(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(713,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(713,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(713,prio)); \
     break; \
     FOREACH_712(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_714(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(714,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(714,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(714,prio)); \
     break; \
     FOREACH_713(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_715(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(715,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(715,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(715,prio)); \
     break; \
     FOREACH_714(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_716(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(716,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(716,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(716,prio)); \
     break; \
     FOREACH_715(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_717(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(717,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(717,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(717,prio)); \
     break; \
     FOREACH_716(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_718(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(718,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(718,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(718,prio)); \
     break; \
     FOREACH_717(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_719(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(719,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(719,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(719,prio)); \
     break; \
     FOREACH_718(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_720(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(720,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(720,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(720,prio)); \
     break; \
     FOREACH_719(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_721(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(721,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(721,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(721,prio)); \
     break; \
     FOREACH_720(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_722(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(722,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(722,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(722,prio)); \
     break; \
     FOREACH_721(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_723(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(723,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(723,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(723,prio)); \
     break; \
     FOREACH_722(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_724(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(724,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(724,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(724,prio)); \
     break; \
     FOREACH_723(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_725(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(725,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(725,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(725,prio)); \
     break; \
     FOREACH_724(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_726(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(726,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(726,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(726,prio)); \
     break; \
     FOREACH_725(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_727(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(727,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(727,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(727,prio)); \
     break; \
     FOREACH_726(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_728(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(728,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(728,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(728,prio)); \
     break; \
     FOREACH_727(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_729(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(729,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(729,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(729,prio)); \
     break; \
     FOREACH_728(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_730(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(730,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(730,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(730,prio)); \
     break; \
     FOREACH_729(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_731(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(731,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(731,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(731,prio)); \
     break; \
     FOREACH_730(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_732(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(732,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(732,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(732,prio)); \
     break; \
     FOREACH_731(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_733(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(733,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(733,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(733,prio)); \
     break; \
     FOREACH_732(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_734(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(734,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(734,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(734,prio)); \
     break; \
     FOREACH_733(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_735(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(735,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(735,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(735,prio)); \
     break; \
     FOREACH_734(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_736(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(736,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(736,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(736,prio)); \
     break; \
     FOREACH_735(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_737(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(737,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(737,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(737,prio)); \
     break; \
     FOREACH_736(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_738(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(738,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(738,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(738,prio)); \
     break; \
     FOREACH_737(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_739(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(739,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(739,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(739,prio)); \
     break; \
     FOREACH_738(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_740(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(740,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(740,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(740,prio)); \
     break; \
     FOREACH_739(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_741(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(741,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(741,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(741,prio)); \
     break; \
     FOREACH_740(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_742(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(742,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(742,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(742,prio)); \
     break; \
     FOREACH_741(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_743(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(743,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(743,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(743,prio)); \
     break; \
     FOREACH_742(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_744(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(744,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(744,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(744,prio)); \
     break; \
     FOREACH_743(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_745(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(745,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(745,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(745,prio)); \
     break; \
     FOREACH_744(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_746(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(746,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(746,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(746,prio)); \
     break; \
     FOREACH_745(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_747(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(747,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(747,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(747,prio)); \
     break; \
     FOREACH_746(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_748(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(748,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(748,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(748,prio)); \
     break; \
     FOREACH_747(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_749(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(749,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(749,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(749,prio)); \
     break; \
     FOREACH_748(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_750(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(750,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(750,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(750,prio)); \
     break; \
     FOREACH_749(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_751(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(751,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(751,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(751,prio)); \
     break; \
     FOREACH_750(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_752(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(752,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(752,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(752,prio)); \
     break; \
     FOREACH_751(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_753(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(753,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(753,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(753,prio)); \
     break; \
     FOREACH_752(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_754(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(754,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(754,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(754,prio)); \
     break; \
     FOREACH_753(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_755(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(755,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(755,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(755,prio)); \
     break; \
     FOREACH_754(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_756(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(756,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(756,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(756,prio)); \
     break; \
     FOREACH_755(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_757(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(757,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(757,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(757,prio)); \
     break; \
     FOREACH_756(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_758(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(758,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(758,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(758,prio)); \
     break; \
     FOREACH_757(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_759(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(759,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(759,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(759,prio)); \
     break; \
     FOREACH_758(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_760(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(760,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(760,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(760,prio)); \
     break; \
     FOREACH_759(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_761(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(761,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(761,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(761,prio)); \
     break; \
     FOREACH_760(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_762(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(762,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(762,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(762,prio)); \
     break; \
     FOREACH_761(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_763(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(763,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(763,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(763,prio)); \
     break; \
     FOREACH_762(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_764(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(764,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(764,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(764,prio)); \
     break; \
     FOREACH_763(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_765(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(765,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(765,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(765,prio)); \
     break; \
     FOREACH_764(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_766(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(766,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(766,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(766,prio)); \
     break; \
     FOREACH_765(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_767(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(767,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(767,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(767,prio)); \
     break; \
     FOREACH_766(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_768(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(768,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(768,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(768,prio)); \
     break; \
     FOREACH_767(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_769(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(769,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(769,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(769,prio)); \
     break; \
     FOREACH_768(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_770(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(770,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(770,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(770,prio)); \
     break; \
     FOREACH_769(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_771(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(771,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(771,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(771,prio)); \
     break; \
     FOREACH_770(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_772(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(772,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(772,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(772,prio)); \
     break; \
     FOREACH_771(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_773(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(773,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(773,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(773,prio)); \
     break; \
     FOREACH_772(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_774(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(774,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(774,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(774,prio)); \
     break; \
     FOREACH_773(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_775(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(775,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(775,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(775,prio)); \
     break; \
     FOREACH_774(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_776(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(776,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(776,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(776,prio)); \
     break; \
     FOREACH_775(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_777(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(777,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(777,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(777,prio)); \
     break; \
     FOREACH_776(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_778(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(778,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(778,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(778,prio)); \
     break; \
     FOREACH_777(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_779(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(779,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(779,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(779,prio)); \
     break; \
     FOREACH_778(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_780(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(780,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(780,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(780,prio)); \
     break; \
     FOREACH_779(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_781(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(781,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(781,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(781,prio)); \
     break; \
     FOREACH_780(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_782(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(782,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(782,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(782,prio)); \
     break; \
     FOREACH_781(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_783(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(783,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(783,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(783,prio)); \
     break; \
     FOREACH_782(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_784(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(784,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(784,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(784,prio)); \
     break; \
     FOREACH_783(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_785(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(785,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(785,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(785,prio)); \
     break; \
     FOREACH_784(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_786(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(786,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(786,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(786,prio)); \
     break; \
     FOREACH_785(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_787(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(787,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(787,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(787,prio)); \
     break; \
     FOREACH_786(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_788(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(788,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(788,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(788,prio)); \
     break; \
     FOREACH_787(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_789(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(789,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(789,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(789,prio)); \
     break; \
     FOREACH_788(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_790(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(790,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(790,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(790,prio)); \
     break; \
     FOREACH_789(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_791(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(791,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(791,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(791,prio)); \
     break; \
     FOREACH_790(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_792(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(792,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(792,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(792,prio)); \
     break; \
     FOREACH_791(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_793(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(793,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(793,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(793,prio)); \
     break; \
     FOREACH_792(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_794(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(794,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(794,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(794,prio)); \
     break; \
     FOREACH_793(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_795(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(795,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(795,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(795,prio)); \
     break; \
     FOREACH_794(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_796(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(796,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(796,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(796,prio)); \
     break; \
     FOREACH_795(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_797(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(797,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(797,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(797,prio)); \
     break; \
     FOREACH_796(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_798(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(798,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(798,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(798,prio)); \
     break; \
     FOREACH_797(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_799(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(799,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(799,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(799,prio)); \
     break; \
     FOREACH_798(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_800(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(800,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(800,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(800,prio)); \
     break; \
     FOREACH_799(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_801(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(801,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(801,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(801,prio)); \
     break; \
     FOREACH_800(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_802(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(802,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(802,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(802,prio)); \
     break; \
     FOREACH_801(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_803(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(803,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(803,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(803,prio)); \
     break; \
     FOREACH_802(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_804(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(804,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(804,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(804,prio)); \
     break; \
     FOREACH_803(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_805(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(805,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(805,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(805,prio)); \
     break; \
     FOREACH_804(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_806(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(806,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(806,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(806,prio)); \
     break; \
     FOREACH_805(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_807(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(807,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(807,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(807,prio)); \
     break; \
     FOREACH_806(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_808(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(808,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(808,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(808,prio)); \
     break; \
     FOREACH_807(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_809(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(809,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(809,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(809,prio)); \
     break; \
     FOREACH_808(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_810(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(810,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(810,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(810,prio)); \
     break; \
     FOREACH_809(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_811(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(811,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(811,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(811,prio)); \
     break; \
     FOREACH_810(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_812(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(812,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(812,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(812,prio)); \
     break; \
     FOREACH_811(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_813(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(813,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(813,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(813,prio)); \
     break; \
     FOREACH_812(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_814(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(814,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(814,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(814,prio)); \
     break; \
     FOREACH_813(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_815(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(815,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(815,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(815,prio)); \
     break; \
     FOREACH_814(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_816(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(816,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(816,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(816,prio)); \
     break; \
     FOREACH_815(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_817(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(817,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(817,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(817,prio)); \
     break; \
     FOREACH_816(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_818(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(818,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(818,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(818,prio)); \
     break; \
     FOREACH_817(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_819(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(819,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(819,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(819,prio)); \
     break; \
     FOREACH_818(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_820(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(820,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(820,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(820,prio)); \
     break; \
     FOREACH_819(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_821(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(821,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(821,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(821,prio)); \
     break; \
     FOREACH_820(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_822(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(822,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(822,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(822,prio)); \
     break; \
     FOREACH_821(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_823(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(823,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(823,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(823,prio)); \
     break; \
     FOREACH_822(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_824(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(824,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(824,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(824,prio)); \
     break; \
     FOREACH_823(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_825(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(825,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(825,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(825,prio)); \
     break; \
     FOREACH_824(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_826(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(826,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(826,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(826,prio)); \
     break; \
     FOREACH_825(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_827(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(827,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(827,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(827,prio)); \
     break; \
     FOREACH_826(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_828(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(828,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(828,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(828,prio)); \
     break; \
     FOREACH_827(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_829(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(829,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(829,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(829,prio)); \
     break; \
     FOREACH_828(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_830(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(830,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(830,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(830,prio)); \
     break; \
     FOREACH_829(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_831(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(831,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(831,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(831,prio)); \
     break; \
     FOREACH_830(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_832(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(832,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(832,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(832,prio)); \
     break; \
     FOREACH_831(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_833(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(833,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(833,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(833,prio)); \
     break; \
     FOREACH_832(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_834(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(834,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(834,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(834,prio)); \
     break; \
     FOREACH_833(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_835(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(835,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(835,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(835,prio)); \
     break; \
     FOREACH_834(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_836(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(836,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(836,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(836,prio)); \
     break; \
     FOREACH_835(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_837(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(837,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(837,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(837,prio)); \
     break; \
     FOREACH_836(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_838(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(838,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(838,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(838,prio)); \
     break; \
     FOREACH_837(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_839(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(839,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(839,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(839,prio)); \
     break; \
     FOREACH_838(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_840(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(840,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(840,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(840,prio)); \
     break; \
     FOREACH_839(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_841(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(841,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(841,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(841,prio)); \
     break; \
     FOREACH_840(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_842(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(842,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(842,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(842,prio)); \
     break; \
     FOREACH_841(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_843(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(843,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(843,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(843,prio)); \
     break; \
     FOREACH_842(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_844(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(844,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(844,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(844,prio)); \
     break; \
     FOREACH_843(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_845(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(845,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(845,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(845,prio)); \
     break; \
     FOREACH_844(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_846(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(846,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(846,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(846,prio)); \
     break; \
     FOREACH_845(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_847(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(847,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(847,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(847,prio)); \
     break; \
     FOREACH_846(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_848(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(848,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(848,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(848,prio)); \
     break; \
     FOREACH_847(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_849(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(849,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(849,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(849,prio)); \
     break; \
     FOREACH_848(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_850(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(850,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(850,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(850,prio)); \
     break; \
     FOREACH_849(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_851(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(851,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(851,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(851,prio)); \
     break; \
     FOREACH_850(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_852(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(852,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(852,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(852,prio)); \
     break; \
     FOREACH_851(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_853(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(853,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(853,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(853,prio)); \
     break; \
     FOREACH_852(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_854(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(854,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(854,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(854,prio)); \
     break; \
     FOREACH_853(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_855(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(855,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(855,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(855,prio)); \
     break; \
     FOREACH_854(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_856(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(856,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(856,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(856,prio)); \
     break; \
     FOREACH_855(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_857(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(857,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(857,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(857,prio)); \
     break; \
     FOREACH_856(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_858(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(858,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(858,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(858,prio)); \
     break; \
     FOREACH_857(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_859(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(859,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(859,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(859,prio)); \
     break; \
     FOREACH_858(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_860(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(860,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(860,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(860,prio)); \
     break; \
     FOREACH_859(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_861(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(861,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(861,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(861,prio)); \
     break; \
     FOREACH_860(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_862(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(862,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(862,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(862,prio)); \
     break; \
     FOREACH_861(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_863(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(863,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(863,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(863,prio)); \
     break; \
     FOREACH_862(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_864(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(864,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(864,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(864,prio)); \
     break; \
     FOREACH_863(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_865(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(865,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(865,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(865,prio)); \
     break; \
     FOREACH_864(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_866(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(866,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(866,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(866,prio)); \
     break; \
     FOREACH_865(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_867(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(867,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(867,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(867,prio)); \
     break; \
     FOREACH_866(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_868(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(868,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(868,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(868,prio)); \
     break; \
     FOREACH_867(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_869(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(869,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(869,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(869,prio)); \
     break; \
     FOREACH_868(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_870(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(870,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(870,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(870,prio)); \
     break; \
     FOREACH_869(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_871(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(871,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(871,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(871,prio)); \
     break; \
     FOREACH_870(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_872(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(872,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(872,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(872,prio)); \
     break; \
     FOREACH_871(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_873(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(873,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(873,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(873,prio)); \
     break; \
     FOREACH_872(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_874(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(874,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(874,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(874,prio)); \
     break; \
     FOREACH_873(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_875(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(875,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(875,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(875,prio)); \
     break; \
     FOREACH_874(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_876(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(876,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(876,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(876,prio)); \
     break; \
     FOREACH_875(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_877(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(877,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(877,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(877,prio)); \
     break; \
     FOREACH_876(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_878(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(878,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(878,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(878,prio)); \
     break; \
     FOREACH_877(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_879(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(879,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(879,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(879,prio)); \
     break; \
     FOREACH_878(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_880(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(880,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(880,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(880,prio)); \
     break; \
     FOREACH_879(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_881(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(881,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(881,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(881,prio)); \
     break; \
     FOREACH_880(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_882(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(882,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(882,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(882,prio)); \
     break; \
     FOREACH_881(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_883(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(883,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(883,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(883,prio)); \
     break; \
     FOREACH_882(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_884(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(884,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(884,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(884,prio)); \
     break; \
     FOREACH_883(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_885(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(885,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(885,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(885,prio)); \
     break; \
     FOREACH_884(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_886(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(886,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(886,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(886,prio)); \
     break; \
     FOREACH_885(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_887(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(887,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(887,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(887,prio)); \
     break; \
     FOREACH_886(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_888(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(888,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(888,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(888,prio)); \
     break; \
     FOREACH_887(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_889(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(889,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(889,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(889,prio)); \
     break; \
     FOREACH_888(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_890(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(890,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(890,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(890,prio)); \
     break; \
     FOREACH_889(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_891(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(891,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(891,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(891,prio)); \
     break; \
     FOREACH_890(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_892(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(892,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(892,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(892,prio)); \
     break; \
     FOREACH_891(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_893(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(893,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(893,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(893,prio)); \
     break; \
     FOREACH_892(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_894(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(894,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(894,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(894,prio)); \
     break; \
     FOREACH_893(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_895(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(895,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(895,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(895,prio)); \
     break; \
     FOREACH_894(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_896(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(896,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(896,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(896,prio)); \
     break; \
     FOREACH_895(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_897(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(897,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(897,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(897,prio)); \
     break; \
     FOREACH_896(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_898(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(898,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(898,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(898,prio)); \
     break; \
     FOREACH_897(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_899(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(899,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(899,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(899,prio)); \
     break; \
     FOREACH_898(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_900(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(900,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(900,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(900,prio)); \
     break; \
     FOREACH_899(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_901(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(901,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(901,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(901,prio)); \
     break; \
     FOREACH_900(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_902(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(902,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(902,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(902,prio)); \
     break; \
     FOREACH_901(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_903(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(903,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(903,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(903,prio)); \
     break; \
     FOREACH_902(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_904(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(904,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(904,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(904,prio)); \
     break; \
     FOREACH_903(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_905(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(905,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(905,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(905,prio)); \
     break; \
     FOREACH_904(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_906(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(906,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(906,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(906,prio)); \
     break; \
     FOREACH_905(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_907(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(907,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(907,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(907,prio)); \
     break; \
     FOREACH_906(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_908(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(908,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(908,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(908,prio)); \
     break; \
     FOREACH_907(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_909(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(909,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(909,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(909,prio)); \
     break; \
     FOREACH_908(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_910(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(910,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(910,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(910,prio)); \
     break; \
     FOREACH_909(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_911(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(911,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(911,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(911,prio)); \
     break; \
     FOREACH_910(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_912(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(912,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(912,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(912,prio)); \
     break; \
     FOREACH_911(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_913(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(913,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(913,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(913,prio)); \
     break; \
     FOREACH_912(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_914(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(914,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(914,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(914,prio)); \
     break; \
     FOREACH_913(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_915(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(915,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(915,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(915,prio)); \
     break; \
     FOREACH_914(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_916(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(916,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(916,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(916,prio)); \
     break; \
     FOREACH_915(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_917(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(917,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(917,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(917,prio)); \
     break; \
     FOREACH_916(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_918(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(918,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(918,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(918,prio)); \
     break; \
     FOREACH_917(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_919(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(919,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(919,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(919,prio)); \
     break; \
     FOREACH_918(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_920(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(920,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(920,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(920,prio)); \
     break; \
     FOREACH_919(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_921(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(921,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(921,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(921,prio)); \
     break; \
     FOREACH_920(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_922(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(922,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(922,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(922,prio)); \
     break; \
     FOREACH_921(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_923(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(923,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(923,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(923,prio)); \
     break; \
     FOREACH_922(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_924(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(924,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(924,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(924,prio)); \
     break; \
     FOREACH_923(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_925(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(925,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(925,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(925,prio)); \
     break; \
     FOREACH_924(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_926(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(926,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(926,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(926,prio)); \
     break; \
     FOREACH_925(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_927(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(927,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(927,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(927,prio)); \
     break; \
     FOREACH_926(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_928(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(928,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(928,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(928,prio)); \
     break; \
     FOREACH_927(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_929(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(929,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(929,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(929,prio)); \
     break; \
     FOREACH_928(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_930(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(930,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(930,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(930,prio)); \
     break; \
     FOREACH_929(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_931(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(931,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(931,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(931,prio)); \
     break; \
     FOREACH_930(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_932(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(932,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(932,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(932,prio)); \
     break; \
     FOREACH_931(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_933(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(933,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(933,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(933,prio)); \
     break; \
     FOREACH_932(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_934(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(934,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(934,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(934,prio)); \
     break; \
     FOREACH_933(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_935(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(935,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(935,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(935,prio)); \
     break; \
     FOREACH_934(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_936(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(936,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(936,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(936,prio)); \
     break; \
     FOREACH_935(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_937(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(937,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(937,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(937,prio)); \
     break; \
     FOREACH_936(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_938(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(938,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(938,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(938,prio)); \
     break; \
     FOREACH_937(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_939(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(939,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(939,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(939,prio)); \
     break; \
     FOREACH_938(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_940(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(940,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(940,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(940,prio)); \
     break; \
     FOREACH_939(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_941(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(941,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(941,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(941,prio)); \
     break; \
     FOREACH_940(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_942(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(942,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(942,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(942,prio)); \
     break; \
     FOREACH_941(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_943(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(943,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(943,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(943,prio)); \
     break; \
     FOREACH_942(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_944(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(944,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(944,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(944,prio)); \
     break; \
     FOREACH_943(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_945(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(945,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(945,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(945,prio)); \
     break; \
     FOREACH_944(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_946(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(946,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(946,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(946,prio)); \
     break; \
     FOREACH_945(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_947(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(947,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(947,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(947,prio)); \
     break; \
     FOREACH_946(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_948(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(948,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(948,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(948,prio)); \
     break; \
     FOREACH_947(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_949(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(949,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(949,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(949,prio)); \
     break; \
     FOREACH_948(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_950(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(950,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(950,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(950,prio)); \
     break; \
     FOREACH_949(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_951(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(951,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(951,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(951,prio)); \
     break; \
     FOREACH_950(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_952(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(952,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(952,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(952,prio)); \
     break; \
     FOREACH_951(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_953(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(953,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(953,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(953,prio)); \
     break; \
     FOREACH_952(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_954(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(954,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(954,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(954,prio)); \
     break; \
     FOREACH_953(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_955(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(955,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(955,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(955,prio)); \
     break; \
     FOREACH_954(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_956(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(956,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(956,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(956,prio)); \
     break; \
     FOREACH_955(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_957(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(957,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(957,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(957,prio)); \
     break; \
     FOREACH_956(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_958(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(958,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(958,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(958,prio)); \
     break; \
     FOREACH_957(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_959(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(959,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(959,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(959,prio)); \
     break; \
     FOREACH_958(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_960(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(960,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(960,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(960,prio)); \
     break; \
     FOREACH_959(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_961(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(961,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(961,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(961,prio)); \
     break; \
     FOREACH_960(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_962(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(962,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(962,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(962,prio)); \
     break; \
     FOREACH_961(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_963(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(963,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(963,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(963,prio)); \
     break; \
     FOREACH_962(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_964(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(964,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(964,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(964,prio)); \
     break; \
     FOREACH_963(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_965(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(965,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(965,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(965,prio)); \
     break; \
     FOREACH_964(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_966(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(966,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(966,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(966,prio)); \
     break; \
     FOREACH_965(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_967(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(967,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(967,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(967,prio)); \
     break; \
     FOREACH_966(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_968(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(968,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(968,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(968,prio)); \
     break; \
     FOREACH_967(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_969(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(969,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(969,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(969,prio)); \
     break; \
     FOREACH_968(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_970(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(970,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(970,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(970,prio)); \
     break; \
     FOREACH_969(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_971(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(971,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(971,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(971,prio)); \
     break; \
     FOREACH_970(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_972(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(972,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(972,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(972,prio)); \
     break; \
     FOREACH_971(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_973(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(973,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(973,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(973,prio)); \
     break; \
     FOREACH_972(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_974(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(974,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(974,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(974,prio)); \
     break; \
     FOREACH_973(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_975(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(975,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(975,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(975,prio)); \
     break; \
     FOREACH_974(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_976(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(976,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(976,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(976,prio)); \
     break; \
     FOREACH_975(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_977(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(977,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(977,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(977,prio)); \
     break; \
     FOREACH_976(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_978(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(978,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(978,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(978,prio)); \
     break; \
     FOREACH_977(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_979(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(979,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(979,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(979,prio)); \
     break; \
     FOREACH_978(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_980(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(980,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(980,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(980,prio)); \
     break; \
     FOREACH_979(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_981(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(981,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(981,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(981,prio)); \
     break; \
     FOREACH_980(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_982(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(982,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(982,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(982,prio)); \
     break; \
     FOREACH_981(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_983(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(983,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(983,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(983,prio)); \
     break; \
     FOREACH_982(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_984(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(984,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(984,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(984,prio)); \
     break; \
     FOREACH_983(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_985(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(985,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(985,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(985,prio)); \
     break; \
     FOREACH_984(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_986(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(986,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(986,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(986,prio)); \
     break; \
     FOREACH_985(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_987(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(987,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(987,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(987,prio)); \
     break; \
     FOREACH_986(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_988(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(988,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(988,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(988,prio)); \
     break; \
     FOREACH_987(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_989(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(989,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(989,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(989,prio)); \
     break; \
     FOREACH_988(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_990(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(990,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(990,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(990,prio)); \
     break; \
     FOREACH_989(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_991(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(991,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(991,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(991,prio)); \
     break; \
     FOREACH_990(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_992(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(992,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(992,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(992,prio)); \
     break; \
     FOREACH_991(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_993(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(993,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(993,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(993,prio)); \
     break; \
     FOREACH_992(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_994(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(994,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(994,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(994,prio)); \
     break; \
     FOREACH_993(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_995(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(995,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(995,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(995,prio)); \
     break; \
     FOREACH_994(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_996(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(996,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(996,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(996,prio)); \
     break; \
     FOREACH_995(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_997(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(997,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(997,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(997,prio)); \
     break; \
     FOREACH_996(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_998(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(998,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(998,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(998,prio)); \
     break; \
     FOREACH_997(prio,na,E, __VA_ARGS__)
 
 #define FOREACH_999(prio,na,FN, E, ...) \
     case APPLY_SUB(MUL(na,prio),MUL(999,prio)): \
         FN; \
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(999,prio)); \
+        ip=APPLY_SUB(MUL(na,prio),MUL(999,prio)); \
     break; \
     FOREACH_998(prio,na,E, __VA_ARGS__)
 

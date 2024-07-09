@@ -6,7 +6,7 @@ var b,c;
 var txt1=Array.from(new Array(maxLines)).map((o,i)=>`#define FOREACH_${i}(prio,na,FN, E, ...) \\
     case APPLY_SUB(MUL(na,prio),MUL(${i},prio)): \\
         FN; \\
-        ctx->ip=APPLY_SUB(MUL(na,prio),MUL(${i},prio)); \\
+        ip=APPLY_SUB(MUL(na,prio),MUL(${i},prio)); \\
     break; \\
     FOREACH_${i-1}(prio,na,E, __VA_ARGS__)
 `).slice(1).join("\n");
@@ -19,7 +19,7 @@ var ct1=`
 //#define PP_COMMA PP_LPAREN() PP_RPAREN()                // -> PP_COMMA ( )
 //#define PP_IDENTITY(PP_COMMA PP_LPAREN() PP_RPAREN())   // -> PP_COMMA() -> ,
 
-#define FOREACH_0(prio,na,FN, ...) case MUL(na,prio):  FN;ctx->ip=MUL(na,prio); break;
+#define FOREACH_0(prio,na,FN, ...) case MUL(na,prio):  FN;ip=MUL(na,prio); break;
 ${txt1}
 `
 

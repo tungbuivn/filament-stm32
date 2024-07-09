@@ -3,7 +3,7 @@
 #include <Adafruit_SPIDevice.h>
 #include <Adafruit_BusIO_Register.h>
 #include "mylcd.h"
-#include "temperature.h"
+// #include "temperature.h"
 #include "led-blink.h"
 #include "serialcmd.h"
 #include "pwm_ctrl.h"
@@ -14,7 +14,7 @@
 //   #define SERIAL_PORT_HARDWARE    Serial
 
 LCDThread *mylcd;
-Temperature temp;
+// Temperature temp;
 LedBlink *ledBlink;
 SerialCmd mySerial;
 PWMControl *pwmCtrl;

@@ -85,7 +85,7 @@ protected:
 
 public:
     BaseThread();
-    virtual ~BaseThread();
+    // virtual ~BaseThread();
     int isFinished();
     /**
      * this is body of the thread, do not use any local variable here, if you want to, then create a function and call it
