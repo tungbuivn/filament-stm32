@@ -27,26 +27,38 @@
 #define __FOREACH_(prio,FN, NARGS, ...) __FOREACH__(prio,FN, NARGS, __VA_ARGS__)
 #define TBT_THC(prio,FN, ...)  __FOREACH_(prio,FN, N_VA_ARGS(__VA_ARGS__), __VA_ARGS__)
 
+#define CONCATENATE(s1, s2) s1##s2
+
 #define TBT_BLOCK(...) __VA_ARGS__
-#define TBT_IF(labelNum,cond,trueCond,falseCond) \
-    if (!(cond)) goto lbl__false_##labelNum; \
-    ,trueCond,goto lbl__end_##labelNum \
-    ,lbl__false_##labelNum: falseCond \
-    ,lbl__end_##labelNum:
 
+#define TBT_IF_FALSE(cond,...) TBT_IF((!(cond)),TBT_BLOCK(__VA_ARGS__),TBT_BLOCK())
 
-#define TBT_WHILE(labelNum,cond,body) TBT_BLOCK( \
-    lbl__while_##labelNum: body, \
-    if (cond) goto lbl__while_##labelNum; \
+#define TBT_IF_TRUE(cond,...) TBT_IF(cond,TBT_BLOCK(__VA_ARGS__),TBT_BLOCK())
+
+#define TBT_IF(cond,trueCond,falseCond) \
+    TBT_IF_WRAP(__LINE__,TBT_BLOCK(cond),TBT_BLOCK(trueCond),TBT_BLOCK(falseCond))
+
+#define TBT_IF_WRAP(labelNum,cond,trueCond,falseCond) \
+    if (!(cond)) goto CONCATENATE(lbl__false_,labelNum); \
+    ,trueCond,goto CONCATENATE(lbl__end_,labelNum) \
+    ,CONCATENATE(lbl__false_,labelNum): falseCond \
+    ,CONCATENATE(lbl__end_,labelNum):
+
+#define TBT_WHILE(cond,...) \
+    TBT_WHILE_WRAP(__LINE__,TBT_BLOCK(cond),TBT_BLOCK(__VA_ARGS__))
+    
+#define TBT_WHILE_WRAP(labelNum,cond,body) TBT_BLOCK( \
+    CONCATENATE(lbl__while_, labelNum): body, \
+    if (cond) goto CONCATENATE(lbl__while_, labelNum); \
 )
 
-#define __TBT_DELAY(labelNum,FN,num)  time=FN; TBT_WHILE(labelNum,FN-time<num,;)
+#define __TBT_DELAY(FN,num)  time=FN; TBT_WHILE(FN-time<num,;)
 
-#define TBT_DELAY(labelNum,num) __TBT_DELAY(labelNum,millis(),num)
+#define TBT_DELAY(num) __TBT_DELAY(millis(),num)
 
-#define TBT_DELAY_MICRO(labelNum,num) __TBT_DELAY(labelNum,micros(),num)
+#define TBT_DELAY_MICRO(num) __TBT_DELAY(micros(),num)
 
-#define TBT_WAIT_THREAD(labelNum,th) TBT_WHILE(labelNum,!(th.isFinished()),th.execute());
+#define TBT_WAIT_THREAD(th) TBT_WHILE(!(th.isFinished()),th.execute());
 
 enum THREAD_EXECUTION {
     ONCE=1,
@@ -80,7 +92,13 @@ public:
     */
     virtual  void execute()=0;
 };
-
+// typedef int (*ThreadCallBack)();
+// class ThreadAction : public BaseThread {
+// private:
+//     ThreadCallBack cb
+// public:
+//     ThreadAction(ThreadCallBack cb);
+// }
 // void BaseThread::execute() {
 //     if (isSuspend) return;
 // }

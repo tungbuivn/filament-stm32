@@ -9,12 +9,12 @@ Temperature::Temperature()
 
 void Temperature::execute(){
 
-    TBT_THC(4,
+    TBT_THC(5,
         ,,
         // Serial.println("setup text"),
-        mylcd.setText(0,1,"Xin chao"),
+        // mylcd.setText(0,1,"Xin chao"),
           
-            TBT_DELAY(100,80)
+        //     TBT_DELAY(80)
             // TBT_WAIT_THREAD(200, lcd)
     )
 

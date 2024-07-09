@@ -50,28 +50,31 @@ void SerialCmd::readSerial()
         }
     }
 }
-void SerialCmd::handleTask()
+inline void SerialCmd::handleTask()
 {
-
-    if (act != NULL)
-    {
-        // Serial.println("create command");
-        act->execute();
-        if (act->isFinished())
-        {
-
-            delete this->act;
-            act = NULL;
-        }
-    }
 }
 void SerialCmd::execute()
 {
+    static int cont = 0;
     // Serial.println("Looop =================");
-    TBT_THC(3, ,
+    TBT_THC(1, ,
             readSerial(),
             processCommand(),
-            handleTask(),
+            TBT_IF(act != NULL,
 
+                TBT_BLOCK(cont = 1,
+                    TBT_WHILE( cont == 1, 
+                        TBT_BLOCK(
+                            act->execute(), 
+                            if (act->isFinished()) {
+                                delete this->act;
+                                act = NULL;
+                                cont=0; 
+                            }
+                        )
+                    )
+
+                ), 
+            )
     )
 }

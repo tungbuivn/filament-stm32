@@ -9,8 +9,8 @@ private:
     
     // int queueLen;
 public:
-  
+    LedBlink();
     
     void execute();
 };
-extern LedBlink ledBlink;
+extern LedBlink *ledBlink;

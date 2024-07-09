@@ -6,7 +6,7 @@
     "f_cpu": "84000000L",
     "mcu": "stm32f401ccu6",
     "product_line": "STM32F401xC",
-    "variant": "STM32F4xx/F401CC(F-U-Y)_F401C(B-D-E)(U-Y)"
+    "variant": "TBT_STM32F401CC"
   },
   "debug": {
     "jlink_device": "STM32F401CC",
@@ -19,7 +19,7 @@
     "stm32cube",
     "libopencm3"
   ],
-  "name": "STM32F401CC (64k RAM. 256k Flash)",
+  "name": "TBT STM32F401CC (64k RAM. 256k Flash)",
   "upload": {
     "maximum_ram_size": 65536,
     "maximum_size": 262144,
