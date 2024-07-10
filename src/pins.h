@@ -11,8 +11,11 @@
 
 // UI
 // on off button
-#define ONOFF       PA12
-#define SWING       PA11
+#define ONOFF       PA10    
+#define SWING       PA9     
+
+// PA12  // DP
+// PA11  // DM
 // encoder
 #define encA        PB4
 #define encB        PB5
@@ -23,6 +26,10 @@
 #define LCD_MOSI    PIN_SPI_MOSI
 #define LCD_SCK     PIN_SPI_SCK
 
+
+// i2c 2
+#define EXP_SDA2    PB3
+#define EXP_SCL2    PB10
 // buzzer
 #define BUZZER      PA3
 

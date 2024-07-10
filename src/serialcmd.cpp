@@ -4,6 +4,7 @@ SerialCmd::SerialCmd() : BaseThread()
 {
     cmdCount = 0;
     act = NULL;
+    // SerialUSB
 };
 void SerialCmd::processCommand()
 {
@@ -33,7 +34,7 @@ void SerialCmd::processCommand()
             act = new CommandAction(s);
         }
 
-        // Serial.print("full command: ");
+        Serial.print("full command: ");
         Serial.println(buf);
     }
 }
@@ -58,23 +59,21 @@ void SerialCmd::execute()
     static int cont = 0;
     // Serial.println("Looop =================");
     TBT_THC(1, ,
-            readSerial(),
-            processCommand(),
-            TBT_IF(act != NULL,
-
-                TBT_BLOCK(cont = 1,
-                    TBT_WHILE( cont == 1, 
-                        TBT_BLOCK(
-                            act->execute(), 
-                            if (act->isFinished()) {
-                                delete this->act;
-                                act = NULL;
-                                cont=0; 
-                            }
-                        )
+        readSerial(),
+        processCommand(),
+        TBT_IF(act != NULL,
+            TBT_BLOCK(cont = 1,
+                TBT_WHILE( cont == 1, 
+                    TBT_BLOCK(
+                        act->execute(), 
+                        if (act->isFinished()) {
+                            delete this->act;
+                            act = NULL;
+                            cont=0; 
+                        }
                     )
-
-                ), 
-            )
+                )
+            ), 
+        )
     )
 }

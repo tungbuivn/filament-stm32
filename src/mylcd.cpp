@@ -3,7 +3,7 @@
 #include <Arduino.h>
 // #include <U8g2lib.h>
 #include <Wire.h>
-// #include <lcd.h>
+#include <dbglcd.h>
 // #include "lcd/lcd_st7567s.h"
 
 #define LCD_SCL PB6
@@ -18,6 +18,8 @@
 // lcd  lcd;
 LCDThread::LCDThread(EncoderThread *enc,EncoderClick *clickEnc) : BaseThread(){
 
+
+    // dbg=new LCDTBT();
     enc->onChange(LCDThread::onEncoderChange);
     clickEnc->onClick(LCDThread::onEncoderClick);
 

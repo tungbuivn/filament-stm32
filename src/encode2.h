@@ -22,6 +22,21 @@ public:
     void onClick(std::function<void()> callback);
    
 };
+enum stage
+{
+    lblInit = 0,
+    lblLoop,
+    lblCW,
+    lblCW1,
+    lblCW2,
+    lblCW3,
+    lblCCW,
+    lblCCW1,
+    lblCCW2,
+    lblCCW3,
+    lblDone
+
+};
 class EncoderThread : public BaseThread
 {
 private:
@@ -29,7 +44,9 @@ private:
     int currentB;
     void applyChange();
     vector<std::function<void(int)>> callbacks;
-   
+   stage phase;
+    bool roLeft ;
+    bool roRight;
 
 public:
     
@@ -38,6 +55,7 @@ public:
 public:
     ENCODER_DIRECTION dir;
     EncoderThread();
+    ENCODER_DIRECTION countRotate(int ra,int rb);
     // void setText(int x, int y, char *text);
     void execute();
     void onChange(std::function<void(int)> callback);

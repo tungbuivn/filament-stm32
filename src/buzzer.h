@@ -3,14 +3,13 @@
 #include "tbt_thread.h"
 #include <queue>
 
-class LedBlink : public BaseThread
+class Buzzer : public BaseThread
 {
 private:
     
     // int queueLen;
 public:
-    LedBlink();
+    Buzzer();
     
     void execute();
 };
-extern LedBlink *ledBlink;

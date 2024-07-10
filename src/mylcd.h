@@ -2,6 +2,8 @@
 #include "tbt_thread.h"
 #include <queue>
 #include "encode2.h"
+#include "dbglcd.h"
+
 using namespace std;
 struct TextQueueData
 {
@@ -12,6 +14,7 @@ struct TextQueueData
 class LCDThread : public BaseThread
 {
 private:
+
     queue<TextQueueData*> data;
     void updateText();
     int init=0;
@@ -19,6 +22,7 @@ private:
     static void onEncoderClick();
     // int queueLen;
 public:
+    // LCDTBT *dbg;
     LCDThread(EncoderThread *enc,EncoderClick *clickEnc);
     void setText(int x, int y, char *text);
     void execute();

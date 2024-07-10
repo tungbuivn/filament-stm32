@@ -2,7 +2,17 @@
 #include <Arduino.h>
 #include "macro.h"
 
-
+// #define DEBUG_PRINT 1
+#ifdef DEBUG_PRINT
+#define debug_printf(fmt, ...) do { \
+    if (DEBUG_PRINT) { \
+        auto p_time_now = millis(); \
+        Serial.printf("%u ms " fmt, p_time_now, ##__VA_ARGS__); \
+    } \
+} while (0)
+#else
+    #define debug_printf(fmt, ...) ;
+#endif
 
 //copy(Array.from(new Array(20)).map((o,i)=>`#define FOREACH_${i}(na,FN, E, ...) case na-${i}: FN;ip=na-${i}; break; FOREACH_${i-1}(na,E, __VA_ARGS__)`).slice(1).join("\n"))
 
@@ -91,6 +101,7 @@ public:
      * this is body of the thread, do not use any local variable here, if you want to, then create a function and call it
     */
     virtual  void execute()=0;
+    // virtual void execute2()=0;
 };
 // typedef int (*ThreadCallBack)();
 // class ThreadAction : public BaseThread {

@@ -9,4 +9,5 @@ private:
 public:    
     PWMControl();
     void execute();
+     void execute2();
 };
