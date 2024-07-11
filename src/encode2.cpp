@@ -195,7 +195,7 @@ void EncoderThread::triggerA() {
     if (na!=lastA) {
         lastA=na;    
         int v=0b100 | (lastB<<1) | lastA ;
-        enc->data.push(v);
+        rotaryEncoder->data.push(v);
     }
     
 }
@@ -204,7 +204,7 @@ void EncoderThread::triggerB() {
     if (nb!=lastB) {
         lastB=nb;
         int v=(lastB<<1) | lastA ;
-        enc->data.push(v);
+        rotaryEncoder->data.push(v);
     }
     
    

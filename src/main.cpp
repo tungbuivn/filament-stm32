@@ -20,8 +20,8 @@
 LedBlink *ledBlink;
 SerialCmd mySerial;
 PWMControl *pwmCtrl;
-EncoderThread *enc;
-EncoderClick *clickEnc;
+EncoderThread *rotaryEncoder;
+EncoderClick *encoderButton;
 Buzzer *buz;
 
 // I2CScan i2cscan;
@@ -31,10 +31,10 @@ void setup()
    
     Serial.begin(9600);
 
-    enc=new EncoderThread();
+    rotaryEncoder=new EncoderThread();
     pwmCtrl=new PWMControl();
-    clickEnc=new EncoderClick();
-    // mylcd=new LCDThread(enc,clickEnc);
+    encoderButton=new EncoderClick();
+    // mylcd=new LCDThread(enc,encoderButton);
     ledBlink=new LedBlink();
     buz=new Buzzer();
    
@@ -42,10 +42,10 @@ void setup()
 
 void loop()
 {
-    //  analogWrite(PWM_BLDC, 95 * 255 / 100);
+    //  PWM control
     pwmCtrl->execute();
-    enc->execute();
-    clickEnc->execute();
+    rotaryEncoder->execute();
+    encoderButton->execute();
 
     // analogWriteResolution
 

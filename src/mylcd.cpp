@@ -16,12 +16,12 @@
 //create an lcd object.
 // lcd_st7567s Lcd7567;
 // lcd  lcd;
-LCDThread::LCDThread(EncoderThread *enc,EncoderClick *clickEnc) : BaseThread(){
+LCDThread::LCDThread(EncoderThread *rotaryEncoder,EncoderClick *encoderButton) : BaseThread(){
 
 
     // dbg=new LCDTBT();
-    enc->onChange(LCDThread::onEncoderChange);
-    clickEnc->onClick(LCDThread::onEncoderClick);
+    rotaryEncoder->onChange(LCDThread::onEncoderChange);
+    encoderButton->onClick(LCDThread::onEncoderClick);
 
 };
 void LCDThread::onEncoderClick() {

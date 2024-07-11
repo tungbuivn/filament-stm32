@@ -66,4 +66,4 @@ public:
    
     // void initLcd();
 };
-extern EncoderThread *enc;
+extern EncoderThread *rotaryEncoder;

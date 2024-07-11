@@ -30,6 +30,7 @@
 // i2c 2
 #define EXP_SDA2    PB3
 #define EXP_SCL2    PB10
+
 // buzzer
 #define BUZZER      PA3
 

@@ -10,7 +10,7 @@
  *
  *******************************************************************************
  */
-// #if defined(ARDUINO_BLACKPILL_F401CC) || defined(ARDUINO_BLACKPILL_F401CE)
+#if defined(ARDUINO_BLACKPILL_F401CC) || defined(ARDUINO_BLACKPILL_F401CE)
 
 #include "pins_arduino.h"
 
@@ -118,4 +118,4 @@ WEAK void SystemClock_Config(void)
 }
 #endif
 
-// #endif /* (ARDUINO_BLACKPILL_F401CC) || (ARDUINO_BLACKPILL_F401CE) */
+#endif /* (ARDUINO_BLACKPILL_F401CC) || (ARDUINO_BLACKPILL_F401CE) */

@@ -1,6 +1,7 @@
 #pragma once
 #include "tbt_thread.h"
 #include <queue>
+#include <string>
 
 using namespace std;
 class CommandAction:public BaseThread {

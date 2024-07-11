@@ -23,7 +23,7 @@ private:
     // int queueLen;
 public:
     // LCDTBT *dbg;
-    LCDThread(EncoderThread *enc,EncoderClick *clickEnc);
+    LCDThread(EncoderThread *rotaryEncoder,EncoderClick *encoderButton);
     void setText(int x, int y, char *text);
     void execute();
     void initLcd();
