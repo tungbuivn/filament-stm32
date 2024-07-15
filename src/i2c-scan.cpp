@@ -1,6 +1,7 @@
 #include "i2c-scan.h"
 #include <Wire.h>
 
+
 I2CScan::I2CScan() {
     // type=
     Wire.begin(SDA,SCL);
@@ -31,20 +32,20 @@ void I2CScan::execute(){
  
     if (error == 0)
     {
-      // Serial.print("I2C device found at address 0x");
-      // if (address<16)
-      //   Serial.print("0");
-      // Serial.print(address,HEX);
-      // Serial.println("  !");
+      Serial.print("I2C device found at address 0x");
+      if (address<16)
+        Serial.print("0");
+      Serial.print(address,HEX);
+      Serial.println("  !");
  
       nDevices++;
     }
     else if (error==4)
     {
-      // Serial.print("Unknown error at address 0x");
-      // if (address<16)
-        // Serial.print("0");
-      // Serial.println(address,HEX);
+      Serial.print("Unknown error at address 0x");
+      if (address<16)
+        Serial.print("0");
+      Serial.println(address,HEX);
     }    
   }
   // if (nDevices == 0)

@@ -10,6 +10,8 @@ private:
     // int queueLen;
 public:
     Buzzer();
-    
-    void execute();
+
+    void execute2();
+
+    void execute() override;
 };

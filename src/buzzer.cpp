@@ -2,15 +2,20 @@
 #include "pins.h"
 
 Buzzer::Buzzer() {
-     pinMode(BUZZER, OUTPUT);
+    pinMode(BUZZER, OUTPUT);
+    // analogWriteFrequency
+    type=THREAD_EXECUTION::ONCE;
     
 }
-void Buzzer::execute(){
 
+void Buzzer::execute2() {
+}
+
+void Buzzer::execute() {
     TBT_THC(5,
-    ,,
-        // Serial.println("Begin blink led"),
-    
-        TBT_DELAY(500),
+        analogWrite(BUZZER,120),
+        TBT_DELAY(1000),
+        analogWrite(BUZZER,0),
+       
     )
 };

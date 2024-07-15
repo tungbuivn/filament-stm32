@@ -1,7 +1,7 @@
 #pragma once
 
 #include "tbt_thread.h"
-#include <queue>
+// #include <queue>
 
 class LedBlink : public BaseThread
 {
@@ -11,6 +11,6 @@ private:
 public:
     LedBlink();
     
-    void execute();
+    void execute() override;
 };
-extern LedBlink *ledBlink;
+// extern LedBlink *ledBlink;

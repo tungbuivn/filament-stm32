@@ -18,14 +18,14 @@ private:
     queue<TextQueueData*> data;
     void updateText();
     int init=0;
-    static void onEncoderChange(int dir);
-    static void onEncoderClick();
+    // static bool onEncoderChange(EventData *data);
+    // static bool onEncoderClick(EventData *data);
     // int queueLen;
 public:
     // LCDTBT *dbg;
-    LCDThread(EncoderThread *rotaryEncoder,EncoderClick *encoderButton);
+    LCDThread();
     void setText(int x, int y, char *text);
-    void execute();
+    void execute() override;
     void initLcd();
 };
 extern LCDThread *mylcd;

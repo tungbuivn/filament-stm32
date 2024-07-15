@@ -35,7 +35,9 @@
     ip=ip+1;
 
 #define __FOREACH_(prio,FN, NARGS, ...) __FOREACH__(prio,FN, NARGS, __VA_ARGS__)
-#define TBT_THC(prio,FN, ...)  __FOREACH_(prio,FN, N_VA_ARGS(__VA_ARGS__), __VA_ARGS__)
+// max 1000 param in thc contents
+#define TBT_THC_WRAP(prio,FN, ...)  __FOREACH_(prio,FN, N_VA_ARGS(__VA_ARGS__), __VA_ARGS__)
+#define TBT_THC(prio, ...)  TBT_THC_WRAP(prio,, __VA_ARGS__)
 
 #define CONCATENATE(s1, s2) s1##s2
 
@@ -88,19 +90,22 @@ protected:
     /**
      * isSuspend
     */
-   bool isSuspend;
-   uint32_t time;
-   THREAD_EXECUTION type;
-   int finished;
+    bool isSuspend;
+    uint32_t time;
+    THREAD_EXECUTION type;
+    int finished;
 
 public:
     BaseThread();
     // virtual ~BaseThread();
     int isFinished();
+    void reset();
     /**
      * this is body of the thread, do not use any local variable here, if you want to, then create a function and call it
     */
     virtual  void execute()=0;
+    // void execute2()=0;
+    
     // virtual void execute2()=0;
 };
 // typedef int (*ThreadCallBack)();

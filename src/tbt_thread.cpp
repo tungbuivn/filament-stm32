@@ -8,6 +8,10 @@ BaseThread::BaseThread() {
    finished=0;
 //    done=0;
 };
+void BaseThread::reset() {
+    ip=0;
+    finished=0;
+}
 // ThreadAction::ThreadAction(ThreadCallBack cb) {
 //     this->cb=cb;
 // }

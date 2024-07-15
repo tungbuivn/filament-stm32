@@ -2,8 +2,13 @@
 #include "tbt_thread.h"
 #include <queue>
 #include <string>
+#include "events.h"
 
 using namespace std;
+class SerialData : public EventData {
+public:
+    string data;
+};
 class CommandAction:public BaseThread {
    
    private:
@@ -13,17 +18,18 @@ public:
     ~CommandAction();
     void execute();
 };
+
 class SerialCmd : public BaseThread
 {
 private:
 
-    queue<char> data;
+    vector<char> data;
     void processCommand();
     void handleTask();
     void readSerial();
-    int cmdCount;
+    // int cmdCount;
    
-    CommandAction *act;
+    // CommandAction *act;
   
 public:
     SerialCmd();

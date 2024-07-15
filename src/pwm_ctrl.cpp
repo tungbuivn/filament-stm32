@@ -27,34 +27,28 @@ void PWMControl::execute()
     // static int btn=0;
     //  analogWrite(PWM_BLDC, 95 * 255 / 100);
     TBT_THC(1,
-            , ,
-            // Serial.println("setup text"),
-            // btn = digitalRead(ONOFF),
-            TBT_IF(digitalRead(ONOFF) == LOW,
-                   TBT_BLOCK(
-                        Serial.println("Start triggered"),
-                       TBT_WHILE(digitalRead(ONOFF) == LOW, TBT_BLOCK()),
-                        Serial.println("Start triggered released"),
-                       this->start = !this->start,
-                       if (this->start) {
-                           this->duty = 50;
-                       } else {
-                           this->duty = 0;
-                       },
-                        analogWrite(BUZZER, 200); // Almost any value can be used except 0 and 255
-// experiment to get the best tone
-delay(500); // wait for a delayms ms
-analogWrite(BUZZER, 0); // 0 turns it off
-delay(300); // wait for a delayms ms
-                       // this->tm=1,
-                       analogWrite(PWM_BLDC, (this->duty * 255) / 100),
-                       // Serial.println(duty),
-                       // TBT_DELAY(500)
-                       ),
+           
+           
+        TBT_IF(digitalRead(ONOFF) == LOW,
+            TBT_BLOCK(
+                    // Serial.println("Start triggered"),
+                TBT_WHILE(digitalRead(ONOFF) == LOW, TBT_BLOCK()),
+                    // Serial.println("Start triggered released"),
+                this->start = !this->start,
+                if (this->start) {
+                    this->duty = 20;
+                } else {
+                    this->duty = 0;
+                },
+                debug_printf("State %d",this->start),
+                
+                // this->tm=1,
+                analogWrite(PWM_BLDC, (this->duty * 255) / 100),
+                // Serial.println(duty),
+                // TBT_DELAY(500)
+            ),
 
-                   ),
-            //  analogWrite(PWM_BLDC,this->duty*255/100);
-
-            // TBT_WAIT_THREAD(200, lcd)
+        ),
+           
     )
 };
