@@ -11,28 +11,38 @@
 #include "buzzer.h"
 #include "temperature.h"
 #include "events.h"
+#include "buttons.h"
 #include "UI/manager.h"
+#include "settings.h"
 
 Events eventSystem;
+Settings *settings;
 
 vector<BaseThread*> listThread;
 int len;
+
 
 void setup()
 {
 
     Serial.begin(115200);
     delay(2000);
+    auto lcd=new LCDThread();
+    
+    settings=new Settings();
     listThread.assign({
+        new Buttons(),
         new EncoderRotate(),
         new EncoderClick(),
         new PWMControl(),
         new Temperature(),
-        new LCDThread(),
+        
         new LedBlink(),
         new Buzzer(),
         new SerialCmd(),
-        new ManagerPage()
+        settings,
+        new ManagerPage(lcd,settings),
+        
     });
     len = listThread.size();
 };

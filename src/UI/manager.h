@@ -3,6 +3,8 @@
 #include "home.h"
 #include <vector>
 #include "base.h"
+#include "../mylcd.h"
+#include "settings.h"
 using namespace std;
 class ManagerPage : public BaseThread {
   int page;
@@ -10,9 +12,11 @@ class ManagerPage : public BaseThread {
   static bool onRotate(EventData *);
   static bool onClick(EventData *);
   static bool gotoPage(EventData *);
-  static bool onOffStateChange(EventData *);
+  // static bool onButtonTrigger(EventData *);
+  
+ 
 public:
-  ManagerPage();
+  ManagerPage(LCDThread* lcd,Settings *settings);
   void execute() override;
  
 

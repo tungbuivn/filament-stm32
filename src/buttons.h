@@ -2,20 +2,29 @@
 
 #include "tbt_thread.h"
 #include "events.h"
+#include "pins.h"
 // #include <queue>
+enum BUTTON_STATE {
+    BTN_NONE,
+    BTN_FAN,
+    BTN_SWING
+};
 
-class OnOffState : public EventData {
+class ButtonState : public EventData {
 public:
-    bool isOn;
+    BUTTON_STATE btn;
+    // bool swingState;
+
 };
 class Buttons : public BaseThread
 {
 private:
-    OnOffState fan;
+    ButtonState state;
     // int queueLen;
 public:
     Buttons();
     
     void execute() override;
 };
+
 // extern LedBlink *ledBlink;

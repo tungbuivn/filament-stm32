@@ -1,20 +1,23 @@
 #include "buttons.h"
-#include "pins.h"
-#include "events.h"
 
+#define BUTTON_PRESS(button,evt) \
+    TBT_IF_TRUE(digitalRead(button)==LOW, \
+        TBT_WHILE(digitalRead(button)==LOW,), \
+        state.btn=evt, \
+        eventSystem.dispatchMessage(EventType::BUTTON_TRIGGER,&state) \
+    )
 Buttons::Buttons() {
-    pinMode(ONOFF, INPUT_PULLUP);
-    pinMode(SWING, INPUT_PULLUP);
-    fan.isOn=false;
+    pinMode(PIN_BTN_ONOFF, INPUT_PULLUP);
+    pinMode(PIN_BTN_SWING, INPUT_PULLUP);
+    state.btn=BUTTON_STATE::BTN_NONE;
+    
 }
+
 void Buttons::execute(){
     
     TBT_THC(1,
-        TBT_IF_TRUE(digitalRead(ONOFF)==LOW,
-            TBT_WHILE(digitalRead(ONOFF)==LOW,),
-            fan.isOn=!fan.isOn,
-            eventSystem.dispatchMessage(EventType::ONOFF_BUTTON,&fan),
-        )
-        // Serial.println("Begin blink led"),
+        BUTTON_PRESS(PIN_BTN_ONOFF,BUTTON_STATE::BTN_FAN),
+        BUTTON_PRESS(PIN_BTN_SWING,BUTTON_STATE::BTN_SWING)
+        
     )
 };

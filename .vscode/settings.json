@@ -49,5 +49,6 @@
         "map": "cpp",
         "numbers": "cpp",
         "queue": "cpp"
-    }
+    },
+    "C_Cpp.default.compilerPath": "/home/tungbt/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-gcc"
 }

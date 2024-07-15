@@ -1,4 +1,4 @@
 #include "base.h"
-BasePage::BasePage() {
+BasePage::BasePage(LCDThread* lcd) {
    isSuspend=false;
 }

@@ -7,6 +7,7 @@
 
 #include <Adafruit_GFX.h>    // Core graphics library
 #include <Adafruit_ST7789.h> // Hardware-specific library for ST7789
+#include <Adafruit_ILI9341.h>
 #include <SPI.h>
 #include "pins.h"
 #include "events.h"
@@ -243,6 +244,9 @@ void lcdReset()
 uint32_t readId(int cmd) {
   tft.startWrite();
   tft.writeCommand(cmd);
+ 
+  
+ 
   // tft.SPI_DC_LOW(); // Command mode
   // tft.spiWrite(cmd);
   // tft.SPI_DC_HIGH(); // Data mode
@@ -251,7 +255,7 @@ uint32_t readId(int cmd) {
     int byte=tft.readcommand8(cmd,i);
      data = (data << 8) | byte;
      debug_printf("%d\n",byte);
-  }; // Discard bytes up to index'th
+  }; 
   debug_printf("LCD id: %08x\n",data);
   tft.endWrite();
   return data >> 7;

@@ -3,16 +3,13 @@
 
 
 
-
-// bldc motor 
+// UI
+// on off button
+#define PIN_BTN_ONOFF           PA10    
 // pwm signal to control motor
 #define PWM_BLDC                PA2
 
-
-// UI
-// on off button
-#define ONOFF                   PA10    
-#define SWING                   PA9     
+#define PIN_BTN_SWING           PA9     
 
 // PA12  // DP
 // PA11  // DM
@@ -24,10 +21,7 @@
 
 // lcd
 #ifndef LCD_READ_ID
-  #define LCD_READ_ID 0x04   // Read display identification information (0xD3 on ILI9341)
-#endif
-#ifndef LCD_READ_ID4
-  #define LCD_READ_ID4 0xD3   // Read display identification information (0xD3 on ILI9341)
+  #define LCD_READ_ID           0x04   // Read display identification information see page 162, using for both ili9341 & st7789v
 #endif
 
 
@@ -50,6 +44,7 @@
 #define BUZZER                  PA3
 
 // eeprom
+#define EEPROM_OFFSET           10
 
 // temp
 #define TEMPERATURE             PA1
