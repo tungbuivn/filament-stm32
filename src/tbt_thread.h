@@ -76,6 +76,24 @@ enum THREAD_EXECUTION {
     ONCE=1,
     FOREVER=2,
 };
+class ThreadData {
+public:
+    int ip=0;
+    uint32_t time;
+    THREAD_EXECUTION type=THREAD_EXECUTION::FOREVER;
+    int finished=0;
+};
+
+#define AUTO_THC(threadData,content) \
+    int ip=data->ip; \
+    int time=data->time; \
+    THREAD_EXECUTION type=data->type; \
+    int finished=data->finished; \
+    TBT_THC(1, \
+        content, \
+    ) \
+    data->ip=ip; \
+    data->time=time;
 class BaseThread {
 protected:
    

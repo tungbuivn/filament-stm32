@@ -1,7 +1,8 @@
 #pragma once
 #include <Arduino.h>
 
-
+#define PFM_MIN_FREQUENCY       100
+#define PFM_MAX_FREQUENCY       500
 
 // UI
 // on off button
@@ -20,8 +21,20 @@
 
 
 // lcd
-#ifndef LCD_READ_ID
-  #define LCD_READ_ID           0x04   // Read display identification information see page 162, using for both ili9341 & st7789v
+#ifdef ST7789V
+  // read id 4 bytes length
+  #define LCD_READ_ID           0x04   // Read display identification information see page 153 st7789v
+  #define LCD_READ_ID1          0xDA   // (2 bytes) see page: 157
+  #define LCD_READ_ID2          0xDB   // (2 bytes)
+  #define LCD_READ_ID3          0xDC   // (2 bytes)
+  // #endif
+#endif
+
+#ifdef ILI9341
+  #define LCD_READ_ID           0x04   // Read display identification information see page 83 for ili9341
+  #define LCD_READ_ID1          0xDA   // (2 bytes) see page: 85
+  #define LCD_READ_ID2          0xDB   // (2 bytes)
+  #define LCD_READ_ID3          0xDC   // (2 bytes)
 #endif
 
 

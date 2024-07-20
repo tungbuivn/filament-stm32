@@ -5,56 +5,60 @@
 #include "pins.h"
 #include "events.h"
 #include "buttons.h"
+#include "settings.h"
 
-PWMControl *me=NULL;
 PWMControl::PWMControl()
 {
 
-    me=this;
+   
     this->trg = 0;
-    this->start = 0;
+  
     this->duty = 0;
     pinMode(PWM_BLDC, OUTPUT);
-    // pinMode(ONOFF, INPUT_PULLUP);
-    // PWM_MAX_DUTY_CYCLE
-    // decrease resolution to increase frequency
-    // analogWriteResolution(PWM_RES);
-    analogWriteFrequency(700);
+  
+    analogWriteFrequency(settings->pwmFrequency());
     analogWrite(PWM_BLDC, 0);
     /**
      * The on/off button can be trigger by hardware or software from lcd
      */
-    eventSystem.addListener(EventType::BUTTON_TRIGGER,PWMControl::onOff);
-    
+    eventSystem.addListener(EventType::ON_OFF_UPDATED, PWMControl::onOff);
+    eventSystem.addListener(EventType::PWM_UPDATED, PWMControl::updatePWM);
+    eventSystem.addListener(EventType::GEAR_UPDATED, PWMControl::updatePWM);
 }
-bool PWMControl::onOff(EventData *dt) {
-    if (!me) return false;
-    auto ev=(ButtonState*)dt;
-    if (ev->btn==BUTTON_STATE::BTN_FAN) {
-        me->start = !me->start;
-        if (me->start) {
-            me->duty = 20;
-        } else {
-            me->duty = 0;
-        };
-        analogWrite(PWM_BLDC, (me->duty * 255) / 100);
-        debug_printf("State %d, pwm: %d\n",me->start,me->duty);
-    }
-    return false;
+bool PWMControl::updatePWM(EventData *adt)
+{
    
-}
-void PWMControl::execute2(){
+    if (settings->started)
+    {
+      
+        analogWriteFrequency(settings->pwmFrequency());
+        analogWrite(PWM_BLDC, settings->pwmDuty());
+            
+        debug_printf("pwm: %d, freq: %d\n", settings->pwmDuty(), settings->pwmFrequency());
+    }
+    else
+    {
+        analogWrite(PWM_BLDC, 0);
+    }
 
+    return false;
 }
-void PWMControl::execute()
+bool PWMControl::onOff(EventData *dt)
 {
 
-    // static int btn=0;
-    //  analogWrite(PWM_BLDC, 95 * 255 / 100);
+    updatePWM(dt);
+
+    return false;
+}
+void PWMControl::execute2()
+{
+}
+void PWMControl::execute() {
+
+   
     TBT_THC(1,
-           
-           
-        
-           
-    )
+
+         
+
+            )
 };

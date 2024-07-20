@@ -19,17 +19,17 @@ static EncoderRotate* rotaryEncoder=NULL;
 void EncoderClick::execute() {
     static int state=0;
     static int i=0;
-
-    
     state=digitalRead(PIN_ENCODER_CLICK);
-
-    
     TBT_THC(5,,
         TBT_IF_TRUE(state==HIGH,
             TBT_BLOCK(
                 // wait user release button
                 TBT_WHILE(digitalRead(PIN_ENCODER_CLICK)==HIGH,),
-                eventSystem.dispatchMessage(EventType::ENCODER_CLICK,NULL),
+                {
+                    EncoderClickData dt;
+                    eventSystem.dispatchMessage(EventType::ENCODER_CLICK,&dt);
+                },
+                
             )
         )
     )

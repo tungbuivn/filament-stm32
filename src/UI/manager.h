@@ -7,17 +7,20 @@
 #include "settings.h"
 using namespace std;
 class ManagerPage : public BaseThread {
+ 
   int page;
   vector<BasePage*> pages;
-  static bool onRotate(EventData *);
-  static bool onClick(EventData *);
+   static bool handler(EventData *);
+ 
   static bool gotoPage(EventData *);
+  
   // static bool onButtonTrigger(EventData *);
   
  
 public:
-  ManagerPage(LCDThread* lcd,Settings *settings);
+  ManagerPage();
   void execute() override;
+  BasePage *currentPage; 
  
 
 };

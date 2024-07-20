@@ -7,7 +7,9 @@ private:
     int trg;
     int start;
     int duty;
+    
     static bool onOff(EventData *);
+    static bool updatePWM(EventData *);
 public:    
     PWMControl();
     void execute();

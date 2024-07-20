@@ -2,16 +2,10 @@
 #include "tbt_thread.h"
 #include <queue>
 #include "events.h"
+#include "eventData.h"
 using namespace std;
-enum ENCODER_DIRECTION {
-    NONE_DIRECTION,
-    LEFT,
-    RIGHT
-};
-class EncoderData:public EventData {
-public:
-    ENCODER_DIRECTION dir;    
-};
+
+
 
 class EncoderClick : public BaseThread {
 private:

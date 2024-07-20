@@ -3,12 +3,10 @@
 #include <queue>
 #include <string>
 #include "events.h"
+#include "eventData.h"
 
 using namespace std;
-class SerialData : public EventData {
-public:
-    string data;
-};
+
 class CommandAction:public BaseThread {
    
    private:
