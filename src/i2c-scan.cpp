@@ -4,7 +4,7 @@
 
 I2CScan::I2CScan() {
     // type=
-    Wire.begin(SDA,SCL);
+    Wire.begin();
 //  Wire.setSDA(SDA);
 //     Wire.setSCL(SCL);
    

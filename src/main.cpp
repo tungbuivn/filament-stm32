@@ -16,10 +16,12 @@
 #include "settings.h"
 #include "swing_ctrl.h"
 
+
 Events eventSystem;
 Settings *settings = NULL;
 LCDThread *mylcd = NULL;
 SwingControl *swctrl;
+ManagerPage *man = NULL;
 vector<BaseThread *> listThread;
 int len;
 
@@ -31,6 +33,7 @@ void setup()
 
     settings = new Settings();
     listThread.assign({&eventSystem,
+    // new I2CScan(),
                        new Buttons(),
                        new EncoderRotate(),
                        new EncoderClick(),
@@ -41,7 +44,7 @@ void setup()
                        new Buzzer(),
                        new SerialCmd(),
                        swctrl = new SwingControl(),
-                       new ManagerPage(),
+                       man=new ManagerPage(),
                        settings
 
     });

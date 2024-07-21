@@ -3,7 +3,7 @@ BasePage::BasePage() {
    isSuspend=false;
 }
 bool BasePage::drawTextSprite(uint16_t* buf,const char *text,int x,int y,int w,int h,int color) {
-   TFT_eSprite *sp;
+    TFT_eSprite *sp;
     if (mylcd && mylcd->tft)
     {
         sp = new TFT_eSprite(mylcd->tft);
@@ -29,4 +29,15 @@ bool BasePage::drawTextSprite(uint16_t* buf,const char *text,int x,int y,int w,i
 
     sp->deleteSprite();
     delete sp;
+}
+void BasePage::removeSprite() {
+    while (spQueue.size()>0)
+    {
+        auto sp=spQueue.front();
+        delete sp;
+        // sp=NULL;
+        spQueue.pop();
+        debug_printf("free sprite\n");
+    }
+    
 }

@@ -104,27 +104,23 @@ bool EncoderRotate::countRotate(int ra,int rb)
     return done;
 }
 void EncoderRotate::execute() {
-    static int newA=0;
-    static int newB=0;
-    static int pd=0;
+    int newA=0;
+    int newB=0;
+    int pd=0;
     
-    // static int left=0;
-    TBT_THC(1,,
-        TBT_IF(data.size()>0,
-            TBT_BLOCK(
-        
-                pd=data.front(),
-                // debug_printf("buffer size: %d\n",data.size()),
-                data.pop(),
-                newB=pd & 0b01,
-                newA=(pd & 0b10)>>1,
-                if ((currentA!=newA) || (currentB!=newB)) {
-                    this->countRotate(newA,newB);
-                },
-                currentA=newA,
-                currentB=newB,
-            ),
-        )
+   
+    TBT_THC(1,
+        while(data.size()>0) {
+            pd=data.front();
+            data.pop();
+            newB=pd & 0b01;
+            newA=(pd & 0b10)>>1;
+            if ((currentA!=newA) || (currentB!=newB)) {
+                this->countRotate(newA,newB);
+            }
+            currentA=newA;
+            currentB=newB;
+        },
     )
 }
 

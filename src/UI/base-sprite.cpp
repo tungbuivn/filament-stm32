@@ -8,14 +8,16 @@ BaseSprite::BaseSprite(int ax, int ay, int aw, int ah) {
     h = ah;
     transparent=TFT_BLACK;
 }
-BaseSprite::BaseSprite(int ax, int ay, int aw, int ah, int atransparent)
+
+BaseSprite::BaseSprite(int ax, int ay, int aw, int ah, int atransparent): BaseSprite(ax,ay,aw,ah)
 {
-    BaseSprite(ax,ay,aw,ah);
+   
     transparent = atransparent;
     
 }
 void BaseSprite::begin(int aangle)
 {
+    isRotate=angle!=0;
     angle=aangle;
     if (!buf) {
         buf = (uint16_t *)malloc(((w) + 2) * ((h) + 2) * 2);
@@ -30,19 +32,41 @@ void BaseSprite::begin(int aangle)
     sp->fillSprite(transparent);
     
 }
+void BaseSprite::setDrawPoint(int x,int y) {
+    hasDp=true;
+    dpx=x;
+    dpy=y;
+};
 void BaseSprite::end() {
-    mylcd->tft->pushRect(x, y, w, h, buf);
-    if (angle)
-         mylcd->tft->setPivot(x+w/2,y+h/2);
-    if (angle==0)
-        sp->pushSprite(x, y, transparent);
-    else
+    int pvx;
+    int pvy;
+    int rx=x;
+    int ry=y;
+    
+    if (hasDp) {
+        rx=dpx;
+        ry=dpy;
+    }
+    mylcd->tft->pushRect(rx, ry, w, h, buf);
+         
+    if (!isRotate) 
+        sp->pushSprite(rx, ry, transparent);
+    else {
+        pvx= mylcd->tft->getPivotX();
+        pvy= mylcd->tft->getPivotY();
+        mylcd->tft->setPivot(rx+w/2,ry+h/2);
+      
         sp->pushRotated(rotateAngle,transparent);
+        mylcd->tft->setPivot(pvx,pvy);
+        rotateAngle+=angle;
+        if (rotateAngle>360) rotateAngle-=360;
+        if (rotateAngle<-360) rotateAngle+=360;
+    }
+        
     sp->deleteSprite();
-    mylcd->tft->setPivot(0,0);
-    rotateAngle+=angle;
-    if (rotateAngle>360) rotateAngle-=360;
-    if (rotateAngle<-360) rotateAngle+=360;
+  
+        
+   
 }
 BaseSprite::~BaseSprite() {
     if (sp) delete sp;

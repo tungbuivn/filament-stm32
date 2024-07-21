@@ -26,15 +26,11 @@ bool Events::processCallback() {
 }
 void Events::execute() {
     TBT_THC(1,
-        // debug_printf("execute event loop mxxxxxxxxxxxxxxxxxxx\n"),
-        if(eventQueue.size()>0) {
+       
+        while(eventQueue.size()>0) {
             processCallback();
         }
-        // TBT_WHILE(eventQueue.size()>0,
-            // debug_printf("execute event loop\n"),
-            
-        // )
-        // )
+       
     )
 
 }
@@ -55,8 +51,14 @@ void Events::dispatchMessage(EventType event,EventData *data) {
     if (data) {
         // debug_printf("event post %d",eventQueue.size());
         data->type=event;
+        
         auto cl=data->clone();
         eventQueue.push(cl);
+    } else {
+        EventEmpty *et=new EventEmpty();
+        et->type=event;
+        eventQueue.push(et);
+
     } 
     
 }

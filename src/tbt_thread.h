@@ -84,13 +84,13 @@ public:
     int finished=0;
 };
 
-#define AUTO_THC(threadData,content) \
+#define AUTO_THC(data,...) \
     int ip=data->ip; \
     int time=data->time; \
     THREAD_EXECUTION type=data->type; \
     int finished=data->finished; \
     TBT_THC(1, \
-        content, \
+        TBT_BLOCK(__VA_ARGS__) \
     ) \
     data->ip=ip; \
     data->time=time;

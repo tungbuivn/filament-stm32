@@ -10,9 +10,12 @@ class ManagerPage : public BaseThread {
  
   int page;
   vector<BasePage*> pages;
-   static bool handler(EventData *);
+  static bool handler(EventData *);
  
   static bool gotoPage(EventData *);
+  int isSleep=0;
+  bool inited=false;
+  
   
   // static bool onButtonTrigger(EventData *);
   
@@ -21,6 +24,7 @@ public:
   ManagerPage();
   void execute() override;
   BasePage *currentPage; 
- 
+ void init();
 
 };
+extern ManagerPage *man;

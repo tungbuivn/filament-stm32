@@ -88,6 +88,7 @@ void Temperature::execute(){
                             {
                                 TemperatureData data;
                                 data.temperature=getTemp();
+                                
                                 eventSystem.dispatchMessage(EventType::TEMPERATURE_CHANGE,&data);
                             },
                             // quit the loop
