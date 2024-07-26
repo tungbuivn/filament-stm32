@@ -3,6 +3,7 @@
 #include <queue>
 #include "events.h"
 #include "eventData.h"
+
 using namespace std;
 
 
@@ -38,17 +39,17 @@ private:
    
     Stage phase;
   
-   
+    queue<EncoderData*> ecdata;
     bool countRotate(int ra,int rb);
     queue<int> data;
     static void triggerA();
     static void triggerB();
+    void handleEncoderRaw(ThreadData *data);
+    void handleEncoderInterupt(ThreadData *data);
 public:
     
     EncoderRotate();
-    // void setText(int x, int y, char *text);
     void execute() override;
    
    
 };
-// extern EncoderRotate *rotaryEncoder;

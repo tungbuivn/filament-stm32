@@ -7,12 +7,9 @@
 MenuItem::MenuItem(MENUTYPE atype, const char *adesc, const char *avalue)
 {
     type = atype;
-    // int len1=;
-    text = (char *)malloc(strlen(adesc));
     strcpy(text, adesc);
     if (avalue)
     {
-        value = (char *)malloc(strlen(avalue));
         strcpy(value, avalue);
     }
 }
@@ -23,8 +20,6 @@ MenuItem::MenuItem(MENUTYPE atype, const char *adesc, const char *avalue, const 
     char buf[20];
     int j = 0;
     int len = sizeof(alst);
-
-    // int len = strlen(astr);
 
     for (int i = 0; i < len; i++)
     {
@@ -38,8 +33,6 @@ MenuItem::MenuItem(MENUTYPE atype, const char *desc, int aintValue, const long *
 {
     char buf[15];
     itoa(aintValue, buf, 10);
-    delete value;
-    value = (char *)malloc(strlen(buf));
     strcpy(value, buf);
     tmp = aintValue;
     int len = sizeof(alst);
@@ -111,7 +104,7 @@ void SetupPage::drawMenuItem(int i, const char *avalue)
         bs->setDrawPoint(0, i * bs->h);
         if (i == ts->selected)
         {
-            sp->fillRect(0, 0, bs->w, bs->h, TFT_BLUE);
+            sp->fillSprite(TFT_BLUE);
         }
 
         sp->setFreeFont(FS9pt);
@@ -154,8 +147,6 @@ bool SetupPage::render()
     {
         drawMenuItem(i, NULL);
     }
-    
-    // tft->color565();
     return false;
 };
 
@@ -180,15 +171,14 @@ void SetupPage::handleRotateEdit(EncoderData *ecd)
         for (char *lstVal : it->lst)
         {
             i++;
-            // lstVal=lst.at(i);
+           
             if (strcmp(it->value, lstVal) == 0)
             {
                 j = ((int)abs(i + dirVar) % n);
-                // if ((j >= 0) && (j < n))
-                // {
-                it->value = lst.at(j);
+              
+                strcpy(it->value,lst.at(j));
                 drawMenuItem(selected, NULL);
-                // }
+               
                 break;
             }
         }
@@ -200,12 +190,11 @@ void SetupPage::handleRotateEdit(EncoderData *ecd)
         long to = atoi(it->lst[1]);
         long curr = it->tmp;
         curr = timeDistance(it->tmp, dirVar);
+        debug_printf("time distance: %lu\n",curr);
         if ((curr >= from) && (curr <= to))
         {
             it->tmp = curr;
-            // delete it->value;
-            // it->value = (char *)malloc(strlen(buf));
-            // strcpy(it->value, buf);
+           
             drawMenuItem(selected, NULL);
         }
     }
@@ -215,20 +204,18 @@ void SetupPage::handleRotateEdit(EncoderData *ecd)
         long from = atoi(it->lst[0]);
         long to = atoi(it->lst[1]);
         long curr = it->tmp;
-        char buf[15] = {};
+       
+        
+        auto inc = selected == ST_LCD_BRIGHTNESS ? 5 : 1;
+        curr += dirVar * inc;
 
-        {
-            auto inc = selected == ST_LCD_BRIGHTNESS ? 5 : 1;
-            curr += dirVar * inc;
-
-            itoa(curr, buf, 10);
-        }
+            
+        
         if ((curr >= from) && (curr <= to))
         {
+           
             it->tmp = curr;
-            delete it->value;
-            it->value = (char *)malloc(strlen(buf));
-            strcpy(it->value, buf);
+           
             drawMenuItem(selected, NULL);
         }
     }
@@ -253,7 +240,7 @@ void SetupPage::handleEditDone()
             if (strcmp(v, it->value) == 0)
             {
                 settings->speedType = (SPEED_TYPE)count;
-                eventSystem.dispatchMessage(EventType::GEAR_UPDATED, NULL);
+                eventSystem.dispatchMessage(EventType::GEAR_UPDATED, settings->speedType);
                 break;
             }
             count++;
@@ -266,7 +253,7 @@ void SetupPage::handleEditDone()
         break;
     case ST_SLEEP_COUNT_DOWN: // Speed type
         settings->sleepTime = it->tmp;
-        // eventSystem.dispatchMessage(EventType::GEAR_UPDATED, NULL);
+       
         break;
     case ST_AUTO_POWER_OFF: // Speed type
         settings->powerOff = it->tmp;
@@ -278,7 +265,7 @@ void SetupPage::handleEditDone()
         {
             settings->gear = settings->maxGear;
         }
-        eventSystem.dispatchMessage(EventType::GEAR_UPDATED, NULL);
+        eventSystem.dispatchMessage(EventType::GEAR_UPDATED, settings->gear);
         break;
     case ST_MIN_TEMPERATURE: // temp
         settings->minTemperature = it->tmp;
@@ -302,7 +289,7 @@ void SetupPage::handleEditDone()
             if (strcmp(v, it->value) == 0)
             {
                 settings->autoGear = (EN_FAN_AUTO)count;
-                eventSystem.dispatchMessage(EventType::GEAR_UPDATED, NULL);
+                eventSystem.dispatchMessage(EventType::GEAR_UPDATED, settings->autoGear);
                 break;
             }
             count++;
@@ -314,12 +301,12 @@ void SetupPage::handleEditDone()
 void SetupPage::handleRotateClick(EncoderData *dt)
 {
     auto it = mn.items[(ST_MENU_KIND)selected];
-    PageJump pg;
+   
 
     if (selected == ST_BACK)
     {
-        pg.page = 0;
-        eventSystem.dispatchMessage(EventType::GOTO_PAGE, &pg);
+       
+        eventSystem.dispatchMessage(EventType::GOTO_PAGE, 0ll);
     } else if (selected==ST_SAVE) {
         settings->saveSetting();
     }
@@ -338,8 +325,7 @@ bool SetupPage::handleEvent(EventData *dt)
 {
     EncoderData *ecd = (EncoderData *)dt;
     int dirVar;
-    // if (dt->dir == ENCODER_DIRECTION::RIGHT)
-    // debug_printf("setup handler\n");
+    
     switch (dt->type)
     {
     case EventType::ENCODER_ROTATE:

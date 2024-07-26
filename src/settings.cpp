@@ -43,17 +43,17 @@ void Settings::handleGear(EncoderData *dt)
         }
     }
 
-    GearData gdt;
-    gdt.gear = gear;
-    eventSystem.dispatchMessage(EventType::GEAR_UPDATED, &gdt);
+    // GearData gdt;
+    // gdt.gear = gear;
+    eventSystem.dispatchMessage(EventType::GEAR_UPDATED, gear);
 
     // calculate pwm & update
     // calculate freq
 
-    MotorPwmData mt;
-    mt.pwm = pwmDuty();
+    // MotorPwmData mt;
+    // mt.pwm = pwmDuty();
     debug_printf("setting->send PWM_UPDATE\n");
-    eventSystem.dispatchMessage(EventType::PWM_UPDATED, &mt);
+    eventSystem.dispatchMessage(EventType::PWM_UPDATED, pwmDuty());
 }
 int Settings::pwmFrequency()
 {
@@ -61,7 +61,7 @@ int Settings::pwmFrequency()
     if (settings->gear > settings->maxGear)
     {
         settings->gear = settings->maxGear;
-        eventSystem.dispatchMessage(EventType::GEAR_UPDATED, NULL);
+        eventSystem.dispatchMessage(EventType::GEAR_UPDATED, settings->gear);
     }
     if (settings->speedType == SPEED_TYPE::PFM)
     {
@@ -79,7 +79,7 @@ int Settings::pwmDuty()
     if (settings->gear > settings->maxGear)
     {
         settings->gear = settings->maxGear;
-        eventSystem.dispatchMessage(EventType::GEAR_UPDATED, NULL);
+        eventSystem.dispatchMessage(EventType::GEAR_UPDATED, settings->gear);
     }
     if (settings->speedType == SPEED_TYPE::PFM)
     {
@@ -102,6 +102,12 @@ int Settings::pwmDuty()
 }
 void Settings::resetSleep()
 {
+    // wake up from sleep ?
+    if (sleepRemain==0) {
+        // PageJump pg;
+        // pg.page = 0;
+        eventSystem.dispatchMessage(EventType::GOTO_PAGE, 0ll);
+    }
     sleepRemain = sleepTime;
     analogWrite(LCD_LED, lcdBrightness);
 }
@@ -115,22 +121,22 @@ bool Settings::handler(EventData *adt)
     case EventType::BUTTON_TRIGGER:
     {
         resetSleep();
-        auto abtn = (ButtonState *)adt;
-        if (abtn->btn == BUTTON_STATE::BTN_FAN)
+        auto abtn = adt->btn;
+        if (abtn == BUTTON_STATE::BTN_FAN)
         {
             started = !started;
-            OnOffData onOff;
-            onOff.state = started;
-            eventSystem.dispatchMessage(EventType::ON_OFF_UPDATED, &onOff);
+            // OnOffData onOff;
+            // onOff.state = started;
+            eventSystem.dispatchMessage(EventType::ON_OFF_UPDATED, started);
             // eventSystem.dispatchMessage(EventType::GEAR_UPDATED, NULL);
         }
         else
         {
             // swing button press
             swing = !swing;
-            SwingData sw;
-            sw.state = swing;
-            eventSystem.dispatchMessage(EventType::SWING_UPDATED, &sw);
+            // SwingData sw;
+            // sw.state = swing;
+            eventSystem.dispatchMessage(new EventData(EventType::SWING_UPDATED,swing));
         }
     }
 
@@ -140,10 +146,10 @@ bool Settings::handler(EventData *adt)
         resetSleep();
         break;
     case TEMPERATURE_CHANGE:
-        auto ntemp=((TemperatureData *)adt)->temperature;
+        auto ntemp=adt->temperature;
         if (ntemp!=temperature) {
             temperature=ntemp;
-            eventSystem.dispatchMessage(EventType::GEAR_UPDATED,NULL);
+            eventSystem.dispatchMessage(EventType::GEAR_UPDATED,0ll);
         }
         // temperature = ((TemperatureData *)adt)->temperature;
         break;
@@ -153,8 +159,8 @@ bool Settings::handler(EventData *adt)
 void Settings::writeByte(unsigned int add, uint8_t data)
 {
     Wire.beginTransmission(EEPROM_ADDRESS);
-    Wire.write((int)(add >> 8));   // left-part of pointer address
-    Wire.write((int)(add & 0xFF)); // and the right
+    Wire.write((int)(add >> 8));
+    Wire.write((int)(add & 0xFF));
     Wire.write(data);
     Wire.endTransmission();
     delay(5); // small delay for eeprom to save data
@@ -200,6 +206,7 @@ void Settings::saveSetting()
         }
         
     }
+    soundState.push(0);
 }
 void Settings::loadSettings()
 {
@@ -223,7 +230,7 @@ void Settings::loadSettings()
     powerOff=storage[i++];
 
     powerOffRemain=powerOff;
-
+    soundState.push(0);
 
 }
 void Settings::handleAutoPowerOff(ThreadData *data)
@@ -238,7 +245,7 @@ void Settings::handleAutoPowerOff(ThreadData *data)
             {
                 powerOffRemain = 0;
                 started=false;
-                eventSystem.dispatchMessage(EventType::ON_OFF_UPDATED, NULL);
+                eventSystem.dispatchMessage(EventType::ON_OFF_UPDATED, started);
                 // analogWrite(LCD_LED, 0);
             } 
         }, 
@@ -256,6 +263,7 @@ void Settings::handleSleep(ThreadData *data)
             {
                 sleepRemain = 0;
                 analogWrite(LCD_LED, 0);
+                eventSystem.dispatchMessage(EventType::SLEEP, 0ll);
             } 
         }, 
         if (sleepRemain < 0) sleepRemain = 0, 
@@ -304,15 +312,34 @@ void Settings::handleAutoSpeed(ThreadData *data)
                              }
                              if (trigger) {
                                 debug_printf("auto gear %d\n", gear);
-                                eventSystem.dispatchMessage(EventType::GEAR_UPDATED, NULL);
+                                eventSystem.dispatchMessage(EventType::GEAR_UPDATED, 0ll);
                              } }, TBT_DELAY(500), ))
+}
+void Settings::playSound(ThreadData *dt) {
+    AUTO_THC(dt,
+        TBT_IF_TRUE(soundState.size(),
+            while (soundState.size())
+            {
+                soundState.pop();
+            },
+            TBT_IF_TRUE(true,
+                analogWrite(BUZZER,523),
+                TBT_DELAY(200),
+                analogWrite(BUZZER,0),
+            )
+            
+        )
+        
+    )
+    
 }
 void Settings::execute()
 {
     static ThreadData sleepTh;
     static ThreadData autoSpeed;
     static ThreadData autoOff;
-    EventEmpty ev;
+     static ThreadData soundFs;
+    // EventEmpty ev;
     // debug_printf("setting execute!\n");
     TBT_THC(5, if (!inited) {
         inited=true;
@@ -321,10 +348,11 @@ void Settings::execute()
         resetSleep();
         man->init();
         debug_printf("Setting loaded !\n");
-        eventSystem.dispatchMessage(EventType::RENDER,&ev); }, 
+        eventSystem.dispatchMessage(EventType::RENDER,0ll); }, 
         handleSleep(&sleepTh), 
         handleAutoSpeed(&autoSpeed),
         handleAutoPowerOff(&autoOff),
+        playSound(&soundFs),
 
     )
 }

@@ -86,10 +86,10 @@ void Temperature::execute(){
                             debug_printf("Found temperature: resistor: %d, deg:%d \n",val,deg),
 #endif
                             {
-                                TemperatureData data;
-                                data.temperature=getTemp();
+                                // TemperatureData data;
+                                // data.temperature=getTemp();
                                 
-                                eventSystem.dispatchMessage(EventType::TEMPERATURE_CHANGE,&data);
+                                eventSystem.dispatchMessage(EventType::TEMPERATURE_CHANGE,getTemp());
                             },
                             // quit the loop
                             count=999,

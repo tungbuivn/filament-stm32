@@ -26,8 +26,7 @@ void EncoderClick::execute() {
                 // wait user release button
                 TBT_WHILE(digitalRead(PIN_ENCODER_CLICK)==HIGH,),
                 {
-                    EncoderClickData dt;
-                    eventSystem.dispatchMessage(EventType::ENCODER_CLICK,&dt);
+                    eventSystem.dispatchMessage(EventType::ENCODER_CLICK,0ll);
                 },
                 
             )
@@ -63,7 +62,7 @@ EncoderRotate::EncoderRotate(): BaseThread(){
 bool EncoderRotate::countRotate(int ra,int rb)
 {
     bool done=false;
-    EncoderData evt;
+    EncoderData *evt;
     // readData;
     switch (phase)
     {
@@ -81,8 +80,8 @@ bool EncoderRotate::countRotate(int ra,int rb)
             break;
         case lblCW2: // HIGH_LOW
             cond(HIGH, HIGH, lblLoop,  
-                evt.dir=ENCODER_DIRECTION::RIGHT;
-                eventSystem.dispatchMessage(EventType::ENCODER_ROTATE,&evt);
+                evt=new EncoderData(EventType::NONE,ENCODER_DIRECTION::RIGHT,millis());
+                ecdata.push(evt);
                 done= true;
             ) else cond(LOW, LOW, lblCW1);
             break;
@@ -95,24 +94,48 @@ bool EncoderRotate::countRotate(int ra,int rb)
             break;
         case lblCCW2: // LOW_HIGH
             cond(HIGH, HIGH, lblLoop,  
-                evt.dir=ENCODER_DIRECTION::LEFT;
-                eventSystem.dispatchMessage(EventType::ENCODER_ROTATE,&evt);
+                evt=new EncoderData(EventType::NONE,ENCODER_DIRECTION::LEFT,millis());
+                ecdata.push(evt);
                 done= true;
             ) else cond(LOW, LOW, lblCCW1);
             break;
     }
     return done;
 }
-void EncoderRotate::execute() {
-    int newA=0;
-    int newB=0;
-    int pd=0;
-    
-   
-    TBT_THC(1,
-        while(data.size()>0) {
+void EncoderRotate::handleEncoderRaw(ThreadData *thdata) {
+    static bool send;
+    static EncoderData *evt;
+    // evt->data
+    AUTO_THC(thdata,
+        TBT_WHILE((ecdata.size()>0),
+            
+            debug_printf("encoder size: %d \n",ecdata.size()),
+            evt=ecdata.front(),
+            ecdata.pop(),
+            send=ecdata.size()==0,
+            if (!send) {
+                send=false;
+                debug_printf("skip fast encoder\n");
+            },
+            if (send) {
+                eventSystem.dispatchMessage(EventType::ENCODER_ROTATE,evt->data);
+            },
+            delete evt;
+        ),
+    )
+}
+void EncoderRotate::handleEncoderInterupt(ThreadData *thdata) {
+    static int newA=0;
+    static int newB=0;
+    static int pd=0;
+
+
+    AUTO_THC(thdata,
+        while( data.size()>0) {
+            debug_printf("encoder interupt\n");
             pd=data.front();
             data.pop();
+            
             newB=pd & 0b01;
             newA=(pd & 0b10)>>1;
             if ((currentA!=newA) || (currentB!=newB)) {
@@ -121,6 +144,16 @@ void EncoderRotate::execute() {
             currentA=newA;
             currentB=newB;
         },
+    )
+    
+}
+void EncoderRotate::execute() {
+    static ThreadData ecr;
+    static ThreadData eci;
+   
+    TBT_THC(1,
+        handleEncoderInterupt(&eci),
+        handleEncoderRaw(&ecr),
     )
 }
 

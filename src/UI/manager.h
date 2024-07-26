@@ -17,14 +17,12 @@ class ManagerPage : public BaseThread {
   bool inited=false;
   
   
-  // static bool onButtonTrigger(EventData *);
-  
  
 public:
   ManagerPage();
   void execute() override;
   BasePage *currentPage; 
- void init();
+  void init();
 
 };
 extern ManagerPage *man;

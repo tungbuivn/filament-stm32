@@ -25,14 +25,14 @@ enum MENUTYPE {
 };
 class MenuItem {
 public:
-    char *text=NULL;
-    char *value=NULL;
+    char text[15]={};
+    char value[15]={};
     long tmp=0;
     // using to scale step when edit range value
     int stepScale=1;
-    // int intValue=0;
+  
     MENUTYPE type;
-    // char* qs[2]={"123","456"};
+   
     vector<char*> lst;
     MenuItem(MENUTYPE atype,const char *desc,const char *value);
     MenuItem(MENUTYPE atype,const char *desc,const char *value,const char **lst);
@@ -59,7 +59,4 @@ public:
     void handleRotateEdit(EncoderData *ecd);
     void handleRotateClick(EncoderData *dt);
     void handleEditDone();
-   
-   
-   
 };

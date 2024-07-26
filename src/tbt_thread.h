@@ -4,12 +4,12 @@
 
 // #define DEBUG_PRINT 1
 #ifdef DEBUG_PRINT
-#define debug_printf(fmt, ...) do { \
+#define debug_printf(fmt, ...) \
     if (DEBUG_PRINT) { \
         auto p_time_now = millis(); \
         Serial.printf("%u ms " fmt, p_time_now, ##__VA_ARGS__); \
-    } \
-} while (0)
+    }
+
 #else
     #define debug_printf(fmt, ...) ;
 #endif
@@ -37,7 +37,7 @@
 #define __FOREACH_(prio,FN, NARGS, ...) __FOREACH__(prio,FN, NARGS, __VA_ARGS__)
 // max 1000 param in thc contents
 #define TBT_THC_WRAP(prio,FN, ...)  __FOREACH_(prio,FN, N_VA_ARGS(__VA_ARGS__), __VA_ARGS__)
-#define TBT_THC(prio, ...)  TBT_THC_WRAP(prio,, __VA_ARGS__)
+#define TBT_THC(prio, ...)  TBT_THC_WRAP(prio,TBT_BLOCK(),TBT_BLOCK(__VA_ARGS__))
 
 #define CONCATENATE(s1, s2) s1##s2
 
@@ -47,8 +47,7 @@
 
 #define TBT_IF_TRUE(cond,...) TBT_IF(cond,TBT_BLOCK(__VA_ARGS__),TBT_BLOCK())
 
-#define TBT_IF(cond,trueCond,falseCond) \
-    TBT_IF_WRAP(__LINE__,TBT_BLOCK(cond),TBT_BLOCK(trueCond),TBT_BLOCK(falseCond))
+
 
 #define TBT_IF_WRAP(labelNum,cond,trueCond,falseCond) \
     if (!(cond)) goto CONCATENATE(lbl__false_,labelNum); \
@@ -56,13 +55,20 @@
     ,CONCATENATE(lbl__false_,labelNum): falseCond \
     ,CONCATENATE(lbl__end_,labelNum):
 
+#define TBT_IF(cond,trueCond,falseCond) \
+    TBT_IF_WRAP(__LINE__,TBT_BLOCK(cond),TBT_BLOCK(trueCond),TBT_BLOCK(falseCond))
+    
+#define TBT_WHILE_WRAP(labelNum,cond,body) \
+    TBT_BLOCK( \
+        CONCATENATE(lbl__while_start_, labelNum): \
+        if (!(cond)) goto CONCATENATE(lbl__while_end_, labelNum);\
+        body, \
+        goto CONCATENATE(lbl__while_start_, labelNum); \
+        CONCATENATE(lbl__while_end_, labelNum): \
+    )
+
 #define TBT_WHILE(cond,...) \
     TBT_WHILE_WRAP(__LINE__,TBT_BLOCK(cond),TBT_BLOCK(__VA_ARGS__))
-    
-#define TBT_WHILE_WRAP(labelNum,cond,body) TBT_BLOCK( \
-    CONCATENATE(lbl__while_, labelNum): body, \
-    if (cond) goto CONCATENATE(lbl__while_, labelNum); \
-)
 
 #define __TBT_DELAY(FN,num)  time=FN; TBT_WHILE(FN-time<num,;)
 

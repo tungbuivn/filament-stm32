@@ -66,13 +66,6 @@ LCDThread::LCDThread() : BaseThread()
 
   initTFT();
 
-  // testLCD();
-  // dbg=new LCDTBT();
-  // eventSystem.addListener(EventType::TFT_UPDATE_PWM,LCDThread::UpdatePwm);
-  //  eventSystem.addListener(EventType::LCD_OFF_PWM,LCDThread::OffPwm);
-  // eventSystem.addListener(EventType::ENCODER_ROTATE,LCDThread::onEncoderChange);
-  // rotaryEncoder->onChange(LCDThread::onEncoderChange);
-  // encoderButton->onClick(LCDThread::onEncoderClick);
 };
 
 // void LCDThread::setPwmText(const char *text) {

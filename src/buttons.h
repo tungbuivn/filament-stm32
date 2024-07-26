@@ -10,12 +10,9 @@
 class Buttons : public BaseThread
 {
 private:
-    ButtonState state;
-    // int queueLen;
+  
 public:
     Buttons();
     
     void execute() override;
 };
-
-// extern LedBlink *ledBlink;

@@ -2,6 +2,7 @@
 #include "TFT_eSPI.h"
 #include "../settings.h"
 #include "../utils.h"
+#include "rotate-icon.h"
 // #include "sfui20.h"
 
 HomePage::HomePage() : BasePage()
@@ -52,15 +53,15 @@ void HomePage::execute()
             drawSwingThread(&swingTh),
             drawOnOffThread(&onOffTh), 
             drawSleepThread(&sleepTh),
-             drawPowerOffThread(&powerTh)
+            drawPowerOffThread(&powerTh)
             )
 }
 bool HomePage::handleEvent(EventData *dt)
 {
-    // debug_printf("home handle event\n");
+    
     if (!ready && dt->type != EventType::RENDER)
         return false;
-    auto mt = (MotorPwmData *)dt;
+    
     switch (dt->type)
     {
     case EventType::ENCODER_ROTATE:
@@ -69,7 +70,7 @@ bool HomePage::handleEvent(EventData *dt)
         {
             debug_printf("home rotated !\n");
             
-            eventSystem.dispatchMessage(EventType::SETTINGS_UPDATE_GEAR, dt);
+            eventSystem.dispatchMessage(EventType::SETTINGS_UPDATE_GEAR, dt->data);
         }
 
         return false;
@@ -89,9 +90,8 @@ bool HomePage::handleEvent(EventData *dt)
         break;
     case EventType::ENCODER_CLICK:
     {
-        PageJump pg;
-        pg.page = 1;
-        eventSystem.dispatchMessage(EventType::GOTO_PAGE, &pg);
+       
+        eventSystem.dispatchMessage(EventType::GOTO_PAGE, 1);
         return true;
     }
     break;
@@ -101,8 +101,6 @@ bool HomePage::handleEvent(EventData *dt)
     case EventType::PWM_UPDATED:
         if (settings->started)
         {
-
-            // int freq = settings->minFreq + (settings->gear * (settings->maxFreq - settings->minFreq) / settings->maxGear);
             drawFreq(settings->pwmFrequency());
             drawPwm(settings->pwmDuty());
         }
@@ -111,16 +109,13 @@ bool HomePage::handleEvent(EventData *dt)
     case TEMPERATURE_UPDATED:
     case EventType::TEMPERATURE_CHANGE:
     {
-        // auto te = (TemperatureData *)dt;
-        // debug_printf("pwm update !\n");
-
         drawTemp(settings->temperature);
     }
 
     break;
     case EventType::ON_OFF_UPDATED:
     {
-        int state = ((OnOffData *)dt)->state;
+        int state = dt->data;
         debug_printf("draw on/off %d\n", state);
         if (state == 0)
         {
@@ -148,30 +143,17 @@ bool HomePage::handleEvent(EventData *dt)
 };
 void HomePage::drawOnOff(int state)
 {
-   
     auto draw = [](BaseSprite *bs, TFT_eSprite *sp, int state)
     {
-        // auto tft=mylcd->tft;
-        // tft->setFreeFont(FSI30pt);
-        // tft->setTextColor(TFT_BLACK);
-        // tft->setTextDatum(MC_DATUM);
-        //     // sprintf(buf, "%d*C", tempVal);
-        // tft->drawString("6", bs->x+45 / 2, bs->y+ 45 / 2);
         if (state)
         {
-           
-            // sp->fillSmoothCircle(bs->w/2,bs->h/2,20,TFT_ORANGE);
-            sp->setFreeFont(FSI30pt);
-            sp->setTextColor(TFT_GREEN);
-            sp->setTextDatum(MC_DATUM);
-            // sprintf(buf, "%d*C", tempVal);
-            sp->drawString("6", bs->w / 2, bs->h / 2);
+            sp->pushImage(2,2,40,40,(uint16_t*)&rotate_img,16);
         }
-
-        // debug_printf("done draw on off\n");
+        
     };
+    
 
-    DRAW_ROTATE_SPRITE(startStop, 15, state);
+    DRAW_ROTATE_SPRITE(startStop, 15, settings->started);
 
 }
 void HomePage::drawSwing(int state)
@@ -187,7 +169,7 @@ void HomePage::drawSwing(int state)
         }
     };
 
-    DRAW_ROTATE_SPRITE(swing, -1, state);
+    DRAW_ROTATE_SPRITE(swing, -15, settings->swing);
 }
 void HomePage::drawTemp(int tempVal)
 {
@@ -200,8 +182,6 @@ void HomePage::drawTemp(int tempVal)
         sp->setTextDatum(MC_DATUM);
         sprintf(buf, "%d*C", tempVal);
         sp->drawString(buf, temp->w / 2, temp->h / 2, 1);
-        // sp->drawNumber(123,temp->w/2,temp->h/2,1);
-        // debug_printf("done draw temp");
     };
     CHECK_CHANGED(lastTemp,settings->temperature,DRAW_SPRITE(temp, tempVal))
    
@@ -265,8 +245,6 @@ void HomePage::drawPowerOff()
         tft->setTextColor(TFT_SKYBLUE);
         tft->setTextDatum(MR_DATUM);
         tft->drawString(old, 240-5, 24 / 2);
-        // tft->fillRect(240-70,0,70,24,TFT_SKYBLUE);
-        // bs->setDrawPoint(240-70,0);
         tft->setTextColor(TFT_WHITE);
         tft->drawString(buf, 240-5, 24 / 2);
         debug_printf("done draw poer off\n");
@@ -279,35 +257,14 @@ void HomePage::drawPowerOff()
         }
     }
     if (rqDraw) {
-        
-      
-        
         DRAW_SPRITE(powerClk,buf, lastPowerOff);
         strcpy(lastPowerOff,buf);
     }
-    // auto sp = pwmSpeed->sp;
-    
 }
 void HomePage::drawGear(int gear)
 {
     auto draw = [](BaseSprite *bs, TFT_eSprite *sp, int val,int old)
     {
-
-    // auto tft=mylcd->tft;
-    // int startAngle=90-30;
-    // int endAngle=270+30;
-    // int dist=endAngle-startAngle;
-    // int inc=dist/40;
-    // int numd=val*40/settings->maxGear;
-    // if (val<settings->maxGear)
-    //     tft->drawSmoothArc(120,112,100,91,startAngle+inc*numd,270+30,TFT_WHITE,TFT_WHITE);
-    
-    
-    // for (int i=0;i<numd;i++) {
-        
-    //     uint16_t cl=(uint16_t)pgm_read_word((uint16_t*)gradientSpeed+i);
-    //     tft->drawSmoothArc(120,112,100,91,startAngle+i*inc,startAngle+(i+1)*inc,cl,cl);
-    // }
         auto tft=mylcd->tft;
         debug_printf("Drawing gear\n");
         tft->setFreeFont(FSB45pt);
@@ -321,20 +278,6 @@ void HomePage::drawGear(int gear)
         
     };
     int speed=settings->started? settings->gear:0;
-    
-
-    // tft->setFreeFont(FSB45pt);
-    //     tft->setTextColor(TFT_GREEN);
-    //     tft->setTextDatum(MC_DATUM);
-
-    //     tft->drawNumber(speed, gearSpeed->x+ gearSpeed->w / 2,gearSpeed->y+ gearSpeed->h / 2);
-      
-
-
-
-    
-
-   
     if(lastGear!=speed) {
         if (lastGear==-1) lastGear=speed;
         DRAW_SPRITE(gearSpeed, speed,lastGear);
@@ -382,11 +325,6 @@ bool HomePage::render()
     tft->fillRect(33, 0, 174, 42, TFT_SKYBLUE);
     tft->fillSmoothCircle(0, 0, 64, TFT_SKYBLUE);
     tft->fillSmoothCircle(240, 0, 64, TFT_SKYBLUE);
-    // tft->setTextColor(TFT_WHITE);
-    // tft->setTextDatum(TL_DATUM);
-    // tft->setFreeFont(&FreeSans9pt7b);
-    // tft->drawString(F("9h49m"), 5, 5, 1);
-
     tft->fillSmoothCircle(120, 112, 100, TFT_WHITE);
     tft->fillSmoothCircle(120, 112, 90, TFT_PURPLE);
 
@@ -415,7 +353,7 @@ bool HomePage::render()
     // memory card icon
     tft->setFreeFont(FSI30pt);
     tft->setTextDatum(ML_DATUM);
-    tft->setTextColor(TFT_GREEN);
+    tft->setTextColor(settings->eepromError?TFT_RED: TFT_GREEN);
     tft->drawString("4", 188, 230,1);
 
     // temp icon
@@ -435,22 +373,10 @@ bool HomePage::render()
 
     INIT_SPRITE(freqSpeed, 10, 284, 56, 26);
     drawFreq(settings->pwmFrequency());
-
-    // tft->setTextDatum(ML_DATUM);
-    // tft->fillRect(10, 264, 30, 30, TFT_YELLOW);
-    // tft->drawString("000%", 10, 278);
-
-    // INIT_SPRITE(startStop, 95, 268, 1, 1);
-    INIT_SPRITE(startStop, 95, 268, 45, 45);
+    INIT_SPRITE(startStop, 95, 268, 44, 44);
     drawOnOff(settings->started);
 
     INIT_SPRITE(swing, 95, 218, 45, 45);
     drawSwing(settings->swing);
-
-    // ready=true;
     return false;
 };
-// bool HomePage::onButtonTrigger(EventData *bt)
-// {
-//     return false;
-// };

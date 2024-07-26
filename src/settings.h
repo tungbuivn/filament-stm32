@@ -57,10 +57,12 @@ public:
     void handleSleep(ThreadData *sleepTh);
     void handleAutoSpeed(ThreadData *data);
     void handleAutoPowerOff(ThreadData *data);
+    queue<int> soundState;
+    void playSound(ThreadData *data);
     void resetSleep();
     // EEPROM
     int storage[10]={};
-    int eepromError=1;
+    int eepromError=0;
     uint8_t readByte( unsigned int add);
     void writeByte( unsigned int add, uint8_t data);
     void loadSettings();

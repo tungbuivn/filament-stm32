@@ -3,20 +3,14 @@
 #include "../buttons.h"
 #include "setup.h"
 
-// LCDThread* lcd=NULL;
-// Settings *settings=NULL;
-// bool inited=false;
+
 ManagerPage::ManagerPage()
 {
-    // lcd=alcd;
-    // settings=asettings;
+   
+   
 
     page = 0;
 
-    
-    // man = this;
-    // eventSystem.addListener(EventType::BUTTON_TRIGGER,ManagerPage::onButtonTrigger);
-    // isSuspend = true;
 }
 void ManagerPage::init()
 {
@@ -26,6 +20,7 @@ void ManagerPage::init()
                   new SetupPage()}
                   );
     eventSystem.addListener(EventType::GOTO_PAGE, ManagerPage::gotoPage);
+     eventSystem.addListener(EventType::SLEEP, ManagerPage::handler);
 
     eventSystem.addListener(EventType::ENCODER_ROTATE, ManagerPage::handler);
     eventSystem.addListener(EventType::ENCODER_CLICK, ManagerPage::handler);
@@ -48,23 +43,21 @@ bool ManagerPage::handler(EventData *dt)
     bool rs;
     if (man)
     {
-        if (settings->sleepRemain == 0)
-        {
-            man->isSleep = 1;
+        if (dt->type == EventType::SLEEP) {
+            man->isSleep=1;
+            return false;
         }
-        if (man->isSleep && dt->type == ENCODER_CLICK)
-        {
-            man->isSleep = 0;
+         // donot render while lcd is sleep mode
+        if (man->isSleep) {
+            return false;
         }
-        else
-
-            if (dt->type == EventType::RENDER || man->currentPage->ready)
+       
+        if (dt->type == EventType::RENDER || man->currentPage->ready)
         {
+            
             rs = man->currentPage->handleEvent(dt);
             man->currentPage->ready = true;
         }
-
-        // auto pg=man->pages.at(man->page);
 
         return rs;
     }
@@ -81,34 +74,20 @@ void ManagerPage::execute()
 
     )
 }
-// bool ManagerPage::onButtonTrigger(EventData *dt) {
-//      if (!man) return false;
-//     // auto ec=(EncoderData*)dt;
-//     return man->pages.at(man->page)->onButtonTrigger(dt);
 
-// };
-
-// bool ManagerPage::onRotate(EventData *dt)
-// {
-//     if (!man)
-//         return false;
-//     auto ec = (EncoderData *)dt;
-//     return man->pages.at(man->page)->handleEvent(ec);
-// }
 bool ManagerPage::gotoPage(EventData *dt)
 {
     if (!man)
         return false;
     man->currentPage->ready = false;
     man->currentPage->removeSprite();
-    // if (man->isSuspend) return false;
-    PageJump *pg = (PageJump *)dt;
-    man->page = pg->page;
-    man->currentPage = man->pages.at(pg->page);
-    // man->currentPage->ready=false;
-    EventEmpty ev;
-    eventSystem.dispatchMessage(EventType::RENDER, &ev);
-    // man->isSuspend=true;
-    // man->page=pg->page;
+  
+    man->page = dt->page;
+    man->isSleep=0;
+    man->currentPage = man->pages.at(dt->page);
+   
+    // EventEmpty ev;
+    eventSystem.dispatchMessage(EventType::RENDER, 0ll);
+   
     return false;
 }

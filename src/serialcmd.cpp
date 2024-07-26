@@ -49,9 +49,9 @@ void SerialCmd::readSerial()
             std::string str(data.begin(), data.end());
             data.clear();
             debug_printf("Full command: %s",str);
-            SerialData cmd;
-            cmd.data.assign(str);
-            eventSystem.dispatchMessage(EventType::SERIAL_CMD,&cmd);
+            // SerialData cmd;
+            // cmd.str.assign(str);
+            eventSystem.dispatchMessage(new SerialData(str));
         } else {
             data.push_back(incomingByte);
         }

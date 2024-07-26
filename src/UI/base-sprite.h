@@ -23,17 +23,17 @@
 
 
 class BaseSprite {
-     uint16_t *buf=NULL;
-     int rotateAngle=0;
-     int angle=0;
-     bool isRotate=false;
+     
 protected:
    
    
    
     // virtual void onDraw()=0;
 public:
-
+uint16_t *buf=NULL;
+     int rotateAngle=0;
+     int angle=0;
+     bool isRotate=false;
     int x;
     int y;
     int w;

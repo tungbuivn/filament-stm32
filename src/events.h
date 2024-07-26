@@ -25,7 +25,9 @@ public:
     Events();
     void execute() override;
     void addListener(EventType evt, FN_CALLBACK callback);
-    void dispatchMessage(EventType evt,EventData* data);
+    // void dispatchMessage(EventType evt,EventData* data);
+    void dispatchMessage(EventData *data);
+    void dispatchMessage(EventType event,long long adata);
     bool available();
 };
 extern Events eventSystem;

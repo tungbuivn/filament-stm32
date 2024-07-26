@@ -7,19 +7,16 @@
 class HomePage : public BasePage
 {
 
-    // BaseSprite *pwm;
-
     BaseSprite *pwmSpeed = NULL;
     BaseSprite *gearSpeed = NULL;
     BaseSprite *startStop = NULL;
-     BaseSprite *swing = NULL;
-    // uint16_t* pwmSpeedBuf=NULL;
-
+    BaseSprite *swing = NULL;
+   
     BaseSprite *sleepClk = NULL;
     BaseSprite *powerClk = NULL;
     BaseSprite *temp = NULL;
     BaseSprite *freqSpeed = NULL;
-    // uint16_t* tempBuf=NULL;
+   
 
     int lastTemp = -1;
     int lastPwm = -1;
@@ -46,7 +43,5 @@ public:
 
     void execute() override;
     bool handleEvent(EventData *dt) override;
-   
 
-    // bool onButtonTrigger(EventData *bt) override;
 };

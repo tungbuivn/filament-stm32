@@ -1,5 +1,6 @@
 #pragma once
 #include <Arduino.h>
+#define byte uint8_t
 
 #define PFM_MIN_FREQUENCY       100
 #define PFM_MAX_FREQUENCY       500
@@ -67,3 +68,7 @@
 //infrated led
 
 // step motor swing
+#define SWING_A1                PB12
+#define SWING_A2                PB13
+#define SWING_B1                PB14
+#define SWING_B2                PB15
