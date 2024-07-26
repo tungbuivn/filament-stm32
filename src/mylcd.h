@@ -29,23 +29,11 @@ struct TextQueueData
 class LCDThread : public BaseThread
 {
 private:
-
-    // queue<TextQueueData*> data;
-    // void updateText();
-    // int init=0;
    
     void initTFT();
-    // static void setPwmText(const char *text);
-    // static bool UpdatePwm(EventData *data);
-    // static bool OffPwm(EventData *data);
-    // static bool onEncoderClick(EventData *data);
-    // int queueLen;
 public:
     TFT_eSPI *tft;
-    // LCDTBT *dbg;
     LCDThread();
-    // void setText(int x, int y, char *text);
     void execute() override;
-    // void initLcd();
 };
 extern LCDThread *mylcd;

@@ -68,53 +68,9 @@ LCDThread::LCDThread() : BaseThread()
 
 };
 
-// void LCDThread::setPwmText(const char *text) {
-//   if (!mylcd) return;
-//   debug_printf("lcd update pwm %s\n",text);
-//   auto tft=mylcd->tft;
-//   tft->fillRect(60,72,120,80,TFT_RED);
-
-//   tft->setFreeFont(FSB40pt);
-//   tft->setTextDatum(MC_DATUM);
-//   tft->setTextColor(TFT_GREEN);
-//   // std::string s = std::to_string(PwmData->pwm);
-//   // tft->set(TFT_BLUE);
-//   // tft->setTextSize(24);
-//   tft->drawString(text,120,160-40-5,1);
-// }
-// bool LCDThread::OffPwm(EventData *data) {
-//    setPwmText("--");
-//    return false;
-// }
-// bool LCDThread::UpdatePwm(EventData *data) {
-//   if (!mylcd) return false;
-
-//   auto pwmData=(MotorPwmData*)data;
-
-//   char buf[12];
-//   ltoa(pwmData->pwm,buf,10);
-
-//   setPwmText(buf);
-//   return false;
-// }
-// bool LCDThread::onEncoderChange(EventData *data) {
-
-//   auto ndt=(EncoderData *)data;
-//   debug_printf("encode change %d\n",ndt->dir);
-//   return false;
-// }
-
 void LCDThread::execute() {
-  //
-  //   delay(500);
-  //   tft.invertDisplay(false);
-  //   delay(500);
   TBT_THC(5,
           , ,
-          // tft.invertDisplay(true),
-          // TBT_DELAY(500),
-          //  tft.invertDisplay(false),
-          //  TBT_DELAY(500)
 
           )
 };

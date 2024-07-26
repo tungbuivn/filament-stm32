@@ -47,28 +47,8 @@ void Events::addListener(const EventType event, FN_CALLBACK cb) {
     lst->push_back(cb);
 }
 void Events::dispatchMessage(EventData *data) {
-    // if (data) {
-    // EventData *et=data->clone();
     eventQueue.push(data);
-    // } 
-    
 }
 void Events::dispatchMessage(EventType event,long long adata) {
     dispatchMessage(new EventData(event,adata));
-    // if (data) {
-        // EventData *et=new EventData();
-        // eventQueue.push(et);
-    // } 
-    
 }
-
-// void Events::dispatchMessage(EventType event,EventData *data) {
-//     if (data) {
-//         // debug_printf("event post %d",eventQueue.size());
-//         data->type=event;
-        
-//         auto cl=data->clone();
-//         eventQueue.push(cl);
-//     } 
-    
-// }
